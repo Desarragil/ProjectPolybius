@@ -1,0 +1,7 @@
+La aventura gráfica nos pondrá en la piel de batman tras un ataque a la batcueva. Deberemos averiguar quién está detrás del ataque, arreglar nuestro batmóvil y buscar en los escenarios a los que nos dirigan las pistas que nos vamos encontrando para resolver el misterio. 
+
+El juego se apoyará en imágenes de los escenarios que vayamos visitando. En cada escenario habrá que resolver un puzzle interactuando con el entorno. Podremos usar los diferentes gadgets del personaje y su emblemático vehículo.
+
+Por razones obvias no podemos decir quién o quienes son lo villanos. La historia se irá perfilando conforme se vaya avanzando en los diferentes sprints.
+
+

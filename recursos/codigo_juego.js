@@ -17,23 +17,23 @@ undum.game.version = "1.0";
 
 /* A variable that changes the fade out speed of the option text on
  * a mobile. */
-undum.game.mobileHide = 2000
+undum.game.mobileHide = 2000;
 
 /* A variable that changes the options fade out speed. */
-undum.game.fadeSpeed = 1500
+undum.game.fadeSpeed = 1500;
 
 /* A variable that changes the slide up speed after clicking on an
  * option. */
-undum.game.slideUpSpeed = 500
+undum.game.slideUpSpeed = 500;
 
 /* The situations that the game can be in. Each has a unique ID. */
 undum.game.situations = {
 
     inicio: new undum.SimpleSituation(
             "<h1>Cabecera de situación.</h1>\
-		<p> Este es el texto de la historia</p>."
-            )
-}
+		<p> Este es el texto de la historia</p>.",
+    )
+};
 
 // ---------------------------------------------------------------------------
 /* The Id of the starting situation. */
@@ -47,8 +47,8 @@ undum.game.qualities = {
 
     objeto: new undum.OnOffQuality("Objeto/atributo check", {
         priority: "0001",
-        group: 'Inventario',
-        onDisplay: "&#10003;"}),
+        group: 'inventario',
+        onDisplay: "&#10003;"})
 
 };
 
@@ -60,7 +60,7 @@ undum.game.qualities = {
  * non-existent group. */
 undum.game.qualityGroups = {
 
-    inventario: new undum.QualityGroup('Inventario', {priority: "0001"}),
+    inventario: new undum.QualityGroup('inventario', {priority: "0001"})
 };
 
 // ---------------------------------------------------------------------------
@@ -68,5 +68,5 @@ undum.game.qualityGroups = {
  * to configure the character at the start of play. */
 undum.game.init = function (character, system) {
 
-    character.qualities.objeto=1;
+    character.qualities.objeto = 1;
 };

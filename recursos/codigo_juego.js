@@ -29,9 +29,213 @@ undum.game.slideUpSpeed = 500;
 /* The situations that the game can be in. Each has a unique ID. */
 undum.game.situations = {
 
-    inicio: new undum.SimpleSituation(
-            "<h1>Cabecera de situación.</h1>\
-		<p> Este es el texto de la historia</p>.",
+	inicio: new undum.SimpleSituation(
+            "<h1>INTRODUCCIÓN</h1>\
+		<p>Aquí iría la introducción.\
+		</p></br>\
+		<p><a href='batmovil'>Entrar en batmovil</a></p></br>"
+    ),
+
+    parkrow: new undum.SimpleSituation(
+            "<h1>CALLEJÓN DEL CRIMEN</h1>\
+		<p>Te encuentras en el lugar el cual intentas evitar a toda costa. Lo tienes grabado\
+		todo en la cabeza: aquella noche del 26 de Junio a las 10:27 pm tu vida cambió para\
+		siempre, los acontecimientos que se desencadenarían desde ese momento te\
+		convertirían en la persona que eres hoy. Te encuentras en Park Row, conocido como\
+		Callejón del Crimen, el lugar donde asesinaron a tus padres.\
+		</p></br>\
+		<p>No hay tiempo que perder, debes ponerte en marcha, todas las evidencias te llevan\
+		este lugar. Ante ti se encuentra el lugar donde asesinaron a tus padres, al fondo\
+		del callejón se encuentran unos contenedores de basura, algunos de ellos\
+		desparramados por el suelo. No hay mucho tiempo que perder pero, si así lo deseas,\
+		podrías investigar más a fondo el callejón.\
+		</p></br>\
+		<p>Te acercas al lugar exacto en el que asesinaron a tus padres, ya que sobre la\
+		 silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos. Te acercas\
+		 a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras una bolsa\
+		 de una sustancia la cual no parece muy legal.\
+		</p></br>\
+		<p>Sin duda debes analizar la sustancia para averiguar de qué se trata. El ordenador\
+		 de tu batcueva no se encuentra 100 % operativo por lo que solo te queda una solución:\
+		 recurrir a un viejo amigo. Debes ir a la comisaría de Gotham y buscar al comisario\
+		 Gordon para que te ayude a resolver el misterio.\
+		</p></br>\
+		<p>Te diriges al fondo del callejón y observas los contenedores, tras un vistazo rápido\
+		 fijas tu atención en un destello. Te dispones a examinarlo.\
+		</p></br>\
+		<p>Parece que alguien dejo su tarjeta de presentación tras una caída pero ¿Desde dónde?.\
+		</p></br>\
+		<p>Llegas al final del callejón y observas los cubos de basura esparcidos y, a unos\
+		 metros, encuentras un puñado de cristales rotos. Observas por encima de tu cabeza\
+		 y alcanzas a ver en la oscuridad de la noche una ventana con los cristales rotos.\
+		 Debes de investigar ese piso, puede que tenga algo que ver con los asesinatos del\
+		 callejón pero necesitas tu batgarra para salvar la altura a la que se encuentra. Usar\
+		 batgarra para entrar en el piso franco.\
+		</p></br>\
+		<p><a href= 'pisofranco'>entrar en piso franco.</a></br>\
+		<a href= 'batmovil'>Volver al batmovil.</a></p></br>"
+    ),
+
+	comisaria: new undum.SimpleSituation(
+            "<h1>COMISARIA DE GOTHAM</h1>\
+		<p>Llegas a la comisaría de Gotham city al amparo de la noche, inutilizas el sistema\
+		 de alumbrado para colarte y ,al llegar a su despacho, ahí está: James Gordon.\
+		</p></br>\
+		<p>-Ah, eres tú, era de esperar al fin y al cabo. Con alivio retira la mano de la pistolera.\
+		</p></br>\
+		<p>-¿Qué puedes decirme de esto?. Dices tras depositar en su escritorio la bolsa con la\
+		 sustancia que encontraste en Park Row. Lo tenía uno de los cadáveres de Park Row.\
+		</p></br>\
+		<p>-Anoche realizamos una regada en un piso franco. Un soplo anónimo nos dió la dirección\
+		 de lo que creíamos un traficante de poca monta. Cuando llegamos había escapado por la ventana.\
+		 Cuando nuestros chicos llegaron al callejón pudieron abatirlo, pero no estaba solo.\
+		 Junto a él abatieron a uno de los hombres de Jonathan Crane.\
+		</p></br>\
+		<p>El espantapajaros, un viejo amigo.\
+		</p></br>\
+		<p>-Está claro que el soplo se equivocaba. Con Crane subimos de nivel.\
+		</p></br>\
+		<p>-Sí, pero Batman, sabes que no puedo analizar una prueba sustraída de una escena del crimen.\
+		 Podrían incriminarme. Además, no entiendo a qué se debe todo esto.\
+		</p></br>\
+		<p>-James, esta noche han atacado mi guarida. No sé quién ni por qué pero no dispongo de los\
+		 medios para analizar esto. Por favor, no te pediría que te arriesgaras por mi si no fuera mi última opción.\
+		</p></br>\
+		<p>-Maldita sea, déjame que llame a Bárbara, ella sabrá qué hacer. Apresurado, Gordon coge\
+		 la bolsa del escritorio y sale de su despacho.\
+		</p></br>\
+		<p>Tras 45 minutos de espera Gordon vuelve a su despacho.\
+		</p></br>\
+		<p>-No preguntes cómo, pero lo tengo: la sustancia se trata de la toxina del pánico.\
+		</p></br>\
+		<p>Sin duda, Jonathan Crane está detrás de esos asesinatos y, por consecuencia, está detrás\
+		 del ataque del ataque a tu guarida.\
+		</p></br>\
+		<p>-Esto es grande, Batman. Estos últimos meses hemos estado desarticulando una red de tráfico\
+		 ilegal de la tóxina. Crane la estaba colando en las cárceles de todos los distritos haciendo enloquecer\
+		 a los presos y originando motines. Nos ha costado contener la situación, pero esto quiere decir que se\
+		 nos están escapando líneas de distribución.\
+		</p></br>\
+		<p>-No por mucho tiempo. Dices decidido. Esta noche se acabó, ¿Dónde puedo encontrarle?.\
+		</p></br>\
+		<P>-Hemos estado siguiendo sus pasos muy de cerca, se está refugiando en el Salón Iceberg.\
+		 Está al amparo de Oswald Cobblepot, desde allí es prácticamente intocable.\
+		</p></br>\
+		<p>-Ya lo veremos.\
+		</p></br>\
+		<p><a href='batmovil'>Volver al batmovil.</a></p></br>"
+    ),
+
+	pisofranco: new undum.SimpleSituation(
+            "<h1>PISO FRANCO</h1>\
+		<p>Apuntas con tu batgarra a la cornisa y consigues introducirte en el piso franco.\
+		 Todo está quemado, poco queda ya de lo que había en la estancia. Puedes volver al\
+		 callejón o seguir explorando la habitación.\
+		</p></br>\
+		<p>Tras observar detenidamente lo ves claro: alguien intentó deshacerse de pruebas\
+		 antes de que lo pillaran y saltó por la ventana, pero no todo acabó destruido. Te agachas\
+		 ante los restos de lo que debió ser un escritorio y, tras retirar un montón de cenizas,\
+		 encuentras una tarjeta de acreditación. La tarjeta tiene el logo del Salón Iceberg, interesante.\
+		</p></br>\
+		<p><a href='parkrow'>Volver al callejón.</a></p></br>"
+    ),
+
+	saloniceberg: new undum.SimpleSituation(
+            "<h1>SALÓN ICEBERG</h1>\
+		<p>Llegas al exterior del establecimiento que regenta el pingüino y la calle está desierta,\
+		 está claro que te están esperando.\
+		</p></br>\
+		<p>Al entrar en el hall no te encuentras a nadie, avanzas hasta la entrada del salón principal\
+		 del establecimiento. Aprietas los puños tras un mal presentimiento.\
+		</p></br>\
+		<p>Al entrar, todos los matones del pingüino están apuntandote con sus armas. Detrás de ellos,\
+		 se encuentra Oswald, al que parece que le ha entrado la risa floja al verte entrar. Justo detrás\
+		 suya puedes observar una puerta acorazada.\
+		</p></br>\
+		<p>-¡Mira quién se ha dignado a aparacer!. Grita Cobblepot.\
+		</p></br>\
+		<p>-¡¿Qué andáis tramando Crane y tú?!.\
+		</p></br>\
+		<p>-Esparaba al menos un saludo, Batman. Sea como sea poco importa lo que tramemos mi socio y yo,\
+		 tu viaje ha llegado a su fin.. Acto seguido, ves como el pingüino hace una señal a sus secuaces\
+		 para que abran fuego.\
+		</p></br>\
+		<p>Debes pensar rápido: puedes lanzar tus aturdidores sónicos, o tus bat-granadas  de bat-humo.\
+		</p></br>\
+		<p>Lanzas tus aturdidores sónicos a los pies del grupo de matones. Justo antes de que pudieran disparar,\
+		 los aturdidores hacen su ruído ensordecedor lo que provoca que todos los presentes en la sala menos tú se\
+		 lleven las manos a las orejas irremediablemente.\
+		</p></br>\
+		<p>Aprovechas la oportunidad para nockear a los cuatro matones más cercanos. Mientras atacas al quinto,\
+		 notas un golpe seco en la espalda, te han disparado. Menos mal que tu traje puede soportar algunos tiros.\
+		 Te apresuras y lanzas al matón que te ha disparado tu víctima y justo cuando vas a avalanzarte,\
+		 notas que tu cuerpo se paraliza. Te han aturdido con una pistola taser, ahora estás a merced de tus enemigos.\
+		</p></br>\
+		<p>Antes de que puedan apretar el disparador de sus armas, lanzas tus bat-granadas de bat-humo las cuales\
+		 estallan antes de tocar el suelo haciendo que ninguno de los presentes puedan ver a más de un palmo de\
+		 la cara. Activas tu visión nocturna y lanzas un batarang a las armas de cada uno de los matones,\
+		 desarmandolos en el acto. A continuación, empiezas a nockear a cada uno de los matones hasta\
+		 encontrarte justo delante del Cobblepot.\
+		</p></br>\
+		<p>El humo se disipa y, tras observar la escena que ahora se presenta delante de él, puedes\
+		 notar como el pavor se adueña de su cara. Antes de que pueda mediar palabra, acaricias con\
+		 tu puño su cara dejándolo inconsciente en el acto.\
+		</p></br>\
+		<p>Frente a tí, la puerta blindada. Tiene un mecanismo de identificación mediante tarjeta.\
+		</p></br>\
+		<p>Sacas la tarjeta que encontraste en el piso franco de Park Row y entras en la camara acorazada.\
+		</p></br>\
+		<p>Dentro de la cámara, te encuentras con una habitación llena de lujos. Justo en el centro de\
+		 la cámara  encuentras a Crane, quien observas que va a empezar a hablar.\
+		</p></br>\
+		<p>Dejar que hable o hundir tu puño en su cara.\
+		</p></br>\
+		<p>Conforme te acercas a él empieza a hablar: \
+		</p></br>\
+		<p>-Vaya, justo me preguntaba cuánto tardarías en encontrarme.\
+		</p></br>\
+		<p>-Basta de juegos, espantapájaros.\
+		</p></br>\
+		<p>Crane aprieta un control remoto que tenía en el bolsillo activando unos aspersores en la pared\
+		 que rocían toda la estancia con la toxina de espantapájaros, lo cual te deja en el suelo en estado catatónico.\
+		 Has fracasado.\
+		</p></br>\
+		<p>Te apresuras a acercarte a Crane y, antes de que medie palabra, hundes tu puño en su cara.\
+		 Esto hace que caiga al suelo, perdiendo un control remoto que guardaba en el bolsilo.\
+		</p></br>\
+		<p>Pisas el control remoto destruyendolo y asestas otro puñetazo con todas tus fuerzas\
+		 a la cara de Crane.\
+		</p></br>\
+		<p>-Si tienes un mínimo de amor propio más te vale empezar a hablar pronto.\
+		 Dices decidido levantando el puño para propinar otro puñetazo a tu víctima.\
+		</p></br>\
+		<p>-¡Espera! ¡Hablaré!. Grita Espantapájaros horrorizado al ver tu puño elevarse.\
+		</p></br>\
+		<p>-Eso me figuraba. ¿Por qué has atacado la batcueva, cómo sabías de su localización?\
+		 Si me mientes, lo sabré. Dices, ordenando mientras a tu detector de ritmo cardíaco que\
+		 te muestre las lecturas de Crane.\
+		</p></br>\
+		<p>-Yo no ataqué tu guarida, yo solo me encargo de la toxina.\
+		</p></br>\
+		<p>-¿Qué tóxina? ¿De qué me estás hablando?\
+		</p></br>\
+		<p>-Si quieres respuestas, ve a la Torre Wayne. A estas alturas,\
+	 	encontrarás todas las respuestas allí.\
+		</p></br>\
+		<p>Al terminar de articular la última frase nockeas a Crane, dejándolo inconsciente.\
+		 Llamas a Gordon para que envíe a sus hombre a limpiar el sitio.\
+		</p></br>\
+		<p><a href='batmovil'>Volver al batmovil.</a></p></br>"
+    ),
+
+	batmovil: new undum.SimpleSituation(
+            "<h1>BATMOVIL</h1>\
+		<p><ul>\
+			<li><a href='parkrow'>Callejón del crimen</a></li>\
+			<li><a href='comisaria'>Comisaria de Gotham</a></li>\
+			<li><a href='saloniceberg'>Salón Iceberg</a></li>\
+		</ul>\
+		</p></br>"
     )
 };
 

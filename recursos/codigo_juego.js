@@ -42,11 +42,11 @@ undum.game.situations = {
 	
 	garaje: new undum.SimpleSituation(
 	      "<h1>GARAJE</h1>\
-		  <p> Accedes al Garaje intentando buscar la mejor solución para poder salir de la batcuva\
+		  <p> Accedes al Garaje intentando buscar la mejor solución para poder salir de la batcueva\
 		  totalmente ileso. Frente a ti puedes ver el batmovil y tienes la opción de <a href='batmovil_roto'>Entrar al batmovil</a>\
 		  e intentar salir del garaje. Pero sigues buscando otra solución alternativa y te percatas de\
 		  que la puerta de salida a la calle del garaje se encuentra abierta, por lo tanto también sopesas\
-		  si <a href='calle1'>Salir directemente por la puerta.</a></p>"
+		  si <a href='calle1'>Salir directamente por la puerta.</a></p>"
      ),
 
     distribuidor1: new undum.SimpleSituation(
@@ -67,12 +67,12 @@ undum.game.situations = {
     batmovil_roto: new undum.SimpleSituation(
 	          "<h1>BATMOVIL</h1>\
 			  <p> Estas sentado en el asiento del conductor y pruebas arrancarlo, no arranca e\
-			  intentas buscar una solución, buscas el posible error del batmovil y te percatas de\
+			  intentas encontrar una solución, buscas el posible error del batmovil y te percatas de\
 			  que los slots donde van alojadas las piezas de la cpu están vacios. Te dispones a buscar\
 			  las piezas de la cpu dentro del vehiculo y algo en el asiento del acompañante llama tu\
 			  atención... ¡Las llaves del resto de las puertas de la batcueva!.\
 			  Te encuentras en la texitura de volver al distribuidor y <a href='distribuidor2'>Probar las llaves</a>\
-			  O <a href='batmovil2'>Seguir buscando las piezas en el batmovil.</a></p>"	 
+			  o <a href='batmovil2'>Seguir buscando las piezas en el batmovil.</a></p>"	 
 			  
 	),
 	
@@ -105,7 +105,7 @@ undum.game.situations = {
 	          "<h1>BATMOVIL</h1>\
 			  <p> Entras al garaje y accedes al interior del batmovil, introduces cada una de las\
 			  piezas recopiladas en las habitaciones en los slots para la cpu, entonces el batmovil\
-			  arranca y <a href='ciudad'> Sales a descubrir la ciudad.</a></p>"
+			  arranca y <a href='batmovil'> Sales a descubrir la ciudad.</a></p>"
 			  
 	),
     parkrow: new undum.SimpleSituation(
@@ -300,7 +300,7 @@ undum.game.situations = {
 		<p><a href='batmovil'>Volver al batmovil.</a></p></br>"
     ),
 
-	ciudad: new undum.SimpleSituation(
+	batmovil: new undum.SimpleSituation(
             "<h1>CIUDAD</h1>\
 		<p><ul>\
 			<li><a href='parkrow'>Callejón del crimen</a></li>\

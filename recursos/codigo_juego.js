@@ -31,10 +31,22 @@ undum.game.situations = {
 
 	inicio: new undum.SimpleSituation(
             "<h1>INTRODUCCIÓN</h1>\
-		<p>Aquí iría la introducción.\
-		</p></br>\
-		<p><a href='batmovil'>Entrar en batmovil</a></p></br>"
+		<p>Te encuentras en el distribuidor de la batcueva y quieres salir de allí lo antes\
+		 posible ya que te encuentras indefenso y el villano quiere aprovechar esta situación\
+		 para acabar contigo. Miras a tu alrededor y puedes ver cinco puertas, cuatro de ellas\
+		 están cerradas y no puedes acceder a su interior, y la unica que está abierta es la \
+         puerta de acceso al garaje.Por lo tanto puedes </p></br> \
+		 <p><a href='Garaje'>Entrar al garaje</a></p></br> o\
+		 <p><a href='batmovil'>Quedarte en el distribuidor</a></p></br>\
+		 <p><a href='batmovil'>Entrar en batmovil</a></p></br>"
     ),
+	Garaje: new undum.SimpleSituation(
+	      "<h1>Garaje</h1>\
+		  <p> Accedes al Garaje y quieres salir de l\
+		  la batcueva lo antes posible ya que estas indefenso y el villano quiere aprovechar\
+		  esta situción para acabar contigo
+	
+     ),
 
     parkrow: new undum.SimpleSituation(
             "<h1>CALLEJÓN DEL CRIMEN</h1>\

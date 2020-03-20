@@ -297,7 +297,7 @@ undum.game.situations = {
 		<p>Al terminar de articular la última frase nockeas a Crane, dejándolo inconsciente.\
 		 Llamas a Gordon para que envíe a sus hombre a limpiar el sitio.\
 		</p></br>\
-		<p><a href='batmovil'>Volver al batmovil.</a></p></br>"
+		<p><a href='saloniceberg2'>Volver al batmovil.</a></p></br>"
     ),
 
 	batmovil: new undum.SimpleSituation(
@@ -308,7 +308,141 @@ undum.game.situations = {
 			<li><a href='saloniceberg'>Salón Iceberg</a></li>\
 		</ul>\
 		</p></br>"
-    )
+	),
+	
+	saloniceberg2: new undum.SimpleSituation(
+			"<h1>SALÓN ICEBERG</h1>\
+		<p>Antes de que vuelvas al batmóvil, escuchas como Crane vuelve a recuperar la conciencia, \
+		quiere ayudarte:\
+		</p></br>\
+		<p>-Espera, creo que será mejor que te ayude. No te puedo decir quien está detrás de todo \
+		esto, pero puedo conseguir que llegues hasta él, así que vamos a planear algo.\
+		</p></br>\
+		<p>-Vale, ¿qué propones?\
+		</p></br>\
+		<p>-Se me ocurren dos formas de poder llegar allí: la primera consiste en que \
+		<a href='llamarymentir'>yo le llame y le haga creer que has sido derrotado</a>, \
+		la segunda opción sería <a href='vencidoenlacalle'>fingir que eres vencido en la entrada del club</a>, \
+		donde podría comprobarlo por sí mismo ya que nos vigila desde su estancia. \
+		O ahora que recuerdo, el villano siempre suele pedir sobre estas horas al kebab que hay \
+		en la esquina, así que también podemos <a href='llamarkebab'>hacer una llamada al kebab.</a>\
+		</p></br>"
+	),
+
+	llamarymentir: new undum.SimpleSituation(
+		"<p>Hace la llamada, y al cabo de 5 minutos el local se llena de hombres que trabajan para el villano, \
+		quienes os acribillan a ti y a Crane.\
+		</p></br>"
+	),
+
+	vencidoenlacalle: new undum.SimpleSituation(
+		"<p>Sales, finge que te vencen y esperas a que el villano se vaya a dormir. Te diriges hasta la torre, \
+		y justo cuando dispones a entrar te topas con la cuadrilla de bienvenida que ni siquiera te deja saludar. \
+		Has sido derrotado.</p></br>"
+	),
+
+	llamarkebab: new undum.SimpleSituation(
+		"<p>-Se me está ocurriendo algo al respecto: puedo llamar al encargado y hacer un trato con él para que \
+		ponga otra sustancia en su pedido que nos ayudará a ganar tiempo, al fin y al cabo no se va a negar a \
+		llevarse una pequeña comisión por estos servicios.\
+		</p></br>\
+		<p>La llamada al kebab se hace y el encargado accede al trato.\
+		</p></br>\
+		<p>-Bingo, tenemos lo que queremos. Escúchame atentamente: el encargado se va a encargar de poner un poco \
+		de laxante en el pedido. Así, el villano tendrá que ir al sanitario inmediatamente, sin que le de tiempo \
+		a poner a nadie a vigilar en su lugar, momento en el que podrás salir de aquí inmediatamente y llegar hasta \
+		allí sin haber levantado sospecha ninguna. A partir de ahí, el plan queda en tus manos.\
+		</p></br>\
+		<p>-Esta idea tiene ya otro color. Avísame cuando ocurra esto.\
+		</p></br>\
+		<p>Pasada una hora, se cumple todo lo planeado y el villano se retira de su lugar de vigilancia, quedando el \
+		club nocturno sin vigilancia ninguna. Sales del club, pero ahora tienes un dilema: \
+		<a href='cogerbatmovil'>coger el batmovil</a> o <a href='ircaminando'>ir caminando.</a>\
+		</p></br>"
+	),
+
+	cogerbatmovil: new undum.SimpleSituation(
+		"<p>Si coges el batmovil, el villano volverá a la sala de vigilancia, y verá que ya no estsá allí. Así se \
+		anticipará a tu llegada, y te esperará con un comité de bienvenida con el que no podrás hacer nada, \
+		y habrás sido derrotado.\
+		</p></br>"
+	),
+
+	ircaminando: new undum.SimpleSituation(
+			"<h1>TORRE WAYNE</h1>\
+		<p>Finalmente, decides ir caminando. Llegas a la torre, y al subir a lo más alto, te encuentras con que la \
+		escolta que custodia su residencia está distraída. Así, accedes de forma inmediata al interior, y se \
+		presenta el primer dilema: el villano se supone que debe estar ya en la sala de vigilancia, pero eres \
+		consciente de que sería más vulnerable allí ya que podría estar armado y es bastante factible que además \
+		la habitación esté protegida, por lo que la otra opción sería ir al baño directamente, donde la cosa estaría \
+		más a tu favor. Entoces, tienes dos opciones: <a href='irsalavigilancia'>ir a la sala de vigilancia</a>\
+		o <a href='irbanio'>ir al baño.</a>\
+		</p></br>"
+	),
+
+	irsalavigilancia: new undum.SimpleSituation(
+			"<h1>SALA DE VIGILANCIA</h1>\
+		<p>Al principio, te decantas por ir primero a la sala de vigilancia, y te encuentras con que la entrada está \
+		bloqueada. Ante esta situación, puedes hacer dos cosas: puedes <a href='forzarentrada'>probar a forzar la entrada</a> \
+		o <a href='mirarsuelo'>mirar detalladamente</a> a ver si por casualidad hubiera algo que te ayude a desbloquear la \
+		entrada de forma más serena.\
+		</p></br>"
+	),
+
+	forzarentrada: new undum.SimpleSituation(
+		"<p>Fuerzas la entrada, e inmediatamente salta la alarma. Ya no te vale, el villano se presenta con unos de sus hombres \
+		y te reducen. Fracaso.\
+		</p></br>"
+	),
+
+	mirarsuelo: new undum.SimpleSituation(
+		"<p>Visto esto, empiezas a mirar a tu alrededor, y entre la oscuridad del pasillo, descubres un objeto brillante: ¡es una \
+		llave y… es la que desbloquea la cerradura! Abres la puerta con cautela, pero para tu sorpresa te encuentras con que no \
+		está allí tu objetivo. Así, inmediatamente, <a href='irbanio'>te diriges al baño.</a>\
+		</p></br>"
+	),
+
+	irbanio: new undum.SimpleSituation(
+			"<h1>BAÑO</h1>\
+		<p>Una vez llegas allí, ves una pequeña ráfaga de luz que asoma bajo la puerta. Esto te hace pensar que tu objetivo se \
+		encuentra allí, y decides sorprenderlo. Abres la puerta y apuntas con un revólver: descubres que el villano es Dos Caras, y \
+		sólo tienes unos segundos para decidir entre <a href='disparar'>disparar</a> o \
+		<a href='dejarquehable'>dejar que hable y se explique.</a>\
+		</p></br>"
+	),
+
+	disparar: new undum.SimpleSituation(
+		"<p>Tras disparar, sus hombres se alarman de la situación y acuden al lugar. Te reducen y acaban contigo. Has sido derrotado.\
+		</p></br>"
+	),
+
+	dejarquehable: new undum.SimpleSituation(
+		"<p>Finalmente, dejas que hable.\
+		</p></br>\
+		<p>-Tú, ¿que estás tramando?\
+		</p></br>\
+		<p>-¿Cómo has sido capaz de encontrarme y acceder hasta aquí sin haber armado ni un solo ruido?\
+		</p></br>\
+		<p>-Tu comité de vigilancia, que es muy efectivo. Te recomiendo que los mandes al paro. ¡Explícate ahora!\
+		</p></br>\
+		<p>-Supongo que no tengo otra alternativa…\
+		</p></br>\
+		<p>-Ni lo quieras comprobar.\
+		</p></br>\
+		<p>-Todo esto surge de mi famosa moneda de dos caras, sabes que yo de por sí no tengo ese espíritu maligno para obrar de esta manera. \
+		Simplemente, estaba tratando el asunto de la toxina, cuando en ese momento vi una noticia sobre ti en el periódico. Inconscientemente, \
+		relacioné una cosa con la otra y… ya puedes imaginarte el resto. Para resolver este pensamiento, tuve que lanzar la moneda, y el \
+		resultado no fue para nada bueno.\
+		</p></br>\
+		<p>-Pues sólo te digo una cosa: o empiezas a tratarte ese trastorno que no te conviene, o me obligarás a acabar contigo en este mismo \
+		momento.\
+		</p></br>\
+		<p>Y Dos Caras tuvo que acceder a solucionar su problema. Batman lo puso en manos de especialistas que, con ayuda de un tratamiento, \
+		comenzaron a luchar contra su trastorno.\
+		</p></br>\
+		<p>FIN\
+		</p></br>"
+	)
 };
 
 // ---------------------------------------------------------------------------

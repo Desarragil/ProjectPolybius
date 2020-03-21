@@ -32,7 +32,7 @@ undum.game.situations = {
 	inicio: new undum.SimpleSituation(
             "<h1>INTRODUCCIÓN</h1>\
 		<p>Te encuentras en el distribuidor de la batcueva y quieres salir de allí lo antes\
-		 posible, ya que te encuentras indefenso y el villano quiere aprovechar esta situación\
+		 posible, ya que te encuentras indefenso y unos encapuchados quieren aprovechar esta situación\
 		 para acabar contigo. Miras a tu alrededor y puedes ver cinco puertas, cuatro de ellas\
 		 están cerradas y no puedes acceder a su interior, y la unica que está abierta es la \
          puerta de acceso al garaje. Por lo tanto puedes <a href='garaje'>Entrar al garaje</a>\
@@ -51,8 +51,8 @@ undum.game.situations = {
 
     distribuidor1: new undum.SimpleSituation(
 	        "<h1>DISTRIBUIDOR</h1>\
-			<p> Has decidido quedarte dentro de la batcueva totalmente indefenso y el villano ha aprovechado\
-			la situación y ha acabado contigo.\
+			<p> Has decidido quedarte dentro de la batcueva totalmente indefenso y los encapuchados han aprovechado\
+			la situación y han acabado contigo.\
 			<a href='inicio'>Volver a comenzar</a></p>"
 	     ),
 			
@@ -60,7 +60,7 @@ undum.game.situations = {
 	          "<h1>SALIR POR EL GARAJE</h1>\
 			  <p> Te diriges hacia la puerta de salida del garaje con intención de pasar por ella para\
 			  acceder a la calle pero, al acercarte a la puerta pisas un objeto extraño y cae una red\
-			  sobre ti. ¡El villano te ha puesto una trampa y te ha atrapado!\
+			  sobre ti. ¡Los encapuchados te han puesto una trampa y te han atrapado!\
 			  <a href='inicio'>Volver a comenzar.</a></p>"
 		),	
 		
@@ -79,7 +79,7 @@ undum.game.situations = {
 	batmovil2: new undum.SimpleSituation(
 	          "<h1>BATMOVIL</h1>\
 			  <p> Sigues en el batmovil buscando las piezas de la cpu, notas una presencia,\
-			  miras hacia atrás, sientes como el villano te atrapa con sus garras y acaba contigo\
+			  miras hacia atrás, sientes como los encapuchads te atrapan con sus garras y acaban contigo\
 			  <a href='inicio'>Volver a comenzar.</a></p>"	 
 			  
 	),
@@ -97,7 +97,7 @@ undum.game.situations = {
 	calle2: new undum.SimpleSituation(
 	          "<h1>PUERTA A LA CALLE DE LA BATCUEVA</h1>\
 			  <p> Introduces la llave en la cerradura de la puerta, la giras y la puerta se abre.\
-			  Al abrir la puerta el villano estaba esperandote y acaba contigo.\
+			  Al abrir la puerta los encapuchados estaban esperandote y acaban contigo.\
 			  <a href='inicio'>Volver a comenzar</a></p>"  
 	),
 	
@@ -302,7 +302,7 @@ undum.game.situations = {
 
 	batmovil: new undum.SimpleSituation(
             "<h1>CIUDAD</h1>\
-		<p><ul>\
+		<p><ul class='options'>\
 			<li><a href='parkrow'>Callejón del crimen</a></li>\
 			<li><a href='comisaria'>Comisaria de Gotham</a></li>\
 			<li><a href='saloniceberg'>Salón Iceberg</a></li>\

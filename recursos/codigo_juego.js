@@ -470,7 +470,7 @@ undum.game.qualities = {
  * non-existent group. */
 undum.game.qualityGroups = {
 
-    inventario: new undum.QualityGroup('inventario', {priority: "0001"})
+    inventario: new undum.QualityGroup('Inventario', {priority: "0001"})
 };
 
 // ---------------------------------------------------------------------------

@@ -515,5 +515,12 @@ undum.game.qualityGroups = {
  * to configure the character at the start of play. */
 undum.game.init = function (character, system) {
 
-    character.qualities.objeto = 1;
+    character.qualities.piezasCPU = 0;
+    character.qualities.llavesBatcueva = 0;
+    character.qualities.sustancia = 0;
+    character.qualities.batgarra = 0;
+    character.qualities.tarjetaAcred = 0;
+    character.qualities.aturdidores = 1;
+    character.qualities.batgranadas = 1;
+    character.qualities.llaveSala = 0;
 };

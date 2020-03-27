@@ -454,11 +454,48 @@ undum.game.start = "inicio";
  * possess. We don't have to be exhaustive, but if we miss one out then
  * that quality will never show up in the character bar in the UI. */
 undum.game.qualities = {
+		
+	piezasCPU: new undum.OnOffQuality("Piezas de la CPU", {
+		priority: "0001",
+		group: 'inventario',
+		onDisplay: ""}),
 
-    objeto: new undum.OnOffQuality("Objeto/atributo check", {
-        priority: "0001",
-        group: 'inventario',
-        onDisplay: "&#10003;"})
+	llavesBatcueva: new undum.OnOffQuality("Llaves de la Batcueva", {
+		priority: "0002",
+		group: 'inventario',
+		onDisplay: ""}),
+
+	sustancia: new undum.OnOffQuality("Sustancia para analizar", {
+		priority: "0003",
+		group: 'inventario',
+		onDisplay: ""}),
+		
+	batgarra: new undum.OnOffQuality("Batgarra", {
+		priority: "0004",
+		group: 'inventario',
+		onDisplay: ""}),
+
+	tarjetaAcred: new undum.OnOffQuality("Tarjeta de ID", {
+		priority: "0005",
+		group: 'inventario',
+		onDisplay: ""}),
+
+	aturdidores: new undum.OnOffQuality("Aturdidores sónicos", {
+		priority: "0006",
+		group: 'inventario',
+		onDisplay: ""}),
+
+	batgranadas: new undum.OnOffQuality("Batgranadas de humo", {
+		priority: "0007",
+		group: 'inventario',
+		onDisplay: ""}),
+
+	llaveSala: new undum.OnOffQuality("Llave de la sala de vigilancia", {
+		priority: "0008",
+		group: 'inventario',
+		onDisplay: ""})
+
+	
 
 };
 

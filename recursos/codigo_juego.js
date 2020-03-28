@@ -86,12 +86,118 @@ undum.game.situations = {
 	
 	distribuidor2: new undum.SimpleSituation(
 	           "<h1>DISTRIBUIDOR</h1>\
-			   <p>Vuelves al distribuidor a probar las llaves y accedes a las tres habitaciones\
-			   que hay dentro de la batcueva, en cada una de ellas encuentras las distintas piezas de la cpu,\
-			   recopilas todas las piezas y ves en el juego de llaves, una llave que no has usado.\
+			   <p>Vuelves al distribuidor a probar las llaves y ahora puedes acceder a las habitaciones de la batcueva:\
+				<ul class='options'>\
+					<li><a href='habitacion1' class='once'>Sala de comunicaciones</a></li>\
+					<li><a href='habitacion2' class='once'>Sala de entrenamiento</a></li>\
+					<li><a href='habitacion3' class='once'>Cuartel general</a></li>\
+				</ul>\
+ 			   recopilas todas las piezas y ves en el juego de llaves, una llave que no has usado.\
 			   Puedes <a href='calle2'>Probarla en la puerta que da a la calle</a> o\
 			   <a href='batmovil_arreglado'> Ir al garaje y montar la cpu en el batmovil.</a></p>"
 	
+	),
+
+	habitacion1: new undum.SimpleSituation(
+		"<h1>SALA DE COMUNICACIONES</h1>\
+		<p>Te encuentras en la sala de comunicaciones, donde Alfred y tú\
+		tenéis montado vuestro centro de operaciones informáticas, y \
+		desde donde Alfred te brinda apoyo de inteligencia durante tus\
+		misiones.</p></br>\
+		<p> La sala está repleta de material puntero, lo más avanzado\
+		que Industrias Wayne tiene en el mercado, un equipo por el que\
+		más de un gobierno mataría por tenerle bajo su control. De\
+		entre todo el material que se encuentra en la sala hay algo que\
+		no te termina de encajar: hay <a href='./examinarbrillo' class='once'>algo que brilla\
+		</a> justo al lado del\
+		teclado principal.</p></br>\
+		<p class='transient'><a href='distribuidor2' class='once'>Volver al distribuidor</a></p></br>",
+		{
+            		actions: {
+                		'examinarbrillo': "<p>Te aproximas a la altura\
+				del teclado y puedes observar que el brillo es\
+				sin lugar a dudas una de las <a href='./recogerpieza' class='once'>piezas de la CPU</a> \
+				que estabas buscando.</p></br>",
+				
+				'recogerpieza': function(character, system, to) {
+                		system.setQuality("piezaCPU1", 1);
+				}
+            		}
+        	}
+	),
+
+	habitacion2: new undum.SimpleSituation(
+		"<h1>SALA DE ENTRENAMIENTO</h1>\
+		<p>Te encuentras en la sala donde entrenas diariamente tus\
+		habilidades físicas, prácticas todo tipo de artes marciales y\
+		te adiestras en el uso de todo tipo de armas blancas.</p></br>\
+		<p>A simple vista todo está como lo sueles dejar todos los días\
+		al terminar de entrenar, todo excepto <a href='./examinardojo' class='once'>el dojo</a>\
+		que se encuentra ligeramente movido</p></br>\
+		<p class='transient'><a href='distribuidor2' class='once'>Volver al distribuidor</a></p></br>",
+		{
+            		actions: {
+                		'examinardojo': "<p>Te acercas al dojo y puedes\
+				observar como alguien lo ha movido de lugar y, además\
+				tiene un bulto en uno de los extremos. Levantas el dojo\
+				y ahí está, una de las <a href='./recogerpieza' class='once'>piezas de la CPU</a> \
+				que estabas buscando.</p></br>",
+				
+				'recogerpieza': function(character, system, to) {
+                		system.setQuality("piezaCPU2", 1);
+				}
+            		}
+        	}
+	),
+
+	habitacion3: new undum.SimpleSituation(
+		"<h1>CUARTEL GENERAL</h1>\
+		<P>Te encuentras en la sala más grande de la batcueva, donde te\
+		avituallas para las misiones, almacenas todas tus armas y tus\
+		gadchets, y donde se encuentran tus laboratorios y talleres\
+		principales. Es la sala que peor lleva el ataque que sigue en curso.\
+		No eres capaz de distiguir a simple vista lo que está fuera de lugar,\
+		deberás explorar las secciones que han sido atacadas:</p></br>\
+		<p><ul class='options'>\
+			<li><a href='./armeria' class='once'>Armería</a></li>\
+			<li><a href='./quimica' class='once'>Laboratorio química</a></li>\
+			<li><a href='./mecanica' class='once'>Taller de mecánica</a></li>\
+		</ul>\
+		</p></br>\
+		<p class='transient'><a href='distribuidor2' class='once'>Volver al distribuidor</a></p></br>",
+		{
+            		actions: {
+                		'armeria': "<p>Inspeccionas la armería y puedes\
+				alcanzar a observar que ha sufrido grandes deaños\
+				solo queda en pie el armario blindado donde guardas\
+				tus trajes, y otro pequeño donde guardas tu\
+				<a href='./recogerbatgarra' class='once'>batgarra</a>\
+				 con una serie de recambios de cable metálico\
+				para esta.</p></br>",
+				
+				'quimica': "<p>Te acercas a la sección donde se\
+				encuentra tu laboratorio de química y ha sido completamente\
+				destruido, por las marcas de abrasiones que se encuentran en\
+				el lugar puedes deducir que lo han volado por los aires\
+				ese laboratorio era ideal para analizar sustancias desconocidas,\
+				lastima.</p></br>",
+
+				'mecanica': "<p>El talle de mecánica es el lugar que mejor\
+				ha soportado el ataque. Tan solo han esparcido muchas de tus\
+				herramientas por el suelo y derribado unos cuantos almacenes de piezas\
+				, nada que el viejo Alfred no pueda arreglar en un día de duro trabajo.\
+				Miras detenidamente el lugar y, en el centro del banco de trabajo principal,\
+				encuentras <a href='./recogerpieza' class='once'> una de las piezas de la CPU</a>.</p></br>",
+
+				'recogerpieza': function(character, system, to) {
+                		system.setQuality("piezaCPU3", 1);
+				},
+
+				'recogerbatgarra':function(character, system, to) {
+                		system.setQuality("batgarra", 1);
+				}
+            		}
+        	}
 	),
 	
 	calle2: new undum.SimpleSituation(

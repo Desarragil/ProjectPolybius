@@ -70,9 +70,22 @@ undum.game.situations = {
 			  intentas encontrar una solución, buscas el posible error del batmovil y te percatas de\
 			  que los slots donde van alojadas las piezas de la cpu están vacios. Te dispones a buscar\
 			  las piezas de la cpu dentro del vehiculo y algo en el asiento del acompañante llama tu\
-			  atención... ¡Las llaves del resto de las puertas de la batcueva!.\
-			  Te encuentras en la texitura de volver al distribuidor y <a href='distribuidor2'>Probar las llaves</a>\
-			  o <a href='batmovil2'>Seguir buscando las piezas en el batmovil.</a></p>"	 
+			  atención... <a href='./examinarasiento' class='once'>examinar asiento</a></p></br>",
+			  {
+				actions: {
+						'examinarasiento': "<p>Enciendes las luces de la cabina para ver mejor\
+								 y logras distinguir una figura familiar:\
+								 <a href='./recogerllaves' class='once'>las llaves de la batcueva</a></p></br>",
+						
+						'recogerllaves': function(character, system, to) {
+                						system.setQuality("llavesBatcueva", 1);
+								system.write("<p>Ahora que tienes en tu poder las llaves de la batcueva\
+								puedes acceder a las estancias que estaban antes bloqueadas.</p></br>\
+								<p class='transient'>Te encuentras en la texitura de volver al distribuidor y <a href='distribuidor2'>Probar las llaves</a>\
+			  					o <a href='batmovil2'>Seguir buscando las piezas en el batmovil.</a></p>");
+								}
+				}
+			}	 
 			  
 	),
 	
@@ -91,8 +104,8 @@ undum.game.situations = {
 					<li><a href='habitacion1' class='once'>Sala de comunicaciones</a></li>\
 					<li><a href='habitacion2' class='once'>Sala de entrenamiento</a></li>\
 					<li><a href='habitacion3' class='once'>Cuartel general</a></li>\
-				</ul>\
- 			   recopilas todas las piezas y ves en el juego de llaves, una llave que no has usado.\
+				</ul></p>\
+ 			   <p>recopilas todas las piezas y ves en el juego de llaves, una llave que no has usado.\
 			   Puedes <a href='calle2'>Probarla en la puerta que da a la calle</a> o\
 			   <a href='batmovil_arreglado'> Ir al garaje y montar la cpu en el batmovil.</a></p>"
 	
@@ -230,8 +243,8 @@ undum.game.situations = {
 		</p></br>\
 		<p>Te acercas al lugar exacto en el que asesinaron a tus padres, ya que sobre la\
 		 silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos. Te acercas\
-		 a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras una bolsa\
-		 de una sustancia la cual no parece muy legal.\
+		 a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras <a href='./recogerbolsa' class='once'>\
+		una bolsa de una sustancia la cual no parece muy legal.</a>\
 		</p></br>\
 		<p>Sin duda debes analizar la sustancia para averiguar de qué se trata. El ordenador\
 		 de tu batcueva no se encuentra 100 % operativo por lo que solo te queda una solución:\
@@ -251,7 +264,14 @@ undum.game.situations = {
 		 batgarra para entrar en el piso franco.\
 		</p></br>\
 		<p><a href= 'pisofranco'>entrar en piso franco.</a></br>\
-		<a href= 'batmovil'>Volver al batmovil.</a></p></br>"
+		<a href= 'batmovil'>Volver al batmovil.</a></p></br>",
+		{
+			actions: {
+					'recogerbolsa': function(character, system, to) {
+                			system.setQuality("sustancia", 1);
+					}
+				}
+		}
     ),
 
 	comisaria: new undum.SimpleSituation(

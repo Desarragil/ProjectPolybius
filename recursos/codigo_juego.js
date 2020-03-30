@@ -333,9 +333,17 @@ undum.game.situations = {
 		<p>Tras observar detenidamente lo ves claro: alguien intentó deshacerse de pruebas\
 		 antes de que lo pillaran y saltó por la ventana, pero no todo acabó destruido. Te agachas\
 		 ante los restos de lo que debió ser un escritorio y, tras retirar un montón de cenizas,\
-		 encuentras una tarjeta de acreditación. La tarjeta tiene el logo del Salón Iceberg, interesante.\
+		 encuentras una <a href='./recogertarjeta' class='once'>tarjeta de acreditación.</a>\
+		 La tarjeta tiene el logo del Salón Iceberg, interesante.\
 		</p></br>\
-		<p><a href='parkrow'>Volver al callejón.</a></p></br>"
+		<p><a href='parkrow'>Volver al callejón.</a></p></br>",
+		{
+			actions:{
+				'recogertarjeta':function(character, system, to) {
+                			system.setQuality("tarjetaAcred", 1);
+					}
+				}
+		}
     ),
 
 	saloniceberg: new undum.SimpleSituation(
@@ -358,18 +366,37 @@ undum.game.situations = {
 		 tu viaje ha llegado a su fin.. Acto seguido, ves como el pingüino hace una señal a sus secuaces\
 		 para que abran fuego.\
 		</p></br>\
-		<p>Debes pensar rápido: puedes lanzar tus aturdidores sónicos, o tus bat-granadas  de bat-humo.\
-		</p></br>\
-		<p>Lanzas tus aturdidores sónicos a los pies del grupo de matones. Justo antes de que pudieran disparar,\
-		 los aturdidores hacen su ruído ensordecedor lo que provoca que todos los presentes en la sala menos tú se\
-		 lleven las manos a las orejas irremediablemente.\
+		<p class='transient'>Debes pensar rápido: puedes <a href='./lanzaraturdidores' class='once'>lanzar tus aturdidores sónicos</a>,\
+		 o <a href='./lanzargranadas' class='once'>tus bat-granadas de bat-humo.</a>\
+		</p></br>",
+		{
+			actions:{
+				'lanzaraturdidores':function(character, system, to) {
+                						system.setQuality("aturdidores", 0);
+								system.doLink('final1');
+								},
+				'lanzargranadas':function(character, system, to) {
+                						system.setQuality("batgranadas", 0);
+								system.doLink('combateconjefe');
+								}
+			}
+		}
+    ),
+	
+	final1: new undum.SimpleSituation(
+		"<p>Lanzas tus aturdidores sónicos a los pies del grupo de matones. Justo antes de que pudieran disparar,\
+		los aturdidores hacen su ruído ensordecedor lo que provoca que todos los presentes en la sala menos tú se\
+		lleven las manos a las orejas irremediablemente.\
 		</p></br>\
 		<p>Aprovechas la oportunidad para nockear a los cuatro matones más cercanos. Mientras atacas al quinto,\
-		 notas un golpe seco en la espalda, te han disparado. Menos mal que tu traje puede soportar algunos tiros.\
-		 Te apresuras y lanzas al matón que te ha disparado tu víctima y justo cuando vas a avalanzarte,\
-		 notas que tu cuerpo se paraliza. Te han aturdido con una pistola taser, ahora estás a merced de tus enemigos.\
-		</p></br>\
-		<p>Antes de que puedan apretar el disparador de sus armas, lanzas tus bat-granadas de bat-humo las cuales\
+		notas un golpe seco en la espalda, te han disparado. Menos mal que tu traje puede soportar algunos tiros.\
+		Te apresuras y lanzas al matón que te ha disparado tu víctima y justo cuando vas a avalanzarte,\
+		notas que tu cuerpo se paraliza. Te han aturdido con una pistola taser, ahora estás a merced de tus enemigos.\
+		</p></br>"
+	),
+
+	combateconjefe: new undum.SimpleSituation(
+		"<p>Antes de que puedan apretar el disparador de sus armas, lanzas tus bat-granadas de bat-humo las cuales\
 		 estallan antes de tocar el suelo haciendo que ninguno de los presentes puedan ver a más de un palmo de\
 		 la cara. Activas tu visión nocturna y lanzas un batarang a las armas de cada uno de los matones,\
 		 desarmandolos en el acto. A continuación, empiezas a nockear a cada uno de los matones hasta\
@@ -424,7 +451,7 @@ undum.game.situations = {
 		 Llamas a Gordon para que envíe a sus hombre a limpiar el sitio.\
 		</p></br>\
 		<p><a href='saloniceberg2'>Volver al batmovil.</a></p></br>"
-    ),
+		),
 
 	batmovil: new undum.SimpleSituation(
             "<h1>CIUDAD</h1>\
@@ -522,10 +549,18 @@ undum.game.situations = {
 	),
 
 	mirarsuelo: new undum.SimpleSituation(
-		"<p>Visto esto, empiezas a mirar a tu alrededor, y entre la oscuridad del pasillo, descubres un objeto brillante: ¡es una \
-		llave y… es la que desbloquea la cerradura! Abres la puerta con cautela, pero para tu sorpresa te encuentras con que no \
-		está allí tu objetivo. Así, inmediatamente, <a href='irbanio'>te diriges al baño.</a>\
-		</p></br>"
+		"<p>Visto esto, empiezas a mirar a tu alrededor, y entre la oscuridad del pasillo, descubres un objeto brillante: \
+		<a href='./recogerllavesala' class='once'>¡es una llave y…</a>\
+		</p></br>",
+		{
+			actions:{
+				'recogerllavesala':function(character, system, to) {
+                						system.setQuality("llaveSala", 1);
+								system.write("<p>es la que desbloquea la cerradura! Abres la puerta con cautela, pero para tu sorpresa te encuentras con que no \
+								está allí tu objetivo. Así, inmediatamente, <a href='irbanio'>te diriges al baño.</a></p>");
+								}
+			}
+		}
 	),
 
 	irbanio: new undum.SimpleSituation(

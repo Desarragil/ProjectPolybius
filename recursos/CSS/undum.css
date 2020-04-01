@@ -1,11 +1,23 @@
 body {
-    background: #170804 url("../imágenes/page_bg.jpg") repeat-x left top;
+    /*background: #170804 url("../imágenes/page_bg.jpg") repeat-x left top;*/
     font-family: Palatino, Times, "Times New Roman", serif;
     font-size: 18px;
     line-height: 1.6em;
     background-attachment: fixed;
     overflow-y: scroll;
 }
+
+#video_background {
+ position: fixed;
+ bottom: 0px;
+ right: 0px;
+ min-width: 100%;
+ min-height: 100%;
+ width: auto;
+ height: auto;
+ z-index: -1000;
+ overflow: hidden;
+ }
 
 /* Basic structure */
 #page {

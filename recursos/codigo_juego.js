@@ -616,43 +616,53 @@ undum.game.start = "inicio";
  * that quality will never show up in the character bar in the UI. */
 undum.game.qualities = {
 		
-	piezasCPU: new undum.OnOffQuality("Piezas de la CPU", {
+	piezaCPU1: new undum.OnOffQuality("Pieza 1 de la CPU", {
 		priority: "0001",
 		group: 'inventario',
 		onDisplay: ""}),
 
-	llavesBatcueva: new undum.OnOffQuality("Llaves de la Batcueva", {
+	piezaCPU2: new undum.OnOffQuality("Pieza 2 de la CPU", {
 		priority: "0002",
 		group: 'inventario',
 		onDisplay: ""}),
 
-	sustancia: new undum.OnOffQuality("Sustancia para analizar", {
+	piezaCPU3: new undum.OnOffQuality("Pieza 3 de la CPU", {
 		priority: "0003",
 		group: 'inventario',
 		onDisplay: ""}),
-		
-	batgarra: new undum.OnOffQuality("Batgarra", {
+
+	llavesBatcueva: new undum.OnOffQuality("Llaves de la Batcueva", {
 		priority: "0004",
 		group: 'inventario',
 		onDisplay: ""}),
 
-	tarjetaAcred: new undum.OnOffQuality("Tarjeta de ID", {
+	sustancia: new undum.OnOffQuality("Sustancia para analizar", {
 		priority: "0005",
 		group: 'inventario',
 		onDisplay: ""}),
-
-	aturdidores: new undum.OnOffQuality("Aturdidores sónicos", {
+		
+	batgarra: new undum.OnOffQuality("Batgarra", {
 		priority: "0006",
 		group: 'inventario',
 		onDisplay: ""}),
 
-	batgranadas: new undum.OnOffQuality("Batgranadas de humo", {
+	tarjetaAcred: new undum.OnOffQuality("Tarjeta de ID", {
 		priority: "0007",
 		group: 'inventario',
 		onDisplay: ""}),
 
-	llaveSala: new undum.OnOffQuality("Llave de la sala de vigilancia", {
+	aturdidores: new undum.OnOffQuality("Aturdidores sónicos", {
 		priority: "0008",
+		group: 'inventario',
+		onDisplay: ""}),
+
+	batgranadas: new undum.OnOffQuality("Batgranadas de humo", {
+		priority: "0009",
+		group: 'inventario',
+		onDisplay: ""}),
+
+	llaveSala: new undum.OnOffQuality("Llave de la sala de vigilancia", {
+		priority: "0010",
 		group: 'inventario',
 		onDisplay: ""})
 
@@ -676,7 +686,9 @@ undum.game.qualityGroups = {
  * to configure the character at the start of play. */
 undum.game.init = function (character, system) {
 
-    character.qualities.piezasCPU = 0;
+	character.qualities.piezaCPU1 = 0;
+	character.qualities.piezaCPU2 = 0;
+	character.qualities.piezaCPU3 = 0;
     character.qualities.llavesBatcueva = 0;
     character.qualities.sustancia = 0;
     character.qualities.batgarra = 0;

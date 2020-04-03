@@ -29,15 +29,16 @@ body {
 
 /* The title block */
 #title, #title .label, #content, .tools {
-    border-radius: 2px;
+    border-radius: 10px;
 }
 #title {
     max-width: 28em;
-    background: #e6e6c6 url("../imágenes/title_bg.jpg") repeat -1.1em -1.1em;
+    background:url("../imágenes/title_bg.jpg") repeat -1.1em -1.1em;
     margin: 2.2em auto 1.1em auto;
     padding: 1.7em;
     border: 1.1em solid rgba(0,0,0,0.25);
     cursor: pointer; /* Until we click to start. */
+border-radius: 10px;
 }
 #title .label {
     overflow: hidden;
@@ -108,11 +109,12 @@ body {
 #content_wrapper {
     max-width: 28em;
     position: relative;
-    background: #e6e6c6 url("../imágenes/text_bg.jpg") repeat left top;
+    background-color: rgba(255,255,255,0.4);
     margin: 0.6em auto 1.1em auto;
     padding: 2.8em;
     display: none; /* Shown by Javascript */
     overflow: auto;
+border-radius: 10px;
 }
 span.drop + p {
     text-indent: -0.4em;
@@ -153,7 +155,7 @@ ul {
     padding: 0 0 0 1em;
 }
 ul.options {
-    border: 2px solid #876;
+    border: 2px solid #000;
     padding: 0;
     margin-top: 0.5em;
     margin-bottom: 0.7em;
@@ -161,11 +163,11 @@ ul.options {
     border-radius: 4px;
 }
 ul.options li {
-    border-bottom: 1px solid #876;
+    border-bottom: 1px solid #000;
     padding: 0.5em;
 }
 ul.options li:hover {
-    background-color: rgba(153,136,119,0.2);
+    background-color: rgba(0,0,0,0.2);
     cursor: pointer;
 }
 ul.options li:last-child {
@@ -222,7 +224,7 @@ img.float_left {
 .tools {
     padding: 0.6em;
     width: 8.9em;
-    background: #cec3ae url("../imágenes/tools_bg.jpg") repeat left top;
+    background-color: rgba(255,255,255,0.4);
     position: absolute;
 }
 .tools p {

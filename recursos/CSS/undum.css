@@ -17,7 +17,11 @@ body {
  z-index: -1000;
  overflow: hidden;
  }
-
+#img{
+border: 1.1em solid rgba(0,0,0,0.25);
+border-radius: 10px;
+margin: 2.2em auto 1.1em auto;
+}
 /* Basic structure */
 #page {
     margin: 0 auto;

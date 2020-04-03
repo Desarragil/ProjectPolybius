@@ -278,6 +278,7 @@ undum.game.situations = {
 
 	comisaria: new undum.SimpleSituation(
             "<h1>COMISARIA DE GOTHAM</h1>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/Comisaria.jpg' width='450' height='250' ></p>\
 		<p>Llegas a la comisaría de Gotham city al amparo de la noche, inutilizas el sistema\
 		 de alumbrado para colarte y ,al llegar a su despacho, ahí está: James Gordon.\
 		</p></br>\

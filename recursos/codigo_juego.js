@@ -28,9 +28,11 @@ undum.game.slideUpSpeed = 500;
 
 /* The situations that the game can be in. Each has a unique ID. */
 undum.game.situations = {
+	/*<img src="recursos\imágenes\batcueva.jfif">*/
 
 	inicio: new undum.SimpleSituation(
             "<h1>INTRODUCCIÓN</h1>\
+			<p align='center'> <img src='./recursos/imágenes/batcueva.jpg' width='500' height='300' ></p>\
 		<p>Te encuentras en el distribuidor de la batcueva y quieres salir de allí lo antes\
 		 posible, ya que te encuentras indefenso y unos encapuchados quieren aprovechar esta situación\
 		 para acabar contigo. Miras a tu alrededor y puedes ver cinco puertas, cuatro de ellas\

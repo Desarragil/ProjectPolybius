@@ -351,6 +351,7 @@ undum.game.situations = {
 
 	saloniceberg: new undum.SimpleSituation(
             "<h1>SALÓN ICEBERG</h1>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/Salon_iceberg.jpg' width='450' height='250' ></p>\
 		<p>Llegas al exterior del establecimiento que regenta el pingüino y la calle está desierta,\
 		 está claro que te están esperando.\
 		</p></br>\

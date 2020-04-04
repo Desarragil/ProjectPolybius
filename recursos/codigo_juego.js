@@ -230,7 +230,8 @@ undum.game.situations = {
 			  
 	),
     parkrow: new undum.SimpleSituation(
-            "<h1>CALLEJÓN DEL CRIMEN</h1>\
+			"<h1>CALLEJÓN DEL CRIMEN</h1>\
+			<p align='center'> <img id='img' src='./recursos/imágenes/callejoncrimen.jpg' width='450' height='250' ></p>\
 		<p>Te encuentras en el lugar el cual intentas evitar a toda costa. Lo tienes grabado\
 		todo en la cabeza: aquella noche del 26 de Junio a las 10:27 pm tu vida cambió para\
 		siempre, los acontecimientos que se desencadenarían desde ese momento te\

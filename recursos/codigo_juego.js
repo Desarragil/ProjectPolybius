@@ -67,7 +67,8 @@ undum.game.situations = {
 		),	
 		
     batmovil_roto: new undum.SimpleSituation(
-	          "<h1>BATMOVIL</h1>\
+			  "<h1>BATMOVIL</h1>\
+			  <p align='center'> <img id='img' src='./recursos/imágenes/batmovil.jpg' width='450' height='250' ></p>\
 			  <p> Estas sentado en el asiento del conductor y pruebas arrancarlo, no arranca e\
 			  intentas encontrar una solución, buscas el posible error del batmovil y te percatas de\
 			  que los slots donde van alojadas las piezas de la cpu están vacios. Te dispones a buscar\
@@ -223,7 +224,8 @@ undum.game.situations = {
 	),
 	
 	batmovil_arreglado: new undum.SimpleSituation(
-	          "<h1>BATMOVIL</h1>\
+			  "<h1>BATMOVIL</h1>\
+			  <p align='center'> <img id='img' src='./recursos/imágenes/batmovil.jpg' width='450' height='250' ></p>\
 			  <p> Entras al garaje y accedes al interior del batmovil, introduces cada una de las\
 			  piezas recopiladas en las habitaciones en los slots para la cpu, entonces el batmovil\
 			  arranca y <a href='batmovil'> Sales a descubrir la ciudad.</a></p>"

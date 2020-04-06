@@ -530,6 +530,7 @@ undum.game.situations = {
 
 	ircaminando: new undum.SimpleSituation(
 			"<h1>TORRE WAYNE</h1>\
+			<p align='center'> <img id='img' src='./recursos/imágenes/torrewayne.jpg' width='450' height='250' ></p>\
 		<p>Finalmente, decides ir caminando. Llegas a la torre, y al subir a lo más alto, te encuentras con que la \
 		escolta que custodia su residencia está distraída. Así, accedes de forma inmediata al interior, y se \
 		presenta el primer dilema: el villano se supone que debe estar ya en la sala de vigilancia, pero eres \

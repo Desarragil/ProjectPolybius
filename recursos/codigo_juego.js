@@ -52,18 +52,22 @@ undum.game.situations = {
      ),
 
     distribuidor1: new undum.SimpleSituation(
-	        "<h1>DISTRIBUIDOR</h1>\
+			"<h1>DISTRIBUIDOR</h1>\
+			<p align='center'> <img id='img' src='./recursos/imágenes/batmanacorralado.jpg' width='450' height='250' ></p>\
 			<p> Has decidido quedarte dentro de la batcueva totalmente indefenso y los encapuchados han aprovechado\
-			la situación y han acabado contigo.\
-			<a href='inicio'>Volver a comenzar</a></p>"
+			la situación y han acabado contigo.</p></br>\
+			<p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
+			<p><a href='inicio'>Volver a comenzar</a></p>"
 	     ),
 			
 	calle1: new undum.SimpleSituation(
-	          "<h1>SALIR POR EL GARAJE</h1>\
+			  "<h1>SALIR POR EL GARAJE</h1>\
+			  <p align='center'> <img id='img' src='./recursos/imágenes/batmanacorralado.jpg' width='450' height='250' ></p>\
 			  <p> Te diriges hacia la puerta de salida del garaje con intención de pasar por ella para\
 			  acceder a la calle pero, al acercarte a la puerta pisas un objeto extraño y cae una red\
-			  sobre ti. ¡Los encapuchados te han puesto una trampa y te han atrapado!\
-			  <a href='inicio'>Volver a comenzar.</a></p>"
+			  sobre ti. ¡Los encapuchados te han puesto una trampa y te han atrapado!</p></br>\
+			  <p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
+			  <p><a href='inicio'>Volver a comenzar</a></p>"
 		),	
 		
     batmovil_roto: new undum.SimpleSituation(
@@ -93,10 +97,12 @@ undum.game.situations = {
 	),
 	
 	batmovil2: new undum.SimpleSituation(
-	          "<h1>BATMOVIL</h1>\
+			  "<h1>BATMOVIL</h1>\
+			  <p align='center'> <img id='img' src='./recursos/imágenes/batmanacorralado.jpg' width='450' height='250' ></p>\
 			  <p> Sigues en el batmovil buscando las piezas de la cpu, notas una presencia,\
-			  miras hacia atrás, sientes como los encapuchads te atrapan con sus garras y acaban contigo\
-			  <a href='inicio'>Volver a comenzar.</a></p>"	 
+			  miras hacia atrás, sientes como los encapuchads te atrapan con sus garras y acaban contigo.</p></br>\
+			  <p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
+			  <p><a href='inicio'>Volver a comenzar</a></p>"	 
 			  
 	),
 	
@@ -217,10 +223,12 @@ undum.game.situations = {
 	),
 	
 	calle2: new undum.SimpleSituation(
-	          "<h1>PUERTA A LA CALLE DE LA BATCUEVA</h1>\
+			  "<h1>PUERTA A LA CALLE DE LA BATCUEVA</h1>\
+			  <p align='center'> <img id='img' src='./recursos/imágenes/batmanacorralado.jpg' width='450' height='250' ></p>\
 			  <p> Introduces la llave en la cerradura de la puerta, la giras y la puerta se abre.\
-			  Al abrir la puerta los encapuchados estaban esperandote y acaban contigo.\
-			  <a href='inicio'>Volver a comenzar</a></p>"  
+			  Al abrir la puerta los encapuchados estaban esperandote y acaban contigo.</p></br>\
+			  <p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
+			  <p><a href='inicio'>Volver a comenzar</a></p>"  
 	),
 	
 	batmovil_arreglado: new undum.SimpleSituation(
@@ -490,15 +498,20 @@ undum.game.situations = {
 	),
 
 	llamarymentir: new undum.SimpleSituation(
-		"<p>Hace la llamada, y al cabo de 5 minutos el local se llena de hombres que trabajan para el villano, \
-		quienes os acribillan a ti y a Crane.\
-		</p></br>"
+		"<p align='center'> <img id='img' src='./recursos/imágenes/batmanacorralado.jpg' width='450' height='250' ></p>\
+		<p>Hace la llamada, y al cabo de 5 minutos el local se llena de hombres que trabajan para el villano, \
+		quienes os acribillan a ti y a Crane.</p></br>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
+		<p><a href='inicio'>Volver a comenzar</a></p>"
 	),
 
 	vencidoenlacalle: new undum.SimpleSituation(
-		"<p>Sales, finge que te vencen y esperas a que el villano se vaya a dormir. Te diriges hasta la torre, \
+		"<p align='center'> <img id='img' src='./recursos/imágenes/batmanacorralado.jpg' width='450' height='250' ></p>\
+		<p>Sales, finge que te vencen y esperas a que el villano se vaya a dormir. Te diriges hasta la torre, \
 		y justo cuando dispones a entrar te topas con la cuadrilla de bienvenida que ni siquiera te deja saludar. \
-		Has sido derrotado.</p></br>"
+		Has sido derrotado.</p></br>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
+		<p><a href='inicio'>Volver a comenzar</a></p>"
 	),
 
 	llamarkebab: new undum.SimpleSituation(
@@ -522,10 +535,12 @@ undum.game.situations = {
 	),
 
 	cogerbatmovil: new undum.SimpleSituation(
-		"<p>Si coges el batmovil, el villano volverá a la sala de vigilancia, y verá que ya no estsá allí. Así se \
+		"<p align='center'> <img id='img' src='./recursos/imágenes/batmanacorralado.jpg' width='450' height='250' ></p>\
+		<p>Si coges el batmovil, el villano volverá a la sala de vigilancia, y verá que ya no estsá allí. Así se \
 		anticipará a tu llegada, y te esperará con un comité de bienvenida con el que no podrás hacer nada, \
-		y habrás sido derrotado.\
-		</p></br>"
+		y habrás sido derrotado.</p></br>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
+		<p><a href='inicio'>Volver a comenzar</a></p>"
 	),
 
 	ircaminando: new undum.SimpleSituation(
@@ -551,9 +566,11 @@ undum.game.situations = {
 	),
 
 	forzarentrada: new undum.SimpleSituation(
-		"<p>Fuerzas la entrada, e inmediatamente salta la alarma. Ya no te vale, el villano se presenta con unos de sus hombres \
-		y te reducen. Fracaso.\
-		</p></br>"
+		"<p align='center'> <img id='img' src='./recursos/imágenes/batmanacorralado.jpg' width='450' height='250' ></p>\
+		<p>Fuerzas la entrada, e inmediatamente salta la alarma. Ya no te vale, el villano se presenta con unos de sus hombres \
+		y te reducen. Fracaso.</p></br>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
+		<p><a href='inicio'>Volver a comenzar</a></p>"
 	),
 
 	mirarsuelo: new undum.SimpleSituation(
@@ -581,8 +598,10 @@ undum.game.situations = {
 	),
 
 	disparar: new undum.SimpleSituation(
-		"<p>Tras disparar, sus hombres se alarman de la situación y acuden al lugar. Te reducen y acaban contigo. Has sido derrotado.\
-		</p></br>"
+		"<p align='center'> <img id='img' src='./recursos/imágenes/batmanacorralado.jpg' width='450' height='250' ></p>\
+		<p>Tras disparar, sus hombres se alarman de la situación y acuden al lugar. Te reducen y acaban contigo. Has sido derrotado.</p></br>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
+		<p><a href='inicio'>Volver a comenzar</a></p>"
 	),
 
 	dejarquehable: new undum.SimpleSituation(

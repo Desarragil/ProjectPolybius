@@ -403,11 +403,13 @@ undum.game.situations = {
 		los aturdidores hacen su ruído ensordecedor lo que provoca que todos los presentes en la sala menos tú se\
 		lleven las manos a las orejas irremediablemente.\
 		</p></br>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/batmanacorralado.jpg' width='450' height='250' ></p>\
 		<p>Aprovechas la oportunidad para nockear a los cuatro matones más cercanos. Mientras atacas al quinto,\
 		notas un golpe seco en la espalda, te han disparado. Menos mal que tu traje puede soportar algunos tiros.\
 		Te apresuras y lanzas al matón que te ha disparado tu víctima y justo cuando vas a avalanzarte,\
-		notas que tu cuerpo se paraliza. Te han aturdido con una pistola taser, ahora estás a merced de tus enemigos.\
-		</p></br>"
+		notas que tu cuerpo se paraliza. Te han aturdido con una pistola taser, ahora estás a merced de tus enemigos.</p></br>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
+		<p><a href='inicio'>Volver a comenzar</a></p>"  
 	),
 
 	combateconjefe: new undum.SimpleSituation(

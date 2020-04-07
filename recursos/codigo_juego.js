@@ -122,6 +122,7 @@ undum.game.situations = {
 
 	habitacion1: new undum.SimpleSituation(
 		"<h1>SALA DE COMUNICACIONES</h1>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/sala_de_comunicaciones.jpg' width='450' height='250' ></p>\
 		<p>Te encuentras en la sala de comunicaciones, donde Alfred y tú\
 		tenéis montado vuestro centro de operaciones informáticas, y \
 		desde donde Alfred te brinda apoyo de inteligencia durante tus\
@@ -150,6 +151,7 @@ undum.game.situations = {
 
 	habitacion2: new undum.SimpleSituation(
 		"<h1>SALA DE ENTRENAMIENTO</h1>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/sala_entrenamiento.jpg' width='450' height='250' ></p>\
 		<p>Te encuentras en la sala donde entrenas diariamente tus\
 		habilidades físicas, prácticas todo tipo de artes marciales y\
 		te adiestras en el uso de todo tipo de armas blancas.</p></br>\
@@ -174,6 +176,7 @@ undum.game.situations = {
 
 	habitacion3: new undum.SimpleSituation(
 		"<h1>CUARTEL GENERAL</h1>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/cuartel_general.jpg' width='450' height='250' ></p>\
 		<P>Te encuentras en la sala más grande de la batcueva, donde te\
 		avituallas para las misiones, almacenas todas tus armas y tus\
 		gadchets, y donde se encuentran tus laboratorios y talleres\
@@ -340,7 +343,7 @@ undum.game.situations = {
 
 	pisofranco: new undum.SimpleSituation(
             "<h1>PISO FRANCO</h1>\
-			<p align='center'> <img id='img' src='./recursos/imágenes/piso_franco.jpg' width='450' height='250' ></p>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/piso_franco.jpg' width='450' height='250' ></p>\
 		<p>Apuntas con tu batgarra a la cornisa y consigues introducirte en el piso franco.\
 		 Todo está quemado, poco queda ya de lo que había en la estancia. Puedes volver al\
 		 callejón o seguir explorando la habitación.\

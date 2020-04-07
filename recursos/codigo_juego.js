@@ -340,6 +340,7 @@ undum.game.situations = {
 
 	pisofranco: new undum.SimpleSituation(
             "<h1>PISO FRANCO</h1>\
+			<p align='center'> <img id='img' src='./recursos/imágenes/piso_franco.jpg' width='450' height='250' ></p>\
 		<p>Apuntas con tu batgarra a la cornisa y consigues introducirte en el piso franco.\
 		 Todo está quemado, poco queda ya de lo que había en la estancia. Puedes volver al\
 		 callejón o seguir explorando la habitación.\

@@ -38,8 +38,7 @@ undum.game.situations = {
 		 para acabar contigo. Miras a tu alrededor y puedes ver cinco puertas, cuatro de ellas\
 		 están cerradas y no puedes acceder a su interior, y la unica que está abierta es la \
          puerta de acceso al garaje. Por lo tanto puedes <a href='garaje'>Entrar al garaje</a>\
-		 o <a href='distribuidor1'>Quedarte en el distribuidor.</a></p>"
-		 
+		 o <a href='distribuidor1'>Quedarte en el distribuidor.</a></p>"	 
     ),
 	
 	garaje: new undum.SimpleSituation(

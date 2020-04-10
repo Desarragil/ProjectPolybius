@@ -116,7 +116,12 @@ undum.game.situations = {
 				</ul></p>\
  			   <p>recopilas todas las piezas y ves en el juego de llaves, una llave que no has usado.\
 			   Puedes <a href='calle2'>Probarla en la puerta que da a la calle</a> o\
-			   <a href='batmovil_arreglado'> Ir al garaje y montar la cpu en el batmovil.</a></p>"
+			   <a href='batmovil_arreglado'> Ir al garaje y montar la cpu en el batmovil.</a></p>",
+			{
+				enter:function(character, system, to) {
+					system.setQuality("llavesBatcueva", 0);
+					}
+			}	
 	
 	),
 
@@ -239,7 +244,14 @@ undum.game.situations = {
 			  <p align='center'> <img id='img' src='./recursos/imágenes/batmovil.jpg' width='450' height='250' ></p>\
 			  <p> Entras al garaje y accedes al interior del batmovil, introduces cada una de las\
 			  piezas recopiladas en las habitaciones en los slots para la cpu, entonces el batmovil\
-			  arranca y <a href='batmovil'> Sales a descubrir la ciudad.</a></p>"
+			  arranca y <a href='batmovil'> Sales a descubrir la ciudad.</a></p>",
+			{
+				enter :function(character, system, to) {
+					system.setQuality("piezaCPU1", 0);
+					system.setQuality("piezaCPU2", 0);
+					system.setQuality("piezaCPU3", 0);
+				}
+			}
 			  
 	),
     parkrow: new undum.SimpleSituation(
@@ -338,7 +350,12 @@ undum.game.situations = {
 		</p></br>\
 		<p>-Ya lo veremos.\
 		</p></br>\
-		<p><a href='batmovil'>Volver al batmovil.</a></p></br>"
+		<p><a href='batmovil'>Volver al batmovil.</a></p></br>",
+		{
+				enter :function(character, system, to) {
+					system.setQuality("sustancia", 0);
+					}
+		}
     ),
 
 	pisofranco: new undum.SimpleSituation(
@@ -649,55 +666,55 @@ undum.game.start = "inicio";
  * that quality will never show up in the character bar in the UI. */
 undum.game.qualities = {
 		
-	piezaCPU1: new undum.OnOffQuality("Pieza 1 de la CPU", {
+	piezaCPU1: new undum.OnOffQuality("Pieza de CPU", {
 		priority: "0001",
 		group: 'inventario',
-		onDisplay: ""}),
+		onDisplay: "<img src='./recursos/imágenes/piezaCPU1.png' width='175' height='85'>"}),
 
-	piezaCPU2: new undum.OnOffQuality("Pieza 2 de la CPU", {
+	piezaCPU2: new undum.OnOffQuality("Pieza de CPU", {
 		priority: "0002",
 		group: 'inventario',
-		onDisplay: ""}),
+		onDisplay: "<img src='./recursos/imágenes/piezaCPU2.png' width='175' height='85'>"}),
 
-	piezaCPU3: new undum.OnOffQuality("Pieza 3 de la CPU", {
+	piezaCPU3: new undum.OnOffQuality("Pieza de CPU", {
 		priority: "0003",
 		group: 'inventario',
-		onDisplay: ""}),
+		onDisplay: "<img src='./recursos/imágenes/piezaCPU3.png' width='175' height='85'>"}),
 
 	llavesBatcueva: new undum.OnOffQuality("Llaves de la Batcueva", {
 		priority: "0004",
 		group: 'inventario',
-		onDisplay: ""}),
+		onDisplay: "<img src='./recursos/imágenes/llaves.png' width='170' height='85'>"}),
 
 	sustancia: new undum.OnOffQuality("Sustancia para analizar", {
 		priority: "0005",
 		group: 'inventario',
-		onDisplay: ""}),
+		onDisplay: "<img src='./recursos/imágenes/sustancia.jpg' width='175' height='85'>"}),
 		
 	batgarra: new undum.OnOffQuality("Batgarra", {
 		priority: "0006",
 		group: 'inventario',
-		onDisplay: ""}),
+		onDisplay: "<img src='./recursos/imágenes/batgarra.png' width='175' height='85'>"}),
 
 	tarjetaAcred: new undum.OnOffQuality("Tarjeta de ID", {
 		priority: "0007",
 		group: 'inventario',
-		onDisplay: ""}),
+		onDisplay: "<img src='./recursos/imágenes/tarjetaAcred.jpg' width='175' height='85'>"}),
 
 	aturdidores: new undum.OnOffQuality("Aturdidores sónicos", {
 		priority: "0008",
 		group: 'inventario',
-		onDisplay: ""}),
+		onDisplay: "<img src='./recursos/imágenes/aturdidores.jpeg' width='175' height='85'>"}),
 
-	batgranadas: new undum.OnOffQuality("Batgranadas de humo", {
+	batgranadas: new undum.OnOffQuality("Granadas de humo", {
 		priority: "0009",
 		group: 'inventario',
-		onDisplay: ""}),
+		onDisplay: "<img src='./recursos/imágenes/batgranadas.png' width='175' height='85'>"}),
 
 	llaveSala: new undum.OnOffQuality("Llave de la sala de vigilancia", {
 		priority: "0010",
 		group: 'inventario',
-		onDisplay: ""})
+		onDisplay: "<img src='./recursos/imágenes/llaves.png' width='175' height='85'>"})
 
 	
 

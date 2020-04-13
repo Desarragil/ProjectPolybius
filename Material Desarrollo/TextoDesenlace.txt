@@ -1,0 +1,88 @@
+HISTORIA DESENLACE:
+
+Tras derrotar al villano responsable del ataque en el Club Nocturno, 
+regresamos al batmovil habiendo recopilado la información que hemos 
+conseguido previamente en el interrogatorio. Entre otras cosas, se 
+nos acaba de informar que quien verdaderamente quiere deshacerse de 
+se encuentra en el ático de un edificio muy próximo al Club Nocturno 
+donde acabamos de estar, ya que quería estar alerta de la situación 
+en todo momento al ser consciente de que seríamos capaces de ayudar 
+a BatMan a averiguar todo el misterio que había detrás de su plan y 
+conseguir llegar hasta este intermediario. El interrogado no nos dice
+quien es el verdadero villano, pero como muestra de buena fe, nos da
+una serie de indicaciones: la primera, nos dice que el villano tiene 
+costumbre de pedir todos los días a la misma hora al kebab de la 
+esquina; la segunda, nos dice que el villano está constantemente 
+vigilando la localización del club nocturno, pues sabe que si no 
+conseguimos llegar aquí seremos incapaces de descubrir su plan ni su 
+localización. Por tanto, nos dice que debemos pensar como llegar hasta 
+donde está el villano sin que él sea consciente, teniendo en cuenta 
+que nos ha visto entrar en el Club Nocturno, pero jugando a nuestro 
+favor con que no sabe lo que está pasando dentro. Entre las ideas que 
+se nos proponen, tenemos: que el interrogado llame al villano y le 
+mienta diciéndole que hemos sido derrotados, fingir que hemos sido 
+derrotados en la entrada del club, o hacer una llamada al kebab.
+
+	Si elegimos la primera opción, el villano mandará a sus hombres a 
+	comprobar la situación en el club, descubrirán la mentira y nos matarán 
+	a todos, incluido el interrogado por traidor, pues nos superan en número 
+	y armas.
+
+	Si elegimos la segunda opción, tendremos que esperar a que el villano 
+	vaya a acostarse para movilizarnos hacia su ubicación: una vez el 
+	villano esté durmiendo (cosa que nos dirá el interrogado), nos 
+	desplazaremos hasta el ático, sin saber que el villano ha dejado a uno 
+	de sus hombres vigilando en su lugar, y como nos ha visto, lo ha 
+	avisado y nos está esperando ocultos en la entrada para rematarnos, 
+	por lo que no podremos jugar con el factor sorpresa y moriremos.
+
+Si por el contrario elegimos la tercera opción, planearemos una jugada 
+maestra: el interrogado llamará al kebab y hablará con el encargado, 
+intentando sobornarlo para que este aliñe el pedido con un poco de 
+laxante. El villano recibirá su pedido, y cuando esté comiendo irá al 
+baño en un acto reflejo, sin que le de tiempo de avisar a uno de sus 
+hombres para que vigile la situación. En ese tiempo, nos dirigiremos 
+hacia dicho lugar pudiendo hacerlo de dos formas: caminando o en el 
+BatMovil.
+
+	Si elegimos ir en el BatMovil, el villano puede volver al lugar de 
+	vigilancia y ver que no estamos allí, por lo que el factor sorpresa 
+	fallaría. Al acceder al lugar, nos encontramos con que el villano 
+	nos espera escoltado por 15 hombres a su disposición, y evidentemente 
+	no tenemos nada que hacer y nos matan.
+
+Si por el contrario vamos caminando, el villano no se olerá nada y 
+seguirá su cena tranquilamente, incluso si tenemos suerte, puede que 
+tenga que volver al baño repetidas veces. Accedemos al lugar y 
+conseguimos burlar la escolta que nos esperaba en la entrada del ático. 
+Acto seguido, nos encontramos con dos opciones: dirigirnos hacia la
+sala donde nos vigilaba, o ir al baño y atacar allí donde seguramente 
+esté indefenso.
+
+Si decidimos ir directamente a la sala, nos encontramos con que el 
+acceso está bloqueado, y podemos hacer tres cosas: mirar detalladamente 
+en el pasillo, forzar la cerradura o ir al baño como alternativa.
+
+	Si decidimos forzar la cerradura, la alarma contra robos sonará, 
+	nos pillarán y nos matarán.
+
+Si decidimos mirar detalladamente, encontraremos un clip en el suelo que 
+podremos usar para abrir la cerradura, y desbloquear el acceso. Tras esto, 
+conseguimos acceder y vemos que el villano no se encuentra en la sala, por lo 
+que iremos directamente al baño.
+
+Si decidimos no tocar nada e ir directamente al baño, además de que 
+sabemos casi con plena seguridad que el villano está allí, nos intuimos 
+que está indefenso y sin escolta. Abrimos la puerta, nos lo encontramos 
+allí y conseguimos reducirlo a pesar del maravilloso olor que sale del 
+sanitario. ¡Descubrimos que se trata de Dos Caras! Acto seguido, podemos 
+matarlo o dejar que nos cuente su versión de los hechos.
+
+	Si lo matamos, probablemente sus hombres nos escuchen y nos maten después 
+	a nosotros.
+
+Si por el contrario lo escuchamos, nos contará que todo se debía a que 
+había lanzado su moneda de dos caras y había salido rayado, y 
+comprenderemos que él realmente no lo quería matar. Después, lo 
+llevaríamos al psicólogo para que comenzara un tratamiento contra ese 
+trastorno y ahorrarle un problema más a la sociedad. FIN.

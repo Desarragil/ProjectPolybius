@@ -1,12 +1,27 @@
 body {
-    background: #170804 url("../imágenes/page_bg.jpg") repeat-x left top;
-    font-family: Palatino, Times, "Times New Roman", serif;
+    font-family: Helvetica,Futura,Arial,Verdana,sans-serif;
     font-size: 18px;
     line-height: 1.6em;
     background-attachment: fixed;
     overflow-y: scroll;
 }
 
+#video_background {
+ position: fixed;
+ bottom: 0px;
+ right: 0px;
+ min-width: 100%;
+ min-height: 100%;
+ width: auto;
+ height: auto;
+ z-index: -1000;
+ overflow: hidden;
+ }
+#img{
+border: 1.1em solid rgba(0,0,0,0.25);
+border-radius: 10px;
+margin: 2.2em auto 1.1em auto;
+}
 /* Basic structure */
 #page {
     margin: 0 auto;
@@ -18,24 +33,25 @@ body {
 
 /* The title block */
 #title, #title .label, #content, .tools {
-    border-radius: 2px;
+    border-radius: 10px;
 }
 #title {
     max-width: 28em;
-    background: #e6e6c6 url("../imágenes/title_bg.jpg") repeat -1.1em -1.1em;
+    background:url("../imágenes/title_bg.jpg") repeat -1.1em -1.1em;
     margin: 2.2em auto 1.1em auto;
     padding: 1.7em;
     border: 1.1em solid rgba(0,0,0,0.25);
     cursor: pointer; /* Until we click to start. */
+border-radius: 10px;
 }
 #title .label {
     overflow: hidden;
-    background: #e6e6c6 url("../imágenes/text_bg.jpg") repeat left top;
+    background-color: rgba(255,255,255,0.4);
     padding: 2.0em;
     margin: auto;
     max-width: 18em;
-    -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.4);
-            box-shadow: 0 0 4px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.5);
+            box-shadow: 0 0 4px rgba(0,0,0,0.5);
     position: relative;
 }
 #title h1 {
@@ -59,15 +75,16 @@ body {
     margin: 1.1em 0 0 0;
 }
 #title h1, #title h2, #title h3 {
-    color: rgba(33,17,0,0.9);
-    text-shadow: rgba(255,255,255,0.5) 2px 2px 2px,
+    color: rgba(0,0,0,1);
+    text-shadow: rgba(0,0,0,0.5) 2px 2px 2px,
     rgba(0,0,0,0.1) -1px -1px 2px;
 }
 #title h1 span.fancy {
     font-size: 2.5em;
     line-height: 0;
-    font-family: Tangerine, Palatino, Times, "Times New Roman", serif;
+    font-family: 'Helvetica','Verdana','Monaco',sans-serif;
     font-style: italic;
+    font-weight: bold;
     margin: 0 -0.2em;
 }
 #title .click_message {
@@ -79,7 +96,7 @@ body {
     font-size: 0.9em;
     font-style: italic;
     text-align: center;
-    color: #987;
+    color: #000;
 }
 #title .noscript_message {
     left: 0;
@@ -96,11 +113,12 @@ body {
 #content_wrapper {
     max-width: 28em;
     position: relative;
-    background: #e6e6c6 url("../imágenes/text_bg.jpg") repeat left top;
+    background-color: rgba(255,255,255,0.4);
     margin: 0.6em auto 1.1em auto;
     padding: 2.8em;
     display: none; /* Shown by Javascript */
     overflow: auto;
+border-radius: 10px;
 }
 span.drop + p {
     text-indent: -0.4em;
@@ -141,7 +159,7 @@ ul {
     padding: 0 0 0 1em;
 }
 ul.options {
-    border: 2px solid #876;
+    border: 2px solid #000;
     padding: 0;
     margin-top: 0.5em;
     margin-bottom: 0.7em;
@@ -149,11 +167,11 @@ ul.options {
     border-radius: 4px;
 }
 ul.options li {
-    border-bottom: 1px solid #876;
+    border-bottom: 1px solid #000;
     padding: 0.5em;
 }
 ul.options li:hover {
-    background-color: rgba(153,136,119,0.2);
+    background-color: rgba(0,0,0,0.2);
     cursor: pointer;
 }
 ul.options li:last-child {
@@ -210,7 +228,7 @@ img.float_left {
 .tools {
     padding: 0.6em;
     width: 8.9em;
-    background: #cec3ae url("../imágenes/tools_bg.jpg") repeat left top;
+    background-color: rgba(255,255,255,0.4);
     position: absolute;
 }
 .tools p {

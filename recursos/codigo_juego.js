@@ -28,7 +28,6 @@ undum.game.slideUpSpeed = 500;
 
 /* The situations that the game can be in. Each has a unique ID. */
 undum.game.situations = {
-	/*<img src="recursos\imágenes\batcueva.jfif">*/
 
 	inicio: new undum.SimpleSituation(
             "<h1>INTRODUCCIÓN</h1>\
@@ -713,7 +712,11 @@ undum.game.qualities = {
 	llaveSala: new undum.OnOffQuality("Llave de la sala de vigilancia", {
 		priority: "0010",
 		group: 'inventario',
-		onDisplay: "<img src='./recursos/imágenes/llaves.png' width='175' height='85'>"})
+		onDisplay: "<img src='./recursos/imágenes/llaves.png' width='175' height='85'>"}),
+
+	lugaresVisitados: new undum.IntegerQuality("Escenarios visitados",{
+		priority: "0001",
+		group: ''})
 
 	
 
@@ -745,4 +748,5 @@ undum.game.init = function (character, system) {
     character.qualities.aturdidores = 1;
     character.qualities.batgranadas = 1;
     character.qualities.llaveSala = 0;
+   character.qualities.lugaresVisitados = 1;
 };

@@ -716,7 +716,7 @@ undum.game.qualities = {
 
 	lugaresVisitados: new undum.IntegerQuality("Escenarios visitados",{
 		priority: "0001",
-		group: ''})
+		group: 'progreso'})
 
 	
 
@@ -730,7 +730,8 @@ undum.game.qualities = {
  * non-existent group. */
 undum.game.qualityGroups = {
 
-    inventario: new undum.QualityGroup('Inventario', {priority: "0001"})
+    inventario: new undum.QualityGroup('Inventario', {priority: "0001"}),
+	progreso: new undum.QualityGroup('Progreso', {priority: '0001'})
 };
 
 // ---------------------------------------------------------------------------

@@ -26,18 +26,33 @@ undum.game.fadeSpeed = 1500;
  * option. */
 undum.game.slideUpSpeed = 500;
 
+var batcueva = 0;
+var callejon = 0;
+var comisaria = 0;
+var pfranco = 0;
+var salon = 0;
+var torre = 0;
+
 /* The situations that the game can be in. Each has a unique ID. */
 undum.game.situations = {
 
 	inicio: new undum.SimpleSituation(
-            "<h1>INTRODUCCIÓN</h1>\
+            "<h1>BATCUEVA</h1>\
 			<p align='center'> <img id='img' src='./recursos/imágenes/batcueva.jpg' width='450' height='250' ></p>\
 		<p>Te encuentras en el distribuidor de la batcueva y quieres salir de allí lo antes\
 		 posible, ya que te encuentras indefenso y unos encapuchados quieren aprovechar esta situación\
 		 para acabar contigo. Miras a tu alrededor y puedes ver cinco puertas, cuatro de ellas\
 		 están cerradas y no puedes acceder a su interior, y la unica que está abierta es la \
          puerta de acceso al garaje. Por lo tanto puedes <a href='garaje'>Entrar al garaje</a>\
-		 o <a href='distribuidor1'>Quedarte en el distribuidor.</a></p>"	 
+		 o <a href='distribuidor1'>Quedarte en el distribuidor.</a></p>",
+	{
+	enter: function(character, system, to) {
+							if(batcueva == 0){
+                						batcueva++;
+								system.animateQuality("lugaresVisitados", character.qualities.lugaresVisitados+1);
+							}
+						}
+	}	 
     ),
 	
 	garaje: new undum.SimpleSituation(
@@ -292,6 +307,14 @@ undum.game.situations = {
 		<p><a href= 'pisofranco'>entrar en piso franco.</a></br>\
 		<a href= 'batmovil'>Volver al batmovil.</a></p></br>",
 		{
+
+			enter: function(character, system, to) {
+								if ( callejon == 0 ) {
+                							callejon++;
+									system.animateQuality("lugaresVisitados", character.qualities.lugaresVisitados+1);
+								}
+						},
+	
 			actions: {
 					'recogerbolsa': function(character, system, to) {
                 			system.setQuality("sustancia", 1);
@@ -352,6 +375,10 @@ undum.game.situations = {
 		{
 				enter :function(character, system, to) {
 					system.setQuality("sustancia", 0);
+					if ( comisaria == 0){
+						comisaria++;
+						system.animateQuality("lugaresVisitados", character.qualities.lugaresVisitados+1);
+					}
 					}
 		}
     ),
@@ -371,6 +398,12 @@ undum.game.situations = {
 		</p></br>\
 		<p><a href='parkrow'>Volver al callejón.</a></p></br>",
 		{
+			enter :function(character, system, to) {
+					if(pfranco==0){
+						pfranco++;
+						system.animateQuality("lugaresVisitados", character.qualities.lugaresVisitados+1);
+					}
+					},
 			actions:{
 				'recogertarjeta':function(character, system, to) {
                 			system.setQuality("tarjetaAcred", 1);
@@ -404,6 +437,12 @@ undum.game.situations = {
 		 o <a href='./lanzargranadas' class='once'>tus bat-granadas de bat-humo.</a>\
 		</p></br>",
 		{
+			enter :function(character, system, to) {
+					if(salon == 0){
+						salon++;
+						system.animateQuality("lugaresVisitados", character.qualities.lugaresVisitados+1);
+					}
+					},
 			actions:{
 				'lanzaraturdidores':function(character, system, to) {
                 						system.setQuality("aturdidores", 0);
@@ -490,8 +529,7 @@ undum.game.situations = {
 		),
 
 	batmovil: new undum.SimpleSituation(
-            "<h1>CIUDAD</h1>\
-		<p><ul class='options'>\
+            "<p><ul class='options'>\
 			<li><a href='parkrow'>Callejón del crimen</a></li>\
 			<li><a href='comisaria'>Comisaria de Gotham</a></li>\
 			<li><a href='saloniceberg'>Salón Iceberg</a></li>\
@@ -500,8 +538,7 @@ undum.game.situations = {
 	),
 	
 	saloniceberg2: new undum.SimpleSituation(
-			"<h1>SALÓN ICEBERG</h1>\
-		<p>Antes de que vuelvas al batmóvil, escuchas como Crane vuelve a recuperar la conciencia, \
+			"<p>Antes de que vuelvas al batmóvil, escuchas como Crane vuelve a recuperar la conciencia, \
 		quiere ayudarte:\
 		</p></br>\
 		<p>-Espera, creo que será mejor que te ayude. No te puedo decir quien está detrás de todo \
@@ -574,7 +611,15 @@ undum.game.situations = {
 		la habitación esté protegida, por lo que la otra opción sería ir al baño directamente, donde la cosa estaría \
 		más a tu favor. Entoces, tienes dos opciones: <a href='irsalavigilancia'>ir a la sala de vigilancia</a>\
 		o <a href='irbanio'>ir al baño.</a>\
-		</p></br>"
+		</p></br>",
+		{
+		enter :function(character, system, to) {
+					if(torre == 0){
+						torre++;
+						system.animateQuality("lugaresVisitados", character.qualities.lugaresVisitados+1);
+					}
+					}
+		}
 	),
 
 	irsalavigilancia: new undum.SimpleSituation(
@@ -716,7 +761,12 @@ undum.game.qualities = {
 
 	lugaresVisitados: new undum.IntegerQuality("Escenarios visitados",{
 		priority: "0001",
-		group: 'progreso'})
+		group: 'progreso'}),
+
+	total: new undum.OnOffQuality(" de 6 escenarios.",{
+		priority: "0002",
+		group: 'progreso',
+		onDisplay: ""})
 
 	
 
@@ -730,7 +780,7 @@ undum.game.qualities = {
  * non-existent group. */
 undum.game.qualityGroups = {
 
-    inventario: new undum.QualityGroup('Inventario', {priority: "0001"}),
+    inventario: new undum.QualityGroup('Inventario', {priority: "0002"}),
 	progreso: new undum.QualityGroup('Progreso', {priority: '0001'})
 };
 
@@ -739,9 +789,9 @@ undum.game.qualityGroups = {
  * to configure the character at the start of play. */
 undum.game.init = function (character, system) {
 
-	character.qualities.piezaCPU1 = 0;
-	character.qualities.piezaCPU2 = 0;
-	character.qualities.piezaCPU3 = 0;
+    character.qualities.piezaCPU1 = 0;
+    character.qualities.piezaCPU2 = 0;
+    character.qualities.piezaCPU3 = 0;
     character.qualities.llavesBatcueva = 0;
     character.qualities.sustancia = 0;
     character.qualities.batgarra = 0;
@@ -749,5 +799,6 @@ undum.game.init = function (character, system) {
     character.qualities.aturdidores = 1;
     character.qualities.batgranadas = 1;
     character.qualities.llaveSala = 0;
-   character.qualities.lugaresVisitados = 1;
+    character.qualities.lugaresVisitados = 0;
+    character.qualities.total = 1;
 };

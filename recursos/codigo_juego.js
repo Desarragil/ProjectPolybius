@@ -30,6 +30,7 @@ var batcueva = 0;
 var callejon = 0;
 var comisaria = 0;
 var pfranco = 0;
+var llaves = 0;
 var salon = 0;
 var torre = 0;
 
@@ -37,40 +38,114 @@ var torre = 0;
 undum.game.situations = {
 
 	inicio: new undum.SimpleSituation(
-            "<h1>BATCUEVA</h1>\
-			<p align='center'> <img id='img' src='./recursos/imágenes/batcueva.jpg' width='450' height='250' ></p>\
-		<p>Te encuentras en el distribuidor de la batcueva y quieres salir de allí lo antes\
-		 posible, ya que te encuentras indefenso y unos encapuchados quieren aprovechar esta situación\
-		 para acabar contigo. Miras a tu alrededor y puedes ver cinco puertas, cuatro de ellas\
-		 están cerradas y no puedes acceder a su interior, y la unica que está abierta es la \
-         puerta de acceso al garaje. Por lo tanto puedes <a href='garaje'>Entrar al garaje</a>\
-		 o <a href='distribuidor1'>Quedarte en el distribuidor.</a></p>",
+            "<p class='transient'> Desde el distribuidor es posible acceder a las 5 secciones en las que está dividida la batcueva:</br>\
+		<ul class='options'>\
+			<li><a href='nodo_habitacion1' class='once'>Sala de comunicaciones</a></li>\
+			<li><a href='nodo_habitacion2' class='once'>Sala de entrenamiento</a></li>\
+			<li><a href='nodo_habitacion3' class='once'>Cuartel general</a></li>\
+			<li><a href='garaje' class='once'>Garaje</a></li>\
+			<li><a href='nodo_calle2' class='once'>Pasaje al exterior</a></li>\
+		</ul></p></br>\
+		<p class = 'transient'>o puede que lo conveniente sea <a href='final0'>Quedarte en el distribuidor.</a> con\
+		el fin de no llamar la atención.</p></br>",
 	{
 	enter: function(character, system, to) {
 							if(batcueva == 0){
                 						batcueva++;
 								system.animateQuality("lugaresVisitados", character.qualities.lugaresVisitados+1);
+								system.setCharacterText("<p>¡¡Escapa de la batcueva!!</p>");
+								system.write("<h1>BATCUEVA</h1>\
+								<p align='center'> <img id='img' src='./recursos/imágenes/batcueva.jpg' width='450' height='250' ></p>\
+								<p>Puedes sentir una gran presión en el pecho. 'No es posible', piensas, mientras observas las camaras de seguridad.\
+								 Es imposible que hayan podido dar con tu escondite; los últimos sistemas de ocultamiento, defensas contra curiosos,\
+								 nadie podría saber dónde se encuentra su localización. Una explosión interrumpe tus pensamientos, ya han accedido al interior.\
+								</p></br>\
+								<p>Te encuentras en el distribuidor de la batcueva y quieres salir de allí lo antes\
+		 						posible, ya que te encuentras indefenso y unos encapuchados quieren aprovechar esta situación\
+		 						para acabar contigo.</p></br>");
+							}else if ((character.qualities.llavesBatcueva==0) && (callejon==0)){
+								system.write("<h1>DISTRIBUIDOR</h1>\
+								<p align='center'> <img id='img' src='./recursos/imágenes/batcueva.jpg' width='450' height='250' ></p>\
+								<p>Vuelves al distribuidor de la batcueva con los atacantes pisándote los talones, podrían aparecer\
+								 en cualquier momento, tienes que salir de allí lo antes posible.</p></br>");
+							}else if ((character.qualities.llavesBatcueva==1) && (callejon==0)){
+								system.write("<h1>DISTRIBUIDOR</h1>\
+								<p align='center'> <img id='img' src='./recursos/imágenes/batcueva.jpg' width='450' height='250' ></p>\
+								<p>Vuelves al distribuidor a probar las llaves y ahora puedes acceder a las habitaciones de la batcueva. </p></br>");
+								system.setQuality("llavesBatcueva", 0);
+							}else if (callejon == 1){
+								system.write("<h1>DISTRIBUIDOR</h1>\
+								<p align='center'> <img id='img' src='./recursos/imágenes/batcueva.jpg' width='450' height='250' ></p></br>\
+								<p> Te encuentras en el distribuidor de la batcueva, los intrusos que atacaron tu escondite ya no están,\
+								pero sí las hueyas de su paso. No hay tiempo para lamentarse, debes continuar con tu misión.</p></p>");
 							}
 						}
 	}	 
     ),
 	
 	garaje: new undum.SimpleSituation(
-	      "<h1>GARAJE</h1>\
-		  <p> Accedes al Garaje intentando buscar la mejor solución para poder salir de la batcueva\
-		  totalmente ileso. Frente a ti puedes ver el batmovil y tienes la opción de <a href='batmovil_roto'>Entrar al batmovil</a>\
-		  e intentar salir del garaje. Pero sigues buscando otra solución alternativa y te percatas de\
-		  que la puerta de salida a la calle del garaje se encuentra abierta, por lo tanto también sopesas\
-		  si <a href='calle1'>Salir directamente por la puerta.</a></p>"
+	      "<p class='transient'> Ahora mismo tan solo tienes dos opciones posibles:</br></br>\
+		<ul class='options'>\
+			<li><a href='./entrar'>Entrar en el batmóvil</a></li>\
+			<li><a href='calle1'>Salir directamente por la puerta y aprovechar la noche para huir sigilósamente.</a></li>\
+		</ul></p></br>",
+		{
+		enter: function(character, system, to) {
+				if ( (llaves == 0) || (callejon == 0)){
+					system.write("<h1>GARAJE</h1>\
+		  			<p> Accedes al Garaje intentando buscar la mejor solución para poder salir de la batcueva\
+		 		 	totalmente ileso. Podrías coger el batmovil y huir, pero antes de que puedas tomar una decisión\
+					te percatas de que la puerta de salida a la calle del garaje se encuentra abierta. Debes tomar una decisión.</p></br>");
+				} else if ( callejon == 1){
+					system.write("<h1>GARAJE</h1>\
+		  			<p> Accedes al Garaje de la batcueva, donde pones a punto tus vehículos. Tu vehículo te esta esperando, no hay tiempo que perder, tienes\
+					que solucionar el entuerto en el que te encuentras.</p></br>");				
+				}
+			},
+		actions: {
+				'entrar': function(character, system, to) {
+						if ( llaves == 0) {
+							system.write("<p>Te diriges hacia el batmovil y entras en él.</p></br>");
+							system.doLink('batmovil_roto');
+						} else {
+							system.write("<p>Te diriges hacia el batmovil y entras en él.</p></br>");
+							system.doLink('batmovil_arreglado');
+						}
+					  }
+		}
+		}			   	
      ),
 
-    distribuidor1: new undum.SimpleSituation(
-			"<h1>DISTRIBUIDOR</h1>\
-			<p align='center'> <img id='img' src='./recursos/imágenes/batmanacorralado.jpg' width='450' height='250' ></p>\
+    final0: new undum.SimpleSituation(
+			"<h1>GAME OVER</h1>\
+			<p align='center'> <img id='img' src='./recursos/imágenes/gameover.jpg' width='450' height='650' ></p>\
 			<p> Has decidido quedarte dentro de la batcueva totalmente indefenso y los encapuchados han aprovechado\
 			la situación y han acabado contigo.</p></br>\
 			<p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
-			<p><a href='inicio'>Volver a comenzar</a></p>"
+			<p class='transient'><a href='inicio'>Volver a comenzar</a></p>",
+			{
+			exit: function(character, system, to) {
+				batcueva = 0;
+				callejon = 0;
+				comisaria = 0;
+				pfranco = 0;
+				llaves = 0;
+				salon = 0;
+				torre = 0;
+				character.qualities.piezaCPU1 = 0;
+				character.qualities.piezaCPU2 = 0;
+    				character.qualities.piezaCPU3 = 0;
+    				character.qualities.llavesBatcueva = 0;
+    				character.qualities.sustancia = 0;
+    				character.qualities.batgarra = 0;
+    				character.qualities.tarjetaAcred = 0;
+    				character.qualities.aturdidores = 1;
+    				character.qualities.batgranadas = 1;
+    				character.qualities.llaveSala = 0;
+    				character.qualities.lugaresVisitados=0;
+    				character.qualities.total = 1;
+				}			
+			}
 	     ),
 			
 	calle1: new undum.SimpleSituation(
@@ -101,8 +176,9 @@ undum.game.situations = {
                 						system.setQuality("llavesBatcueva", 1);
 								system.write("<p>Ahora que tienes en tu poder las llaves de la batcueva\
 								puedes acceder a las estancias que estaban antes bloqueadas.</p></br>\
-								<p class='transient'>Te encuentras en la texitura de volver al distribuidor y <a href='distribuidor2'>Probar las llaves</a>\
+								<p class='transient'>Te encuentras en la texitura de volver al distribuidor y <a href='inicio'>Probar las llaves</a>\
 			  					o <a href='batmovil2'>Seguir buscando las piezas en el batmovil.</a></p>");
+								llaves=1;
 								}
 				}
 			}	 
@@ -119,7 +195,9 @@ undum.game.situations = {
 			  
 	),
 	
-	distribuidor2: new undum.SimpleSituation(
+	//Esta situación ya no haría falta, por eso la he comentado.
+
+	/*distribuidor2: new undum.SimpleSituation(
 	           "<h1>DISTRIBUIDOR</h1>\
 			   <p>Vuelves al distribuidor a probar las llaves y ahora puedes acceder a las habitaciones de la batcueva:\
 				<ul class='options'>\
@@ -136,6 +214,23 @@ undum.game.situations = {
 					}
 			}	
 	
+	),*/
+
+	nodo_habitacion1: new undum.SimpleSituation(
+	"",
+	{
+		enter: function(character, system, to) {
+				if (llaves == 0){
+					system.write("<p>Te aproximas hasta la puerta acorazada que permite el paso\
+							 a la sala de comunicaciones. Al intentar abrirla te das cuenta de que está\
+							 cerrada. Debes encontrar las llaves que te permitan abrirla, por lo que decides\
+							 deshacer tus pasos y volver al distribuidor.</p></br>");
+							system.doLink('inicio');
+				} else {
+					system.doLink('habitacion1');				
+				} 
+			}
+	}
 	),
 
 	habitacion1: new undum.SimpleSituation(
@@ -152,7 +247,7 @@ undum.game.situations = {
 		no te termina de encajar: hay <a href='./examinarbrillo' class='once'>algo que brilla\
 		</a> justo al lado del\
 		teclado principal.</p></br>\
-		<p class='transient'><a href='distribuidor2' class='once'>Volver al distribuidor</a></p></br>",
+		<p class='transient'><a href='inicio' class='once'>Volver al distribuidor</a></p></br>",
 		{
             		actions: {
                 		'examinarbrillo': "<p>Te aproximas a la altura\
@@ -167,6 +262,23 @@ undum.game.situations = {
         	}
 	),
 
+	nodo_habitacion2: new undum.SimpleSituation(
+	"",
+	{
+		enter: function(character, system, to) {
+				if (llaves == 0){
+					system.write("<p>Te aproximas hasta la puerta acorazada que permite el paso\
+							 a la sala de entrenamiento. Al intentar abrirla te das cuenta de que está\
+							 cerrada. Debes encontrar las llaves que te permitan abrirla, por lo que decides\
+							 deshacer tus pasos y volver al distribuidor.</p></br>");
+							system.doLink('inicio');
+				} else {
+					system.doLink('habitacion2');				
+				} 
+			}
+	}
+	),
+
 	habitacion2: new undum.SimpleSituation(
 		"<h1>SALA DE ENTRENAMIENTO</h1>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/sala_entrenamiento.jpg' width='450' height='250' ></p>\
@@ -176,7 +288,7 @@ undum.game.situations = {
 		<p>A simple vista todo está como lo sueles dejar todos los días\
 		al terminar de entrenar, todo excepto <a href='./examinardojo' class='once'>el dojo</a>\
 		que se encuentra ligeramente movido</p></br>\
-		<p class='transient'><a href='distribuidor2' class='once'>Volver al distribuidor</a></p></br>",
+		<p class='transient'><a href='inicio' class='once'>Volver al distribuidor</a></p></br>",
 		{
             		actions: {
                 		'examinardojo': "<p>Te acercas al dojo y puedes\
@@ -190,6 +302,23 @@ undum.game.situations = {
 				}
             		}
         	}
+	),
+
+	nodo_habitacion3: new undum.SimpleSituation(
+	"",
+	{
+		enter: function(character, system, to) {
+				if (llaves == 0){
+					system.write("<p>Te aproximas hasta la puerta acorazada que permite el paso\
+							 al cuartel general. Al intentar abrirla te das cuenta de que está\
+							 cerrada. Debes encontrar las llaves que te permitan abrirla, por lo que decides\
+							 deshacer tus pasos y volver al distribuidor.</p></br>");
+							system.doLink('inicio');
+				} else {
+					system.doLink('habitacion3');				
+				} 
+			}
+	}
 	),
 
 	habitacion3: new undum.SimpleSituation(
@@ -207,7 +336,7 @@ undum.game.situations = {
 			<li><a href='./mecanica' class='once'>Taller de mecánica</a></li>\
 		</ul>\
 		</p></br>\
-		<p class='transient'><a href='distribuidor2' class='once'>Volver al distribuidor</a></p></br>",
+		<p class='transient'><a href='inicio' class='once'>Volver al distribuidor</a></p></br>",
 		{
             		actions: {
                 		'armeria': "<p>Inspeccionas la armería y puedes\
@@ -242,9 +371,26 @@ undum.game.situations = {
             		}
         	}
 	),
+
+	nodo_calle2: new undum.SimpleSituation(
+	"",
+	{
+		enter: function(character, system, to) {
+				if (llaves == 0){
+					system.write("<p>Te aproximas hasta la puerta acorazada que permite el paso\
+							 al pasaje al exterior. Al intentar abrirla te das cuenta de que está\
+							 cerrada. Debes encontrar las llaves que te permitan abrirla, por lo que decides\
+							 deshacer tus pasos y volver al distribuidor.</p></br>");
+							system.doLink('inicio');
+				} else {
+					system.doLink('calle2');				
+				} 
+			}
+	}
+	),
 	
 	calle2: new undum.SimpleSituation(
-			  "<h1>PUERTA A LA CALLE DE LA BATCUEVA</h1>\
+			  "<h1>PASAJE AL EXTERIOR</h1>\
 			  <p align='center'> <img id='img' src='./recursos/imágenes/batmanacorralado.jpg' width='450' height='250' ></p>\
 			  <p> Introduces la llave en la cerradura de la puerta, la giras y la puerta se abre.\
 			  Al abrir la puerta los encapuchados estaban esperandote y acaban contigo.</p></br>\

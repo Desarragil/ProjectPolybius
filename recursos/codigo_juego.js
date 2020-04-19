@@ -483,7 +483,7 @@ undum.game.situations = {
 			  <p align='center'> <img id='img' src='./recursos/imágenes/batmovil.jpg' width='450' height='250' ></p>\
 			  <p> Entras al garaje y accedes al interior del batmovil, introduces cada una de las\
 			  piezas recopiladas en las habitaciones en los slots para la cpu, entonces el batmovil\
-			  arranca y <a href='batmovil'> Sales a descubrir la ciudad.</a></p>",
+			  arranca y <a href='nodo_batmovil'> Sales a descubrir la ciudad.</a></p>",
             {
                 enter: function (character, system, to) {
                     system.setQuality("piezaCPU1", 0);
@@ -548,8 +548,8 @@ undum.game.situations = {
 		 callejón pero necesitas tu batgarra para salvar la altura a la que se encuentra. Usar\
 		 batgarra para entrar en el piso franco.\
 		</p></br>\
-		<p><a href= 'nodo_pisofranco'>entrar en piso franco.</a></br>\
-		<a href= 'batmovil'>Volver al batmovil.</a></p></br>",
+		<p><a href='nodo_pisofranco'>entrar en piso franco.</a></br>\
+		<a href='nodo_batmovil'>Volver al batmovil.</a></p></br>",
             {
 
                 enter: function (character, system, to) {
@@ -588,7 +588,7 @@ undum.game.situations = {
 			 Gordon para que te ayude a resolver el misterio.\
 			</p></br>\
 			<p><a href= 'nodo_pisofranco'>entrar en piso franco.</a></br>\
-			<a href= 'batmovil'>Volver al batmovil.</a></p></br>",
+			<a href= 'nodo_batmovil'>Volver al batmovil.</a></p></br>",
             {
                 actions: {
                     'recogerbolsa': function (character, system, to) {
@@ -621,7 +621,7 @@ undum.game.situations = {
 		 	batgarra para entrar en el piso franco.\
 			</p></br>\
 			<p><a href= 'nodo_pisofranco'>entrar en piso franco.</a></br>\
-			<a href= 'batmovil'>Volver al batmovil.</a></p></br>"
+			<a href= 'nodo_batmovil'>Volver al batmovil.</a></p></br>"
             ),
 
     parkrow3: new undum.SimpleSituation(
@@ -632,67 +632,99 @@ undum.game.situations = {
 			<p>No hay tiempo que perder, debes ponerte en marcha, tienes suficientes pistas\
 			para continuar con tu aventura. Aún así, si no te importa perder un poco de tiempo\
 			podrías <a href= 'nodo_pisofranco'>volver al piso franco.</a></p></br>\
-			<p><a href= 'batmovil'>Volver al batmovil</a></p></br>"
+			<p><a href= 'nodo_batmovil'>Volver al batmovil</a></p></br>"
             ),
 
+    nodo_comisaria: new undum.SimpleSituation(
+            "",
+    {
+        enter: function (character, system, to) {
+                            if ( sustancia == 0) {
+                                system.doLink('comisaria');
+                            }else {
+                                system.doLink('comisaria1');
+                            }
+                        }
+    }
+            ),
     comisaria: new undum.SimpleSituation(
             "<h1>COMISARIA DE GOTHAM</h1>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/Comisaria.jpg' width='450' height='250' ></p>\
 		<p>Llegas a la comisaría de Gotham city al amparo de la noche, inutilizas el sistema\
 		 de alumbrado para colarte y ,al llegar a su despacho, ahí está: James Gordon.\
 		</p></br>\
+                <p align='center'> <img id='img' src='./recursos/imágenes/james-gordon.jpg' width='450' height='450' ></p>\
 		<p>-Ah, eres tú, era de esperar al fin y al cabo. Con alivio retira la mano de la pistolera.\
 		</p></br>\
-		<p>-¿Qué puedes decirme de esto?. Dices tras depositar en su escritorio la bolsa con la\
-		 sustancia que encontraste en Park Row. Lo tenía uno de los cadáveres de Park Row.\
-		</p></br>\
-		<p>-Anoche realizamos una regada en un piso franco. Un soplo anónimo nos dió la dirección\
-		 de lo que creíamos un traficante de poca monta. Cuando llegamos había escapado por la ventana.\
-		 Cuando nuestros chicos llegaron al callejón pudieron abatirlo, pero no estaba solo.\
-		 Junto a él abatieron a uno de los hombres de Jonathan Crane.\
-		</p></br>\
-		<p>El espantapajaros, un viejo amigo.\
-		</p></br>\
-		<p>-Está claro que el soplo se equivocaba. Con Crane subimos de nivel.\
-		</p></br>\
-		<p>-Sí, pero Batman, sabes que no puedo analizar una prueba sustraída de una escena del crimen.\
-		 Podrían incriminarme. Además, no entiendo a qué se debe todo esto.\
-		</p></br>\
-		<p>-James, esta noche han atacado mi guarida. No sé quién ni por qué pero no dispongo de los\
-		 medios para analizar esto. Por favor, no te pediría que te arriesgaras por mi si no fuera mi última opción.\
-		</p></br>\
-		<p>-Maldita sea, déjame que llame a Bárbara, ella sabrá qué hacer. Apresurado, Gordon coge\
-		 la bolsa del escritorio y sale de su despacho.\
-		</p></br>\
-		<p>Tras 45 minutos de espera Gordon vuelve a su despacho.\
-		</p></br>\
-		<p>-No preguntes cómo, pero lo tengo: la sustancia se trata de la toxina del pánico.\
-		</p></br>\
-		<p>Sin duda, Jonathan Crane está detrás de esos asesinatos y, por consecuencia, está detrás\
-		 del ataque del ataque a tu guarida.\
-		</p></br>\
-		<p>-Esto es grande, Batman. Estos últimos meses hemos estado desarticulando una red de tráfico\
-		 ilegal de la tóxina. Crane la estaba colando en las cárceles de todos los distritos haciendo enloquecer\
-		 a los presos y originando motines. Nos ha costado contener la situación, pero esto quiere decir que se\
-		 nos están escapando líneas de distribución.\
-		</p></br>\
-		<p>-No por mucho tiempo. Dices decidido. Esta noche se acabó, ¿Dónde puedo encontrarle?.\
-		</p></br>\
-		<P>-Hemos estado siguiendo sus pasos muy de cerca, se está refugiando en el Salón Iceberg.\
-		 Está al amparo de Oswald Cobblepot, desde allí es prácticamente intocable.\
-		</p></br>\
-		<p>-Ya lo veremos.\
-		</p></br>\
-		<p><a href='batmovil'>Volver al batmovil.</a></p></br>",
+                <p><a class='once' href='./entregar_sustancia'>Entregar la sustancia a Gordon</a></p></br>",
             {
                 enter: function (character, system, to) {
-                    system.setQuality("sustancia", 0);
                     if (comisaria == 0) {
                         comisaria++;
                         system.animateQuality("lugaresVisitados", character.qualities.lugaresVisitados + 1);
                     }
+                },
+                actions:{
+                    'entregar_sustancia': function(character, system, to){
+                        system.setQuality("sustancia", 0);
+                        sustancia=1;
+                        system.write("<p>-¿Qué puedes decirme de esto?. Dices tras depositar en su escritorio la bolsa con la\
+                                      sustancia que encontraste en Park Row. Lo tenía uno de los cadáveres de Park Row.\
+                                        </p></br>\
+                                        <p>-Anoche realizamos una regada en un piso franco. Un soplo anónimo nos dió la dirección\
+                                        de lo que creíamos un traficante de poca monta. Cuando llegamos había escapado por la ventana.\
+                                        Cuando nuestros chicos llegaron al callejón pudieron abatirlo, pero no estaba solo.\
+                                         Junto a él abatieron a uno de los hombres de Jonathan Crane.\
+                                        </p></br>\
+                                        <p>El espantapajaros, un viejo amigo.\
+                                        </p></br>\
+                                        <p>-Está claro que el soplo se equivocaba. Con Crane subimos de nivel.\
+                                        </p></br>\
+                                        <p>-Sí, pero Batman, sabes que no puedo analizar una prueba sustraída de una escena del crimen.\
+                                         Podrían incriminarme. Además, no entiendo a qué se debe todo esto.\
+                                        </p></br>\
+                                        <p>-James, esta noche han atacado mi guarida. No sé quién ni por qué pero no dispongo de los\
+                                         medios para analizar esto. Por favor, no te pediría que te arriesgaras por mi si no fuera mi última opción.\
+                                        </p></br>\
+                                        <p>-Maldita sea, déjame que llame a Bárbara, ella sabrá qué hacer. Apresurado, Gordon coge\
+                                         la bolsa del escritorio y sale de su despacho.\
+                                        </p></br>\
+                                        <p>Tras 45 minutos de espera Gordon vuelve a su despacho.\
+                                        </p></br>\
+                                        <p align='center'> <img id='img' src='./recursos/imágenes/james-gordon2.jpg' width='450' height='250' ></p>\
+                                        <p>-No preguntes cómo, pero lo tengo: la sustancia se trata de la toxina del pánico.\
+                                        </p></br>\
+                                        <p>Sin duda, Jonathan Crane está detrás de esos asesinatos y, por consecuencia, está detrás\
+                                         del ataque del ataque a tu guarida.\
+                                        </p></br>\
+                                        <p>-Esto es grande, Batman. Estos últimos meses hemos estado desarticulando una red de tráfico\
+                                         ilegal de la tóxina. Crane la estaba colando en las cárceles de todos los distritos haciendo enloquecer\
+                                         a los presos y originando motines. Nos ha costado contener la situación, pero esto quiere decir que se\
+                                         nos están escapando líneas de distribución.\
+                                        </p></br>\
+                                        <p>-No por mucho tiempo. Dices decidido. Esta noche se acabó, ¿Dónde puedo encontrarle?.\
+                                        </p></br>\
+                                        <P>-Hemos estado siguiendo sus pasos muy de cerca, se está refugiando en el Salón Iceberg.\
+                                         Está al amparo de Oswald Cobblepot, desde allí es prácticamente intocable.\
+                                        </p></br>\
+                                        <p>-Ya lo veremos.\
+                                        </p></br>\
+                                        <p><a href='nodo_batmovil'>Volver al batmovil.</a></p></br>");
+                                        }
                 }
             }
+    ),
+    
+   comisaria1: new undum.SimpleSituation(
+            "<h1>COMISARIA DE GOTHAM</h1>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/Comisaria.jpg' width='450' height='250' ></p>\
+		<p>Llegas a la comisaría de Gotham city al amparo de la noche, inutilizas el sistema\
+		 de alumbrado para colarte y ,al llegar a su despacho, ahí está: James Gordon.\
+		</p></br>\
+		<p>-¡¿Qué demonios haces aquí?! ¡¡No hay tiempo que perder maldita sea!! ¡¡Largo de aquí!!\
+		</p></br>\
+                <p>Tiene razón, no voy a conseguir nada nuevo aquí.</p></br>\
+                <p><a href='nodo_batmovil'>Volver al batmovil.</a></p></br>"
     ),
 
     nodo_pisofranco: new undum.SimpleSituation(
@@ -876,10 +908,54 @@ undum.game.situations = {
 		<p><a href='saloniceberg2'>Volver al batmovil.</a></p></br>"
             ),
 
-    batmovil: new undum.SimpleSituation(
-            "<p><ul class='options'>\
+    nodo_batmovil: new undum.SimpleSituation(
+            "",
+            {
+                enter: function (character, system, to) {
+                            if ( callejon == 0) {
+                                system.doLink('batmovil1');
+                            }else if ((character.qualities.sustancia==0) && (sustancia==0)){
+                                system.doLink('batmovil1');
+                            }else if (character.qualities.sustancia == 1) {
+                                system.doLink('batmovil2');
+                            } else if (sustancia == 1) {
+                                system.doLink('batmovil3');
+                            }
+                        }
+            }
+    ),
+
+    batmovil1: new undum.SimpleSituation(
+            "<h1 class='transient'>BATMÓVIL</h1>\
+                <p class='transient' align='center'> <img id='img' src='./recursos/imágenes/ciudad.jpg' width='450' height='150' ></p>\
+                <p>El ordenador de abordo te pide un destino:</p></br>\
+                <p><ul class='options'>\
+			<li><a href='inicio'>Batcueva</a></li>\
 			<li><a href='nodo_parkrow'>Callejón del crimen</a></li>\
-			<li><a href='comisaria'>Comisaria de Gotham</a></li>\
+		</ul>\
+		</p></br>"
+            ),
+
+    batmovil2: new undum.SimpleSituation(
+            "<h1 class='transient'>BATMÓVIL</h1>\
+            <p class='transient' align='center'> <img id='img' src='./recursos/imágenes/ciudad.jpg' width='450' height='150' ></p>\
+            <p>El ordenador de abordo te pide un destino:</p></br>\
+            <p><ul class='options'>\
+			<li><a href='inicio'>Batcueva</a></li>\
+			<li><a href='nodo_parkrow'>Callejón del crimen</a></li>\
+			<li><a href='nodo_comisaria'>Comisaria de Gotham</a></li>\
+		</ul>\
+		</p></br>"
+            ),
+
+    batmovil3: new undum.SimpleSituation(
+            "<h1 class='transient'>BATMÓVIL</h1>\
+            <p class='transient' align='center'> <img id='img' src='./recursos/imágenes/ciudad.jpg' width='450' height='150' ></p>\
+            <p>El ordenador de abordo te pide un destino:</p></br>\
+                <p><ul class='options'>\
+			<li><a href='inicio'>Batcueva</a></li>\
+			<li><a href='nodo_parkrow'>Callejón del crimen</a></li>\
+			<li><a href='nodo_comisaria'>Comisaria de Gotham</a></li>\
 			<li><a href='saloniceberg'>Salón Iceberg</a></li>\
 		</ul>\
 		</p></br>"

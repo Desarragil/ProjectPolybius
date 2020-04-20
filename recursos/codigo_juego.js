@@ -140,18 +140,18 @@ undum.game.situations = {
                     salon = 0;
                     torre = 0;
                     sustancia = 0;
-                    character.qualities.piezaCPU1 = 0;
-                    character.qualities.piezaCPU2 = 0;
-                    character.qualities.piezaCPU3 = 0;
-                    character.qualities.llavesBatcueva = 0;
-                    character.qualities.sustancia = 0;
-                    character.qualities.batgarra = 0;
-                    character.qualities.tarjetaAcred = 0;
-                    character.qualities.aturdidores = 1;
-                    character.qualities.batgranadas = 1;
-                    character.qualities.llaveSala = 0;
-                    character.qualities.lugaresVisitados = 0;
-                    character.qualities.total = 1;
+                    system.setQuality("piezaCPU1", 0);
+                    system.setQuality("piezaCPU2", 0);
+                    system.setQuality("piezaCPU3", 0);
+                    system.setQuality("llavesBatcueva", 0);
+                    system.setQuality("sustancia", 0);
+                    system.setQuality("batgarra", 0);
+                    system.setQuality("tarjetaAcred", 0);
+                    system.setQuality("aturdidores", 1);
+                    system.setQuality("batgranadas", 1);
+                    system.setQuality("llaveSala", 0);
+                    system.setQuality("lugaresVisitados", 0);
+                    system.setQuality("total", 1);
                 }
             }
     ),
@@ -174,18 +174,18 @@ undum.game.situations = {
                     salon = 0;
                     torre = 0;
                     sustancia = 0;
-                    character.qualities.piezaCPU1 = 0;
-                    character.qualities.piezaCPU2 = 0;
-                    character.qualities.piezaCPU3 = 0;
-                    character.qualities.llavesBatcueva = 0;
-                    character.qualities.sustancia = 0;
-                    character.qualities.batgarra = 0;
-                    character.qualities.tarjetaAcred = 0;
-                    character.qualities.aturdidores = 1;
-                    character.qualities.batgranadas = 1;
-                    character.qualities.llaveSala = 0;
-                    character.qualities.lugaresVisitados = 0;
-                    character.qualities.total = 1;
+                    system.setQuality("piezaCPU1", 0);
+                    system.setQuality("piezaCPU2", 0);
+                    system.setQuality("piezaCPU3", 0);
+                    system.setQuality("llavesBatcueva", 0);
+                    system.setQuality("sustancia", 0);
+                    system.setQuality("batgarra", 0);
+                    system.setQuality("tarjetaAcred", 0);
+                    system.setQuality("aturdidores", 1);
+                    system.setQuality("batgranadas", 1);
+                    system.setQuality("llaveSala", 0);
+                    system.setQuality("lugaresVisitados", 0);
+                    system.setQuality("total", 1);
                 }
             }
     ),
@@ -234,43 +234,22 @@ undum.game.situations = {
                     salon = 0;
                     torre = 0;
                     sustancia = 0;
-                    character.qualities.piezaCPU1 = 0;
-                    character.qualities.piezaCPU2 = 0;
-                    character.qualities.piezaCPU3 = 0;
-                    character.qualities.llavesBatcueva = 0;
-                    character.qualities.sustancia = 0;
-                    character.qualities.batgarra = 0;
-                    character.qualities.tarjetaAcred = 0;
-                    character.qualities.aturdidores = 1;
-                    character.qualities.batgranadas = 1;
-                    character.qualities.llaveSala = 0;
-                    character.qualities.lugaresVisitados = 0;
-                    character.qualities.total = 1;
+                    system.setQuality("piezaCPU1", 0);
+                    system.setQuality("piezaCPU2", 0);
+                    system.setQuality("piezaCPU3", 0);
+                    system.setQuality("llavesBatcueva", 0);
+                    system.setQuality("sustancia", 0);
+                    system.setQuality("batgarra", 0);
+                    system.setQuality("tarjetaAcred", 0);
+                    system.setQuality("aturdidores", 1);
+                    system.setQuality("batgranadas", 1);
+                    system.setQuality("llaveSala", 0);
+                    system.setQuality("lugaresVisitados", 0);
+                    system.setQuality("total", 1);
                 }
             }
 
     ),
-
-    //Esta situación ya no haría falta, por eso la he comentado.
-
-    /*distribuidor2: new undum.SimpleSituation(
-     "<h1>DISTRIBUIDOR</h1>\
-     <p>Vuelves al distribuidor a probar las llaves y ahora puedes acceder a las habitaciones de la batcueva:\
-     <ul class='options'>\
-     <li><a href='habitacion1' class='once'>Sala de comunicaciones</a></li>\
-     <li><a href='habitacion2' class='once'>Sala de entrenamiento</a></li>\
-     <li><a href='habitacion3' class='once'>Cuartel general</a></li>\
-     </ul></p>\
-     <p>recopilas todas las piezas y ves en el juego de llaves, una llave que no has usado.\
-     Puedes <a href='calle2'>Probarla en la puerta que da a la calle</a> o\
-     <a href='batmovil_arreglado'> Ir al garaje y montar la cpu en el batmovil.</a></p>",
-     {
-     enter:function(character, system, to) {
-     system.setQuality("llavesBatcueva", 0);
-     }
-     }	
-     
-     ),*/
 
     nodo_habitacion1: new undum.SimpleSituation(
             "",
@@ -462,18 +441,18 @@ undum.game.situations = {
                     salon = 0;
                     torre = 0;
                     sustancia = 0;
-                    character.qualities.piezaCPU1 = 0;
-                    character.qualities.piezaCPU2 = 0;
-                    character.qualities.piezaCPU3 = 0;
-                    character.qualities.llavesBatcueva = 0;
-                    character.qualities.sustancia = 0;
-                    character.qualities.batgarra = 0;
-                    character.qualities.tarjetaAcred = 0;
-                    character.qualities.aturdidores = 1;
-                    character.qualities.batgranadas = 1;
-                    character.qualities.llaveSala = 0;
-                    character.qualities.lugaresVisitados = 0;
-                    character.qualities.total = 1;
+                    system.setQuality("piezaCPU1", 0);
+                    system.setQuality("piezaCPU2", 0);
+                    system.setQuality("piezaCPU3", 0);
+                    system.setQuality("llavesBatcueva", 0);
+                    system.setQuality("sustancia", 0);
+                    system.setQuality("batgarra", 0);
+                    system.setQuality("tarjetaAcred", 0);
+                    system.setQuality("aturdidores", 1);
+                    system.setQuality("batgranadas", 1);
+                    system.setQuality("llaveSala", 0);
+                    system.setQuality("lugaresVisitados", 0);
+                    system.setQuality("total", 1);
                 }
             }
     ),
@@ -545,8 +524,7 @@ undum.game.situations = {
 		 metros, encuentras un puñado de cristales rotos. Observas por encima de tu cabeza\
 		 y alcanzas a ver en la oscuridad de la noche una ventana con los cristales rotos.\
 		 Debes de investigar ese piso, puede que tenga algo que ver con los asesinatos del\
-		 callejón pero necesitas tu batgarra para salvar la altura a la que se encuentra. Usar\
-		 batgarra para entrar en el piso franco.\
+		 callejón pero necesitas tu batgarra para salvar la altura a la que se encuentra.\
 		</p></br>\
 		<p><a href='nodo_pisofranco'>entrar en piso franco.</a></br>\
 		<a href='nodo_batmovil'>Volver al batmovil.</a></p></br>",
@@ -617,8 +595,7 @@ undum.game.situations = {
 			 metros, encuentras un puñado de cristales rotos. Observas por encima de tu cabeza\
 			 y alcanzas a ver en la oscuridad de la noche una ventana con los cristales rotos.\
 			 Debes de investigar ese piso, puede que tenga algo que ver con los asesinatos del\
-			 callejón pero necesitas tu batgarra para salvar la altura a la que se encuentra. Usar\
-		 	batgarra para entrar en el piso franco.\
+			 callejón pero necesitas tu batgarra para salvar la altura a la que se encuentra.\
 			</p></br>\
 			<p><a href= 'nodo_pisofranco'>entrar en piso franco.</a></br>\
 			<a href= 'nodo_batmovil'>Volver al batmovil.</a></p></br>"
@@ -637,16 +614,16 @@ undum.game.situations = {
 
     nodo_comisaria: new undum.SimpleSituation(
             "",
-    {
-        enter: function (character, system, to) {
-                            if ( sustancia == 0) {
-                                system.doLink('comisaria');
-                            }else {
-                                system.doLink('comisaria1');
-                            }
-                        }
-    }
-            ),
+            {
+                enter: function (character, system, to) {
+                    if (sustancia == 0) {
+                        system.doLink('comisaria');
+                    } else {
+                        system.doLink('comisaria1');
+                    }
+                }
+            }
+    ),
     comisaria: new undum.SimpleSituation(
             "<h1>COMISARIA DE GOTHAM</h1>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/Comisaria.jpg' width='450' height='250' ></p>\
@@ -664,10 +641,10 @@ undum.game.situations = {
                         system.animateQuality("lugaresVisitados", character.qualities.lugaresVisitados + 1);
                     }
                 },
-                actions:{
-                    'entregar_sustancia': function(character, system, to){
+                actions: {
+                    'entregar_sustancia': function (character, system, to) {
                         system.setQuality("sustancia", 0);
-                        sustancia=1;
+                        sustancia = 1;
                         system.write("<p>-¿Qué puedes decirme de esto?. Dices tras depositar en su escritorio la bolsa con la\
                                       sustancia que encontraste en Park Row. Lo tenía uno de los cadáveres de Park Row.\
                                         </p></br>\
@@ -710,12 +687,12 @@ undum.game.situations = {
                                         <p>-Ya lo veremos.\
                                         </p></br>\
                                         <p><a href='nodo_batmovil'>Volver al batmovil.</a></p></br>");
-                                        }
+                    }
                 }
             }
     ),
-    
-   comisaria1: new undum.SimpleSituation(
+
+    comisaria1: new undum.SimpleSituation(
             "<h1>COMISARIA DE GOTHAM</h1>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/Comisaria.jpg' width='450' height='250' ></p>\
 		<p>Llegas a la comisaría de Gotham city al amparo de la noche, inutilizas el sistema\
@@ -725,7 +702,7 @@ undum.game.situations = {
 		</p></br>\
                 <p>Tiene razón, no voy a conseguir nada nuevo aquí.</p></br>\
                 <p><a href='nodo_batmovil'>Volver al batmovil.</a></p></br>"
-    ),
+            ),
 
     nodo_pisofranco: new undum.SimpleSituation(
             "",
@@ -792,6 +769,20 @@ undum.game.situations = {
             }
     ),
 
+    nodo_saloniceberg: new undum.SimpleSituation(
+            "",
+            {
+                enter: function (character, system, to) {
+                    if (salon == 0) {
+                        system.doLink('saloniceberg');
+                    } else {
+                        system.doLink('salon_bloqueado');
+                    }
+                }
+            }
+
+    ),
+
     saloniceberg: new undum.SimpleSituation(
             "<h1>SALÓN ICEBERG</h1>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/Salon_iceberg.jpg' width='450' height='250' ></p>\
@@ -801,6 +792,7 @@ undum.game.situations = {
 		<p>Al entrar en el hall no te encuentras a nadie, avanzas hasta la entrada del salón principal\
 		 del establecimiento. Aprietas los puños tras un mal presentimiento.\
 		</p></br>\
+                <p align='center'> <img id='img' src='./recursos/imágenes/matonessalon.jpg' width='450' height='250' ></p>\
 		<p>Al entrar, todos los matones del pingüino están apuntandote con sus armas. Detrás de ellos,\
 		 se encuentra Oswald, al que parece que le ha entrado la risa floja al verte entrar. Justo detrás\
 		 suya puedes observar una puerta acorazada.\
@@ -836,8 +828,20 @@ undum.game.situations = {
             }
     ),
 
+    salon_bloqueado: new undum.SimpleSituation(
+            "<h1>SALÓN ICEBERG</h1>\
+		<p align='center'> <img id='img' src='./recursos/imágenes/Salon_iceberg.jpg' width='450' height='250' ></p>\
+                <p>Vuelves al salón iceberg dispuesto a desbloquear esa puerta blindada.</p></br>\
+                <p>Al entrar en la sala principal te encuentras con los hombres de Gordon. \
+                Han tomado el lugar, arrestando a todos los delicuentes que habatiste anteriormente y están\
+                desmantelando el lugar.</p></br>\
+                <p>Te aproximas a la puerta blindada, donde un grupo de polícias que anteriormente\
+                intentaban derribar la puerta blindada están ahora absortos ante tu presenecia.</p></br>\
+                <p class = 'transient'><a href='nodo_crane'>Abrir puerta blindada</a></p></br>"),
+
     final1: new undum.SimpleSituation(
-            "<p>Lanzas tus aturdidores sónicos a los pies del grupo de matones. Justo antes de que pudieran disparar,\
+            "<h1>GAME OVER</h1>\
+               <p>Lanzas tus aturdidores sónicos a los pies del grupo de matones. Justo antes de que pudieran disparar,\
 		los aturdidores hacen su ruído ensordecedor lo que provoca que todos los presentes en la sala menos tú se\
 		lleven las manos a las orejas irremediablemente.\
 		</p></br>\
@@ -847,40 +851,84 @@ undum.game.situations = {
 		Te apresuras y lanzas al matón que te ha disparado tu víctima y justo cuando vas a avalanzarte,\
 		notas que tu cuerpo se paraliza. Te han aturdido con una pistola taser, ahora estás a merced de tus enemigos.</p></br>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
-		<p><a href='inicio'>Volver a comenzar</a></p>"
-            ),
+		<p class = 'transient' ><a href='inicio'>Volver a comenzar</a></p>",
+            {
+                exit: function (character, system, to) {
+                    batcueva = 0;
+                    callejon = 0;
+                    comisaria = 0;
+                    pfranco = 0;
+                    llaves = 0;
+                    salon = 0;
+                    torre = 0;
+                    sustancia = 0;
+                    system.setQuality("piezaCPU1", 0);
+                    system.setQuality("piezaCPU2", 0);
+                    system.setQuality("piezaCPU3", 0);
+                    system.setQuality("llavesBatcueva", 0);
+                    system.setQuality("sustancia", 0);
+                    system.setQuality("batgarra", 0);
+                    system.setQuality("tarjetaAcred", 0);
+                    system.setQuality("aturdidores", 1);
+                    system.setQuality("batgranadas", 1);
+                    system.setQuality("llaveSala", 0);
+                    system.setQuality("lugaresVisitados", 0);
+                    system.setQuality("total", 1);
+                }
+            }
+    ),
 
     combateconjefe: new undum.SimpleSituation(
             "<p>Antes de que puedan apretar el disparador de sus armas, lanzas tus bat-granadas de bat-humo las cuales\
 		 estallan antes de tocar el suelo haciendo que ninguno de los presentes puedan ver a más de un palmo de\
 		 la cara. Activas tu visión nocturna y lanzas un batarang a las armas de cada uno de los matones,\
-		 desarmandolos en el acto. A continuación, empiezas a nockear a cada uno de los matones hasta\
+		 desarmándolos en el acto. A continuación, empiezas a nockear a cada uno de los matones hasta\
 		 encontrarte justo delante del Cobblepot.\
 		</p></br>\
+                <p align='center'> <img id='img' src='./recursos/imágenes/puñetazopingüino.png' width='450' height='250' ></p>\
 		<p>El humo se disipa y, tras observar la escena que ahora se presenta delante de él, puedes\
 		 notar como el pavor se adueña de su cara. Antes de que pueda mediar palabra, acaricias con\
 		 tu puño su cara dejándolo inconsciente en el acto.\
 		</p></br>\
 		<p>Frente a tí, la puerta blindada. Tiene un mecanismo de identificación mediante tarjeta.\
 		</p></br>\
-		<p>Sacas la tarjeta que encontraste en el piso franco de Park Row y entras en la camara acorazada.\
-		</p></br>\
-		<p>Dentro de la cámara, te encuentras con una habitación llena de lujos. Justo en el centro de\
+                <p class = 'transient'><a href='nodo_crane'>Abrir puerta blindada</a></p></br>"
+            ),
+
+    nodo_crane: new undum.SimpleSituation(
+            "",
+            {
+                enter: function (character, system, to) {
+                    if (character.qualities.tarjetaAcred == 0) {
+                        system.write("<p>Examinas el panel de identificación detenidamente e intentas hackearlo\
+                            con tus herramientas. Intento tras intento fallas en tu cometido.</p></br>\n\
+                            <p>En tu último intento te percatas de una forma familiar en la superfice\
+                            de la puerta blindada, es el símbolo de industrias Wayne.</p></br>\
+                            <p> No sabes cómo ha ido a parar una de estas puertas a un lugar como este\
+                             pero una cosa tienes clara, no vas a conseguir piratearla.</p></br>\
+                            <p> Debes encontrar una forma de abrir esa puerta blindada, decidido\
+                            vuelves al batmovil dispuesto a encontrar una solución a este callejón sin salida.</p></br>");
+                        system.doLink('nodo_batmovil');
+                    } else {
+                        system.write("<p>Sacas la tarjeta que encontraste en el piso franco de Park Row y entras en la camara acorazada.\
+		</p></br>");
+                        system.setQuality("tarjetaAcred", 0);
+                        system.doLink('crane');
+                    }
+                }
+            }
+    ),
+
+    crane: new undum.SimpleSituation(
+            "<p>Dentro de la cámara, te encuentras con una habitación llena de lujos. Justo en el centro de\
 		 la cámara  encuentras a Crane, quien observas que va a empezar a hablar.\
 		</p></br>\
-		<p>Dejar que hable o hundir tu puño en su cara.\
-		</p></br>\
-		<p>Conforme te acercas a él empieza a hablar: \
-		</p></br>\
-		<p>-Vaya, justo me preguntaba cuánto tardarías en encontrarme.\
-		</p></br>\
-		<p>-Basta de juegos, espantapájaros.\
-		</p></br>\
-		<p>Crane aprieta un control remoto que tenía en el bolsillo activando unos aspersores en la pared\
-		 que rocían toda la estancia con la toxina de espantapájaros, lo cual te deja en el suelo en estado catatónico.\
-		 Has fracasado.\
-		</p></br>\
-		<p>Te apresuras a acercarte a Crane y, antes de que medie palabra, hundes tu puño en su cara.\
+		<p class = 'transient'><a href='gameover4'>Dejar que hable</a> o <a href='crane_derrotado'>hundir tu puño en su cara.</a>\
+		</p></br>"
+            ),
+
+    crane_derrotado: new undum.SimpleSituation(
+            "<p>Te apresuras a acercarte a Crane y, antes de que medie palabra, hundes tu puño en su cara.\
 		 Esto hace que caiga al suelo, perdiendo un control remoto que guardaba en el bolsilo.\
 		</p></br>\
 		<p>Pisas el control remoto destruyendolo y asestas otro puñetazo con todas tus fuerzas\
@@ -905,30 +953,69 @@ undum.game.situations = {
 		<p>Al terminar de articular la última frase nockeas a Crane, dejándolo inconsciente.\
 		 Llamas a Gordon para que envíe a sus hombre a limpiar el sitio.\
 		</p></br>\
-		<p><a href='saloniceberg2'>Volver al batmovil.</a></p></br>"
-            ),
+		<p><a href='saloniceberg2'>Volver al batmovil.</a></p></br>"),
+
+    gameover4: new undum.SimpleSituation(
+            "<h1>GAME OVER</h1>\
+                <p>Conforme te acercas a él empieza a hablar: \
+		</p></br>\
+		<p>-Vaya, justo me preguntaba cuánto tardarías en encontrarme.\
+		</p></br>\
+		<p>-Basta de juegos, espantapájaros.\
+		</p></br>\
+                <p align='center'> <img id='img' src='./recursos/imágenes/muertegaseado.jpg' width='450' height='250' ></p>\
+		<p>Crane aprieta un control remoto que tenía en el bolsillo activando unos aspersores en la pared\
+		 que rocían toda la estancia con la toxina de espantapájaros, lo cual te deja en el suelo en estado catatónico.\
+		 Has fracasado.</p></br>\
+                <p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
+		<p class = 'transient' ><a href='inicio'>Volver a comenzar</a></p>",
+            {
+                exit: function (character, system, to) {
+                    batcueva = 0;
+                    callejon = 0;
+                    comisaria = 0;
+                    pfranco = 0;
+                    llaves = 0;
+                    salon = 0;
+                    torre = 0;
+                    sustancia = 0;
+                    system.setQuality("piezaCPU1", 0);
+                    system.setQuality("piezaCPU2", 0);
+                    system.setQuality("piezaCPU3", 0);
+                    system.setQuality("llavesBatcueva", 0);
+                    system.setQuality("sustancia", 0);
+                    system.setQuality("batgarra", 0);
+                    system.setQuality("tarjetaAcred", 0);
+                    system.setQuality("aturdidores", 1);
+                    system.setQuality("batgranadas", 1);
+                    system.setQuality("llaveSala", 0);
+                    system.setQuality("lugaresVisitados", 0);
+                    system.setQuality("total", 1);
+                }
+            }
+    ),
 
     nodo_batmovil: new undum.SimpleSituation(
             "",
             {
                 enter: function (character, system, to) {
-                            if ( callejon == 0) {
-                                system.doLink('batmovil1');
-                            }else if ((character.qualities.sustancia==0) && (sustancia==0)){
-                                system.doLink('batmovil1');
-                            }else if (character.qualities.sustancia == 1) {
-                                system.doLink('batmovil2');
-                            } else if (sustancia == 1) {
-                                system.doLink('batmovil3');
-                            }
-                        }
+                    if (callejon == 0) {
+                        system.doLink('batmovil1');
+                    } else if ((character.qualities.sustancia == 0) && (sustancia == 0)) {
+                        system.doLink('batmovil1');
+                    } else if (character.qualities.sustancia == 1) {
+                        system.doLink('batmovil2');
+                    } else if (sustancia == 1) {
+                        system.doLink('batmovil3');
+                    }
+                }
             }
     ),
 
     batmovil1: new undum.SimpleSituation(
             "<h1 class='transient'>BATMÓVIL</h1>\
                 <p class='transient' align='center'> <img id='img' src='./recursos/imágenes/ciudad.jpg' width='450' height='150' ></p>\
-                <p>El ordenador de abordo te pide un destino:</p></br>\
+                <p class = 'transient'>El ordenador de abordo te pide un destino:</p></br>\
                 <p><ul class='options'>\
 			<li><a href='inicio'>Batcueva</a></li>\
 			<li><a href='nodo_parkrow'>Callejón del crimen</a></li>\
@@ -939,7 +1026,7 @@ undum.game.situations = {
     batmovil2: new undum.SimpleSituation(
             "<h1 class='transient'>BATMÓVIL</h1>\
             <p class='transient' align='center'> <img id='img' src='./recursos/imágenes/ciudad.jpg' width='450' height='150' ></p>\
-            <p>El ordenador de abordo te pide un destino:</p></br>\
+            <p class = 'transient'>El ordenador de abordo te pide un destino:</p></br>\
             <p><ul class='options'>\
 			<li><a href='inicio'>Batcueva</a></li>\
 			<li><a href='nodo_parkrow'>Callejón del crimen</a></li>\
@@ -951,12 +1038,12 @@ undum.game.situations = {
     batmovil3: new undum.SimpleSituation(
             "<h1 class='transient'>BATMÓVIL</h1>\
             <p class='transient' align='center'> <img id='img' src='./recursos/imágenes/ciudad.jpg' width='450' height='150' ></p>\
-            <p>El ordenador de abordo te pide un destino:</p></br>\
+            <p class = 'transient'>El ordenador de abordo te pide un destino:</p></br>\
                 <p><ul class='options'>\
 			<li><a href='inicio'>Batcueva</a></li>\
 			<li><a href='nodo_parkrow'>Callejón del crimen</a></li>\
 			<li><a href='nodo_comisaria'>Comisaria de Gotham</a></li>\
-			<li><a href='saloniceberg'>Salón Iceberg</a></li>\
+			<li><a href='nodo_saloniceberg'>Salón Iceberg</a></li>\
 		</ul>\
 		</p></br>"
             ),

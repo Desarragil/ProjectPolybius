@@ -34,6 +34,7 @@ var llaves = 0;
 var salon = 0;
 var torre = 0;
 var sustancia = 0;
+var batmovilResuelto = 0;
 
 /* The situations that the game can be in. Each has a unique ID. */
 undum.game.situations = {
@@ -98,6 +99,9 @@ undum.game.situations = {
 		</ul></p></br>",
             {
                 enter: function (character, system, to) {
+                    if ((character.qualities.piezaCPU1 == 1) && (character.qualities.piezaCPU2 == 1) && (character.qualities.piezaCPU3 == 1)) {
+                        batmovilResuelto = 1;
+                    }
                     if ((llaves == 0) || (callejon == 0)) {
                         system.write("<h1>GARAJE</h1>\
 		  			<p> Accedes al Garaje intentando buscar la mejor solución para poder salir de la batcueva\
@@ -111,17 +115,88 @@ undum.game.situations = {
                 },
                 actions: {
                     'entrar': function (character, system, to) {
-                        if (llaves == 0) {
-                            system.write("<p>Te diriges hacia el batmovil y entras en él.</p></br>");
-                            system.doLink('batmovil_roto');
-                        } else {
-                            system.write("<p>Te diriges hacia el batmovil y entras en él.</p></br>");
-                            system.doLink('batmovil_arreglado');
-                        }
+                        system.doLink('nodo_puzzlebatmovil');
                     }
                 }
             }
     ),
+
+    nodo_puzzlebatmovil: new undum.SimpleSituation(
+            "",
+            {
+                enter: function (character, system, to) {
+                    if ((llaves == 1) && (batmovilResuelto == 1)) {
+                        system.write("<h1>BATMOVIL</h1>\
+			  <p align='center'> <img id='img' src='./recursos/imágenes/batmovil.jpg' width='450' height='250' ></p>\
+			  <p> Entras al garaje y accedes al interior del batmovil, introduces cada una de las\
+			  piezas recopiladas en las habitaciones en los slots para la cpu, entonces el batmovil\
+			  arranca y <a href='nodo_batmovil'> Sales a descubrir la ciudad.</a></p>");
+                        system.setQuality("piezaCPU1", 0);
+                        system.setQuality("piezaCPU2", 0);
+                        system.setQuality("piezaCPU3", 0);
+                        //sytem.doLink('nodo_batmovil');
+                    } else if (llaves == 0) {
+                        system.write("<p> Decides dirigirte hacia el batmovil, entras y te sientas en el\
+                                          asiento del conductor y pruebas arrancarlo, no arranca e\
+			            intentas encontrar una solución, buscas el posible error del batmovil y te percatas de\
+			            que los slots donde van alojadas las piezas de la cpu están vacios. Si quieres escapar\
+						de la batcueva con el batmovil debes encontrar las piezas de la CPU.</p></br>");
+                        system.doLink('batmovil_roto1');
+
+                    } else {
+                        system.write("<p> Decides dirigirte hacia el batmovil, entras y te sientas en el\
+                                          asiento del conductor y pruebas arrancarlo, no arranca e\
+			            intentas encontrar una solución, buscas el posible error del batmovil y te percatas de\
+			            que los slots donde van alojadas las piezas de la cpu están vacios. Si quieres escapar\
+						de la batcueva con el batmovil debes encontrar las piezas de la CPU.</p></br>");
+                        system.doLink('batmovil_roto2');
+                    }
+
+                }
+            }
+
+    ),
+
+    batmovil_roto1: new undum.SimpleSituation(
+            "<h1>BATMOVIL</h1>\
+     <p align='center'> <img id='img' src='./recursos/imágenes/batmovil.jpg' width='450' height='250' ></p>\
+	 <p>Dadas las circunstancias tienes claras las opciones posibles.</p></br>\
+	 <ul class='options'>\
+			<li><a href='./examinarasiento'>Examinar los asientos en busca de algún arma para defenderte</a></li>\
+			<li><a href='inicio'>Salir al distribuidor</a></li>\
+		</ul></p></br>",
+            {
+                actions: {
+                    'examinarasiento': "<p> Te dispones a buscar\
+			  en los asientos del vehiculo y algo en el asiento del acompañante llama tu\
+			  atención... <a href='./examinarasiento2' class='once'>examinar asiento</a></p></br>",
+                    'examinarasiento2': "<p>Enciendes las luces de la cabina para ver mejor\
+								 y logras distinguir una figura familiar:\
+								 <a href='./recogerllaves' class='once'>las llaves de la batcueva</a></p></br>",
+
+                    'recogerllaves': function (character, system, to) {
+                        system.setQuality("llavesBatcueva", 1);
+                        system.write("<p>Ahora que tienes en tu poder las llaves de la batcueva\
+								puedes acceder a las estancias que estaban antes bloqueadas.</p></br>\
+								<p class='transient'>Te encuentras en la texitura de volver al distribuidor y <a href='inicio'>Probar las llaves</a>\
+			  					o <a href='gameover2'>Seguir buscando en los asientos.</a></p>");
+                        llaves = 1;
+                    }
+                }
+
+            }
+
+    ),
+
+    batmovil_roto2: new undum.SimpleSituation(
+            "<h1>BATMOVIL</h1>\
+     <p align='center'> <img id='img' src='./recursos/imágenes/batmovil.jpg' width='450' height='250' ></p>\
+	 <p>Dadas las circunstncias tienes claras las opciones posibles.</p></br>\
+	 <ul class='options'>\
+			<li><a href='gameover2'>Examinar los asientos en busca de algún arma para defenderte</a></li>\
+			<li><a href='inicio'>Salir al distribuidor</a></li>\
+		</ul></p></br>"
+            ),
 
     gameover0: new undum.SimpleSituation(
             "<h1>GAME OVER</h1>\
@@ -193,25 +268,10 @@ undum.game.situations = {
     batmovil_roto: new undum.SimpleSituation(
             "<h1>BATMOVIL</h1>\
 			  <p align='center'> <img id='img' src='./recursos/imágenes/batmovil.jpg' width='450' height='250' ></p>\
-			  <p> Estas sentado en el asiento del conductor y pruebas arrancarlo, no arranca e\
-			  intentas encontrar una solución, buscas el posible error del batmovil y te percatas de\
-			  que los slots donde van alojadas las piezas de la cpu están vacios. Te dispones a buscar\
-			  las piezas de la cpu dentro del vehiculo y algo en el asiento del acompañante llama tu\
-			  atención... <a href='./examinarasiento' class='once'>examinar asiento</a></p></br>",
+			  ",
             {
                 actions: {
-                    'examinarasiento': "<p>Enciendes las luces de la cabina para ver mejor\
-								 y logras distinguir una figura familiar:\
-								 <a href='./recogerllaves' class='once'>las llaves de la batcueva</a></p></br>",
 
-                    'recogerllaves': function (character, system, to) {
-                        system.setQuality("llavesBatcueva", 1);
-                        system.write("<p>Ahora que tienes en tu poder las llaves de la batcueva\
-								puedes acceder a las estancias que estaban antes bloqueadas.</p></br>\
-								<p class='transient'>Te encuentras en la texitura de volver al distribuidor y <a href='inicio'>Probar las llaves</a>\
-			  					o <a href='gameover2'>Seguir buscando las piezas en el batmovil.</a></p>");
-                        llaves = 1;
-                    }
                 }
             }
 
@@ -269,7 +329,16 @@ undum.game.situations = {
     ),
 
     habitacion1: new undum.SimpleSituation(
-            "<h1>SALA DE COMUNICACIONES</h1>\
+            "",
+            {
+                enter: function (character, system, to) {
+                    if ((batmovilResuelto == 1) || ((batmovilResuelto == 0) && (character.qualities.piezaCPU1 == 1))) {
+                        system.write("<h1>SALA DE COMUNICACIONES</h1>\
+		                <p align='center'> <img id='img' src='./recursos/imágenes/sala_de_comunicaciones.jpg' width='450' height='250' ></p>\
+						<p>Entras en la sala de comunicaciones y tras revisar la habitación te das cuenta de que estás perdiendo el tiempo.</p>\
+						<p class='transient'><a href='inicio' class='once'>Volver al distribuidor</a></p></br>");
+                    } else {
+                        system.write("<h1>SALA DE COMUNICACIONES</h1>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/sala_de_comunicaciones.jpg' width='450' height='250' ></p>\
 		<p>Te encuentras en la sala de comunicaciones, donde Alfred y tú\
 		tenéis montado vuestro centro de operaciones informáticas, y \
@@ -282,8 +351,9 @@ undum.game.situations = {
 		no te termina de encajar: hay <a href='./examinarbrillo' class='once'>algo que brilla\
 		</a> justo al lado del\
 		teclado principal.</p></br>\
-		<p class='transient'><a href='inicio' class='once'>Volver al distribuidor</a></p></br>",
-            {
+		<p class='transient'><a href='inicio' class='once'>Volver al distribuidor</a></p></br>");
+                    }
+                },
                 actions: {
                     'examinarbrillo': "<p>Te aproximas a la altura\
 				del teclado y puedes observar que el brillo es\
@@ -315,7 +385,16 @@ undum.game.situations = {
     ),
 
     habitacion2: new undum.SimpleSituation(
-            "<h1>SALA DE ENTRENAMIENTO</h1>\
+            "",
+            {
+                enter: function (character, system, to) {
+                    if ((batmovilResuelto == 1) || ((batmovilResuelto == 0) && (character.qualities.piezaCPU2 == 1))) {
+                        system.write("<h1>SALA DE ENTRENAMIENTO</h1>\
+		                <p align='center'> <img id='img' src='./recursos/imágenes/sala_entrenamiento.jpg' width='450' height='250' ></p>\
+						<p>Entras en la sala de entrenamiento y tras revisar la habitación te das cuenta de que estás perdiendo el tiempo.</p>\
+						<p class='transient'><a href='inicio' class='once'>Volver al distribuidor</a></p></br>");
+                    } else {
+                        system.write("<h1>SALA DE ENTRENAMIENTO</h1>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/sala_entrenamiento.jpg' width='450' height='250' ></p>\
 		<p>Te encuentras en la sala donde entrenas diariamente tus\
 		habilidades físicas, prácticas todo tipo de artes marciales y\
@@ -323,8 +402,9 @@ undum.game.situations = {
 		<p>A simple vista todo está como lo sueles dejar todos los días\
 		al terminar de entrenar, todo excepto <a href='./examinardojo' class='once'>el dojo</a>\
 		que se encuentra ligeramente movido</p></br>\
-		<p class='transient'><a href='inicio' class='once'>Volver al distribuidor</a></p></br>",
-            {
+		<p class='transient'><a href='inicio' class='once'>Volver al distribuidor</a></p></br>");
+                    }
+                },
                 actions: {
                     'examinardojo': "<p>Te acercas al dojo y puedes\
 				observar como alguien lo ha movido de lugar y, además\
@@ -374,13 +454,25 @@ undum.game.situations = {
 		<p class='transient'><a href='inicio' class='once'>Volver al distribuidor</a></p></br>",
             {
                 actions: {
-                    'armeria': "<p>Inspeccionas la armería y puedes\
+                    'armeria': function (character, system, to) {
+                        if ((character.qualities.batgarra == 0)) {
+                            system.write("<p>Inspeccionas la armería y puedes\
 				alcanzar a observar que ha sufrido grandes deaños\
 				solo queda en pie el armario blindado donde guardas\
 				tus trajes, y otro pequeño donde guardas tu\
 				<a href='./recogerbatgarra' class='once'>batgarra</a>\
 				 con una serie de recambios de cable metálico\
-				para esta.</p></br>",
+				para esta.</p></br>");
+                        } else {
+                            system.write("<p>Inspeccionas la armería y puedes\
+				alcanzar a observar que ha sufrido grandes deaños\
+				solo queda en pie el armario blindado donde guardas\
+				tus trajes, y otro pequeño donde guardas tu\
+				batgarra\
+				con una serie de recambios de cable metálico\
+				para esta. No vas a encontrar nada nuevo aqui</p></br>")
+                        }
+                    },
 
                     'quimica': "<p>Te acercas a la sección donde se\
 				encuentra tu laboratorio de química y ha sido completamente\
@@ -389,13 +481,24 @@ undum.game.situations = {
 				ese laboratorio era ideal para analizar sustancias desconocidas,\
 				lastima.</p></br>",
 
-                    'mecanica': "<p>El talle de mecánica es el lugar que mejor\
+                    'mecanica': function (character, system, to) {
+                        if ((character.qualities.piezaCPU3 == 0) && (batmovilResuelto == 0)) {
+                            system.write("<p>El talle de mecánica es el lugar que mejor\
 				ha soportado el ataque. Tan solo han esparcido muchas de tus\
 				herramientas por el suelo y derribado unos cuantos almacenes de piezas\
 				, nada que el viejo Alfred no pueda arreglar en un día de duro trabajo.\
 				Miras detenidamente el lugar y, en el centro del banco de trabajo principal,\
-				encuentras <a href='./recogerpieza' class='once'> una de las piezas de la CPU</a>.</p></br>",
+				encuentras <a href='./recogerpieza' class='once'> una de las piezas de la CPU</a>.</p></br>");
+                        } else {
+                            system.write("<p>El talle de mecánica es el lugar que mejor\
+				ha soportado el ataque. Tan solo han esparcido muchas de tus\
+				herramientas por el suelo y derribado unos cuantos almacenes de piezas\
+				, nada que el viejo Alfred no pueda arreglar en un día de duro trabajo.\
+				Miras detenidamente el lugar y, te das cuenta que aquí no vas a encontrar nada nuevo</p></br>");
 
+                        }
+
+                    },
                     'recogerpieza': function (character, system, to) {
                         system.setQuality("piezaCPU3", 1);
                     },
@@ -459,17 +562,24 @@ undum.game.situations = {
 
     batmovil_arreglado: new undum.SimpleSituation(
             "<h1>BATMOVIL</h1>\
-			  <p align='center'> <img id='img' src='./recursos/imágenes/batmovil.jpg' width='450' height='250' ></p>\
+			  <p> align='center'> <img id='img' src='./recursos/imágenes/batmovil.jpg' width='450' height='250' ></p>\
 			  <p> Entras al garaje y accedes al interior del batmovil, introduces cada una de las\
 			  piezas recopiladas en las habitaciones en los slots para la cpu, entonces el batmovil\
 			  arranca y <a href='nodo_batmovil'> Sales a descubrir la ciudad.</a></p>",
             {
-                enter: function (character, system, to) {
-                    system.setQuality("piezaCPU1", 0);
-                    system.setQuality("piezaCPU2", 0);
-                    system.setQuality("piezaCPU3", 0);
+                actions: {
+                    'entrar': function (character, system, to) {
+                        if (llaves == 0) {
+                            system.write("<p>Te diriges hacia el batmovil y entras en él.</p></br>");
+                            system.doLink('batmovil_roto');
+                        } else {
+                            system.write("<p>Te diriges hacia el batmovil y entras en él.</p></br>");
+                            system.doLink('batmovil_arreglado');
+                        }
+                    }
                 }
             }
+
 
     ),
 
@@ -1031,6 +1141,19 @@ undum.game.situations = {
 			<li><a href='inicio'>Batcueva</a></li>\
 			<li><a href='nodo_parkrow'>Callejón del crimen</a></li>\
 			<li><a href='nodo_comisaria'>Comisaria de Gotham</a></li>\
+		</ul>\
+		</p></br>"
+            ),
+
+    batmovil3: new undum.SimpleSituation(
+            "<h1 class='transient'>BATMÓVIL</h1>\
+            <p class='transient' align='center'> <img id='img' src='./recursos/imágenes/ciudad.jpg' width='450' height='150' ></p>\
+            <p class = 'transient'>El ordenador de abordo te pide un destino:</p></br>\
+                <p><ul class='options'>\
+			<li><a href='inicio'>Batcueva</a></li>\
+			<li><a href='nodo_parkrow'>Callejón del crimen</a></li>\
+			<li><a href='nodo_comisaria'>Comisaria de Gotham</a></li>\
+			<li><a href='nodo_saloniceberg'>Salón Iceberg</a></li>\
 		</ul>\
 		</p></br>"
             ),

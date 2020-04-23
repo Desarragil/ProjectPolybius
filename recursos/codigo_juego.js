@@ -616,8 +616,13 @@ undum.game.situations = {
 		podrías investigar más a fondo el callejón.\
 		</p></br>\
 		<p>Te acercas al lugar exacto en el que asesinaron a tus padres, ya que sobre la\
-		 silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos. Te acercas\
-		 a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras <a href='./recogerbolsa' class='once'>\
+        silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos.\
+        Puedes <a href='cogersustancia'>mirar detalladamente</a></p></br>"
+    ),
+    
+    cogersustancia: new undum.SimpleSituation(
+
+        "<p>Te acercas a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras <a href='./recogerbolsa' class='once'>\
 		una bolsa de una sustancia la cual no parece muy legal.</a>\
 		</p></br>\
 		<p>Sin duda debes analizar la sustancia para averiguar de qué se trata. El ordenador\
@@ -666,8 +671,11 @@ undum.game.situations = {
 			del callejón se encuentra el piso franco que anteriormente descubriste.\
 			</p></br>\
 			<p>Te acercas al lugar exacto en el que asesinaron a tus padres, ya que sobre la\
-			 silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos. Te acercas\
-			 a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras <a href='./recogerbolsa' class='once'>\
+            silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos. Puedes <a href='cogersustancia1'>mirar detalladamente</a></p></br>"
+    ),
+    
+    cogersustancia1: new undum.SimpleSituation(
+            "<p>Te acercas a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras <a href='./recogerbolsa' class='once'>\
 			una bolsa de una sustancia la cual no parece muy legal.</a>\
 			</p></br>\
 			<p>Sin duda debes analizar la sustancia para averiguar de qué se trata. El ordenador\

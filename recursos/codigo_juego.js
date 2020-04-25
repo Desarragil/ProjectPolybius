@@ -478,12 +478,17 @@ undum.game.situations = {
 				encuentra tu laboratorio de química y ha sido completamente\
 				destruido, por las marcas de abrasiones que se encuentran en\
 				el lugar puedes deducir que lo han volado por los aires\
-				ese laboratorio era ideal para analizar sustancias desconocidas,\
-				lastima.</p></br>",
+				ese laboratorio era ideal para analizar sustancias desconocidas\
+				lastima. Pero ves algo extraño en el suelo lo observas con\
+				detenimiento y descubres que se han dejado una <a href='./nota'>nota</a></p></br>",
+				
+				 'nota':"<p>Coges la nota y está algo requemada por lo que no se puede leer todo\
+				           su contenido, pero puedes leer un párrafo: El intercabio será en el\
+						    callejón del crimen.</p></br>",
 
                     'mecanica': function (character, system, to) {
                         if ((character.qualities.piezaCPU3 == 0) && (batmovilResuelto == 0)) {
-                            system.write("<p>El talle de mecánica es el lugar que mejor\
+                            system.write("<p>El taller de mecánica es el lugar que mejor\
 				ha soportado el ataque. Tan solo han esparcido muchas de tus\
 				herramientas por el suelo y derribado unos cuantos almacenes de piezas\
 				, nada que el viejo Alfred no pueda arreglar en un día de duro trabajo.\
@@ -510,6 +515,7 @@ undum.game.situations = {
             }
     ),
 
+            
     nodo_gameover1: new undum.SimpleSituation(
             "",
             {

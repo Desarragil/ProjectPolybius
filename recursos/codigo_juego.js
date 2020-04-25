@@ -56,7 +56,7 @@ undum.game.situations = {
                         batcueva++;
                         system.animateQuality("lugaresVisitados", character.qualities.lugaresVisitados + 1);
                         system.setCharacterText("<p>¡¡Escapa de la batcueva!!</p>");
-                        system.write("<a class= raw href='https://batman.fandom.com/es/wiki/Batcave'><h1>BATCUEVA</h1></a>\
+                        system.write("\
 								<p align='center'> <img id='img' src='./recursos/imágenes/batcueva.jpg' width='450' height='250' ></p>\
 								<p>Puedes sentir una gran presión en el pecho. 'No es posible', piensas, mientras observas las camaras de seguridad.\
 								 Es imposible que hayan podido dar con tu escondite; los últimos sistemas de ocultamiento, defensas contra curiosos,\
@@ -908,9 +908,9 @@ undum.game.situations = {
             }
 
     ),
-
+	
     saloniceberg: new undum.SimpleSituation(
-            "<h1>SALÓN ICEBERG</h1>\
+            "<a class= raw align= center href='https://batman.fandom.com/es/wiki/Sala_Iceberg'><h1>SALÓN ICEBERG</h1></a>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/Salon_iceberg.jpg' width='450' height='250' ></p>\
 		<p>Llegas al exterior del establecimiento que regenta el pingüino y la calle está desierta,\
 		 está claro que te están esperando.\
@@ -955,7 +955,7 @@ undum.game.situations = {
     ),
 
     salon_bloqueado: new undum.SimpleSituation(
-            "<h1>SALÓN ICEBERG</h1>\
+            "<a class= raw align= center href='https://batman.fandom.com/es/wiki/Sala_Iceberg'><h1>SALÓN ICEBERG</h1></a>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/Salon_iceberg.jpg' width='450' height='250' ></p>\
                 <p>Vuelves al salón iceberg dispuesto a desbloquear esa puerta blindada.</p></br>\
                 <p>Al entrar en la sala principal te encuentras con los hombres de Gordon. \
@@ -1252,7 +1252,7 @@ undum.game.situations = {
             ),
 
     ircaminando: new undum.SimpleSituation(
-            "<h1>TORRE WAYNE</h1>\
+            "<a class= raw href='https://batman.fandom.com/es/wiki/Torre_Wayne'><h1>TORRE WAYNE</h1></a>            \
 			<p align='center'> <img id='img' src='./recursos/imágenes/torrewayne.jpg' width='450' height='250' ></p>\
 		<p>Finalmente, decides ir caminando. Llegas a la torre, y al subir a lo más alto, te encuentras con que la \
 		escolta que custodia su residencia está distraída. Así, accedes de forma inmediata al interior, y se \

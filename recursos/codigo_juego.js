@@ -215,6 +215,7 @@ undum.game.situations = {
                     salon = 0;
                     torre = 0;
                     sustancia = 0;
+                    batmovilResuelto = 0;
                     system.setQuality("piezaCPU1", 0);
                     system.setQuality("piezaCPU2", 0);
                     system.setQuality("piezaCPU3", 0);
@@ -249,6 +250,7 @@ undum.game.situations = {
                     salon = 0;
                     torre = 0;
                     sustancia = 0;
+                    batmovilResuelto = 0;
                     system.setQuality("piezaCPU1", 0);
                     system.setQuality("piezaCPU2", 0);
                     system.setQuality("piezaCPU3", 0);
@@ -294,6 +296,7 @@ undum.game.situations = {
                     salon = 0;
                     torre = 0;
                     sustancia = 0;
+                    batmovilResuelto = 0;
                     system.setQuality("piezaCPU1", 0);
                     system.setQuality("piezaCPU2", 0);
                     system.setQuality("piezaCPU3", 0);
@@ -550,6 +553,7 @@ undum.game.situations = {
                     salon = 0;
                     torre = 0;
                     sustancia = 0;
+                    batmovilResuelto = 0;
                     system.setQuality("piezaCPU1", 0);
                     system.setQuality("piezaCPU2", 0);
                     system.setQuality("piezaCPU3", 0);
@@ -986,6 +990,7 @@ parkrow1: new undum.SimpleSituation(
                     salon = 0;
                     torre = 0;
                     sustancia = 0;
+                    batmovilResuelto = 0;
                     system.setQuality("piezaCPU1", 0);
                     system.setQuality("piezaCPU2", 0);
                     system.setQuality("piezaCPU3", 0);
@@ -1103,6 +1108,7 @@ parkrow1: new undum.SimpleSituation(
                     salon = 0;
                     torre = 0;
                     sustancia = 0;
+                    batmovilResuelto = 0;
                     system.setQuality("piezaCPU1", 0);
                     system.setQuality("piezaCPU2", 0);
                     system.setQuality("piezaCPU3", 0);
@@ -1208,8 +1214,33 @@ parkrow1: new undum.SimpleSituation(
 		<p>Hace la llamada, y al cabo de 5 minutos el local se llena de hombres que trabajan para el villano, \
 		quienes os acribillan a ti y a Crane.</p></br>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
-		<p><a href='inicio'>Volver a comenzar</a></p>"
-            ),
+		<p><a href='inicio'>Volver a comenzar</a></p>",
+		{
+                exit: function (character, system, to) {
+                    batcueva = 0;
+                    callejon = 0;
+                    comisaria = 0;
+                    pfranco = 0;
+                    llaves = 0;
+                    salon = 0;
+                    torre = 0;
+                    sustancia = 0;
+                    batmovilResuelto = 0;
+                    system.setQuality("piezaCPU1", 0);
+                    system.setQuality("piezaCPU2", 0);
+                    system.setQuality("piezaCPU3", 0);
+                    system.setQuality("llavesBatcueva", 0);
+                    system.setQuality("sustancia", 0);
+                    system.setQuality("batgarra", 0);
+                    system.setQuality("tarjetaAcred", 0);
+                    system.setQuality("aturdidores", 1);
+                    system.setQuality("batgranadas", 1);
+                    system.setQuality("llaveSala", 0);
+                    system.setQuality("lugaresVisitados", 0);
+                    system.setQuality("total", 1);
+                }
+             }
+           ),
 
     vencidoenlacalle: new undum.SimpleSituation(
             "<p align='center'> <img id='img' src='./recursos/imágenes/batmanacorralado.jpg' width='450' height='250' ></p>\
@@ -1217,7 +1248,32 @@ parkrow1: new undum.SimpleSituation(
 		y justo cuando dispones a entrar te topas con la cuadrilla de bienvenida que ni siquiera te deja saludar. \
 		Has sido derrotado.</p></br>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
-		<p><a href='inicio'>Volver a comenzar</a></p>"
+		<p><a href='inicio'>Volver a comenzar</a></p>",
+		{
+                exit: function (character, system, to) {
+                    batcueva = 0;
+                    callejon = 0;
+                    comisaria = 0;
+                    pfranco = 0;
+                    llaves = 0;
+                    salon = 0;
+                    torre = 0;
+                    sustancia = 0;
+                    batmovilResuelto = 0;
+                    system.setQuality("piezaCPU1", 0);
+                    system.setQuality("piezaCPU2", 0);
+                    system.setQuality("piezaCPU3", 0);
+                    system.setQuality("llavesBatcueva", 0);
+                    system.setQuality("sustancia", 0);
+                    system.setQuality("batgarra", 0);
+                    system.setQuality("tarjetaAcred", 0);
+                    system.setQuality("aturdidores", 1);
+                    system.setQuality("batgranadas", 1);
+                    system.setQuality("llaveSala", 0);
+                    system.setQuality("lugaresVisitados", 0);
+                    system.setQuality("total", 1);
+                }
+            }
             ),
 
     llamarkebab: new undum.SimpleSituation(
@@ -1246,7 +1302,32 @@ parkrow1: new undum.SimpleSituation(
 		anticipará a tu llegada, y te esperará con un comité de bienvenida con el que no podrás hacer nada, \
 		y habrás sido derrotado.</p></br>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
-		<p><a href='inicio'>Volver a comenzar</a></p>"
+		<p><a href='inicio'>Volver a comenzar</a></p>",
+		{
+                exit: function (character, system, to) {
+                    batcueva = 0;
+                    callejon = 0;
+                    comisaria = 0;
+                    pfranco = 0;
+                    llaves = 0;
+                    salon = 0;
+                    torre = 0;
+                    sustancia = 0;
+                    batmovilResuelto = 0;
+                    system.setQuality("piezaCPU1", 0);
+                    system.setQuality("piezaCPU2", 0);
+                    system.setQuality("piezaCPU3", 0);
+                    system.setQuality("llavesBatcueva", 0);
+                    system.setQuality("sustancia", 0);
+                    system.setQuality("batgarra", 0);
+                    system.setQuality("tarjetaAcred", 0);
+                    system.setQuality("aturdidores", 1);
+                    system.setQuality("batgranadas", 1);
+                    system.setQuality("llaveSala", 0);
+                    system.setQuality("lugaresVisitados", 0);
+                    system.setQuality("total", 1);
+                }
+             }
             ),
 
     ircaminando: new undum.SimpleSituation(
@@ -1284,8 +1365,34 @@ parkrow1: new undum.SimpleSituation(
 		<p>Fuerzas la entrada, e inmediatamente salta la alarma. Ya no te vale, el villano se presenta con unos de sus hombres \
 		y te reducen. Fracaso.</p></br>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
-		<p><a href='inicio'>Volver a comenzar</a></p>"
-            ),
+		<p><a href='inicio'>Volver a comenzar</a></p>",
+		{
+                exit: function (character, system, to) {
+                    batcueva = 0;
+                    callejon = 0;
+                    comisaria = 0;
+                    pfranco = 0;
+                    llaves = 0;
+                    salon = 0;
+                    torre = 0;
+                    sustancia = 0;
+                    batmovilResuelto = 0;
+                    system.setQuality("piezaCPU1", 0);
+                    system.setQuality("piezaCPU2", 0);
+                    system.setQuality("piezaCPU3", 0);
+                    system.setQuality("llavesBatcueva", 0);
+                    system.setQuality("sustancia", 0);
+                    system.setQuality("batgarra", 0);
+                    system.setQuality("tarjetaAcred", 0);
+                    system.setQuality("aturdidores", 1);
+                    system.setQuality("batgranadas", 1);
+                    system.setQuality("llaveSala", 0);
+                    system.setQuality("lugaresVisitados", 0);
+                    system.setQuality("total", 1);
+                }
+            }
+		
+        ),
 
     mirarsuelo: new undum.SimpleSituation(
             "<p>Visto esto, empiezas a mirar a tu alrededor, y entre la oscuridad del pasillo, descubres un objeto brillante: \
@@ -1315,7 +1422,32 @@ parkrow1: new undum.SimpleSituation(
             "<p align='center'> <img id='img' src='./recursos/imágenes/batmanacorralado.jpg' width='450' height='250' ></p>\
 		<p>Tras disparar, sus hombres se alarman de la situación y acuden al lugar. Te reducen y acaban contigo. Has sido derrotado.</p></br>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
-		<p><a href='inicio'>Volver a comenzar</a></p>"
+		<p><a href='inicio'>Volver a comenzar</a></p>",
+		{
+                exit: function (character, system, to) {
+                    batcueva = 0;
+                    callejon = 0;
+                    comisaria = 0;
+                    pfranco = 0;
+                    llaves = 0;
+                    salon = 0;
+                    torre = 0;
+                    sustancia = 0;
+                    batmovilResuelto = 0;
+                    system.setQuality("piezaCPU1", 0);
+                    system.setQuality("piezaCPU2", 0);
+                    system.setQuality("piezaCPU3", 0);
+                    system.setQuality("llavesBatcueva", 0);
+                    system.setQuality("sustancia", 0);
+                    system.setQuality("batgarra", 0);
+                    system.setQuality("tarjetaAcred", 0);
+                    system.setQuality("aturdidores", 1);
+                    system.setQuality("batgranadas", 1);
+                    system.setQuality("llaveSala", 0);
+                    system.setQuality("lugaresVisitados", 0);
+                    system.setQuality("total", 1);
+                }
+             }
             ),
 
     dejarquehable: new undum.SimpleSituation(

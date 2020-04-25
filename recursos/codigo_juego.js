@@ -56,7 +56,7 @@ undum.game.situations = {
                         batcueva++;
                         system.animateQuality("lugaresVisitados", character.qualities.lugaresVisitados + 1);
                         system.setCharacterText("<p>¡¡Escapa de la batcueva!!</p>");
-                        system.write("<h1>BATCUEVA</h1>\
+                        system.write("<a class= raw href='https://batman.fandom.com/es/wiki/Batcave'><h1>BATCUEVA</h1></a>\
 								<p align='center'> <img id='img' src='./recursos/imágenes/batcueva.jpg' width='450' height='250' ></p>\
 								<p>Puedes sentir una gran presión en el pecho. 'No es posible', piensas, mientras observas las camaras de seguridad.\
 								 Es imposible que hayan podido dar con tu escondite; los últimos sistemas de ocultamiento, defensas contra curiosos,\

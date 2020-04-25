@@ -935,16 +935,9 @@ undum.game.situations = {
 		 suya puedes observar una puerta acorazada.\
 		</p></br>\
 		<p>-¡Mira quién se ha dignado a aparacer!. Grita Cobblepot.\
-		</p></br>\
-		<p>-¡¿Qué andáis tramando Crane y tú?!.\
-		</p></br>\
-		<p>-Esparaba al menos un saludo, Batman. Sea como sea poco importa lo que tramemos mi socio y yo,\
-		 tu viaje ha llegado a su fin.. Acto seguido, ves como el pingüino hace una señal a sus secuaces\
-		 para que abran fuego.\
-		</p></br>\
-		<p class='transient'>Debes pensar rápido: puedes <a href='./lanzaraturdidores' class='once'>lanzar tus aturdidores sónicos</a>,\
-		 o <a href='./lanzargranadas' class='once'>tus bat-granadas de bat-humo.</a>\
-		</p></br>",
+        </p></br>\
+        <p class= 'transient'><a href='./responder'>responder</a></p></br>",
+
         {
             enter: function (character, system, to) {
                 if (salon == 0) {
@@ -960,7 +953,17 @@ undum.game.situations = {
                 'lanzargranadas': function (character, system, to) {
                     system.setQuality("batgranadas", 0);
                     system.doLink('combateconjefe');
-                }
+                },
+
+                'responder': "<p>-¡¿Qué andáis tramando Crane y tú?!.\
+                </p></br>\
+                <p>-Esparaba al menos un saludo, Batman. Sea como sea poco importa lo que tramemos mi socio y yo,\
+                 tu viaje ha llegado a su fin.. Acto seguido, ves como el pingüino hace una señal a sus secuaces\
+                 para que abran fuego.\
+                </p></br>\
+                <p class='transient'>Debes pensar rápido: puedes <a href='./lanzaraturdidores' class='once'>lanzar tus aturdidores sónicos</a>,\
+                 o <a href='./lanzargranadas' class='once'>tus bat-granadas de bat-humo.</a>\
+                </p></br>",
             }
         }
     ),
@@ -1076,22 +1079,32 @@ undum.game.situations = {
 		 Dices decidido levantando el puño para propinar otro puñetazo a tu víctima.\
 		</p></br>\
 		<p>-¡Espera! ¡Hablaré!. Grita Espantapájaros horrorizado al ver tu puño elevarse.\
-		</p></br>\
-		<p>-Eso me figuraba. ¿Por qué has atacado la batcueva, cómo sabías de su localización?\
-		 Si me mientes, lo sabré. Dices, ordenando mientras a tu detector de ritmo cardíaco que\
-		 te muestre las lecturas de Crane.\
-		</p></br>\
-		<p>-Yo no ataqué tu guarida, yo solo me encargo de la toxina.\
-		</p></br>\
-		<p>-¿Qué tóxina? ¿De qué me estás hablando?\
-		</p></br>\
-		<p>-Si quieres respuestas, ve a la <a class= raw target=_blank href='https://batman.fandom.com/es/wiki/Torre_Wayne'>Torre Wayne</a> A estas alturas,\
-	 	encontrarás todas las respuestas allí.\
-		</p></br>\
-		<p>Al terminar de articular la última frase nockeas a Crane, dejándolo inconsciente.\
-		 Llamas a Gordon para que envíe a sus hombre a limpiar el sitio.\
-		</p></br>\
-		<p><a href='saloniceberg2'>Volver al batmovil.</a></p></br>"),
+        </p></br>\
+        <p class='transient'><a href='./responder'>responder</a></p></br>",
+
+        {
+            actions: {
+                'responder': "<p>-Eso me figuraba. ¿Por qué has atacado la batcueva, cómo sabías de su localización?\
+                Si me mientes, lo sabré. Dices, ordenando mientras a tu detector de ritmo cardíaco que\
+                te muestre las lecturas de Crane.\
+               </p></br>\
+               <p>-Yo no ataqué tu guarida, yo solo me encargo de la toxina.\
+               </p></br>\
+               <p class='transient'><a href='./responder1'>responder</a></p></br>",
+
+                'responder1': "<p>-¿Qué tóxina? ¿De qué me estás hablando?\
+               </p></br>\
+               <p>-Si quieres respuestas, ve a la <a class= raw target=_blank href='https://batman.fandom.com/es/wiki/Torre_Wayne'>Torre Wayne</a> A estas alturas,\
+                encontrarás todas las respuestas allí.\
+               </p></br>\
+               <p>Al terminar de articular la última frase nockeas a Crane, dejándolo inconsciente.\
+                Llamas a Gordon para que envíe a sus hombre a limpiar el sitio.\
+               </p></br>\
+               <p><a href='saloniceberg2'>Volver al batmovil.</a></p></br>",
+            }
+        }
+
+    ),
 
     gameover4: new undum.SimpleSituation(
         "<h1>GAME OVER</h1>\
@@ -1206,16 +1219,23 @@ undum.game.situations = {
 		</p></br>\
 		<p>-Espera, creo que será mejor que te ayude. No te puedo decir quien está detrás de todo \
 		esto, pero puedo conseguir que llegues hasta él, así que vamos a planear algo.\
-		</p></br>\
-		<p>-Vale, ¿qué propones?\
-		</p></br>\
-		<p>-Se me ocurren dos formas de poder llegar allí: la primera consiste en que \
-		<a href='llamarymentir'>yo le llame y le haga creer que has sido derrotado</a>, \
-		la segunda opción sería <a href='vencidoenlacalle'>fingir que eres vencido en la entrada del club</a>, \
-		donde podría comprobarlo por sí mismo ya que nos vigila desde su estancia. \
-		O ahora que recuerdo, el villano siempre suele pedir sobre estas horas al kebab que hay \
-		en la esquina, así que también podemos <a href='llamarkebab'>hacer una llamada al kebab.</a>\
-		</p></br>"
+        </p></br>\
+        <p class='transient'><a href='./responder'>responder</a></p></br>",
+
+        {
+            actions: {
+                'responder': "<p>-Vale, ¿qué propones?\
+                </p></br>\
+                <p>-Se me ocurren dos formas de poder llegar allí: la primera consiste en que \
+                <a href='llamarymentir'>yo le llame y le haga creer que has sido derrotado</a>, \
+                la segunda opción sería <a href='vencidoenlacalle'>fingir que eres vencido en la entrada del club</a>, \
+                donde podría comprobarlo por sí mismo ya que nos vigila desde su estancia. \
+                O ahora que recuerdo, el villano siempre suele pedir sobre estas horas al kebab que hay \
+                en la esquina, así que también podemos <a href='llamarkebab'>hacer una llamada al kebab.</a>\
+                </p></br>"
+            }
+        }
+
     ),
 
     llamarymentir: new undum.SimpleSituation(
@@ -1461,30 +1481,45 @@ undum.game.situations = {
 
     dejarquehable: new undum.SimpleSituation(
         "<p>Finalmente, dejas que hable.\
-		</p></br>\
-		<p>-Tú, ¿que estás tramando?\
-		</p></br>\
-		<p>-¿Cómo has sido capaz de encontrarme y acceder hasta aquí sin haber armado ni un solo ruido?\
-		</p></br>\
-		<p>-Tu comité de vigilancia, que es muy efectivo. Te recomiendo que los mandes al paro. ¡Explícate ahora!\
-		</p></br>\
-		<p>-Supongo que no tengo otra alternativa…\
-		</p></br>\
-		<p>-Ni lo quieras comprobar.\
-		</p></br>\
-		<p>-Todo esto surge de mi famosa moneda de dos caras, sabes que yo de por sí no tengo ese espíritu maligno para obrar de esta manera. \
-		Simplemente, estaba tratando el asunto de la toxina, cuando en ese momento vi una noticia sobre ti en el periódico. Inconscientemente, \
-		relacioné una cosa con la otra y… ya puedes imaginarte el resto. Para resolver este pensamiento, tuve que lanzar la moneda, y el \
-		resultado no fue para nada bueno.\
-		</p></br>\
-		<p>-Pues sólo te digo una cosa: o empiezas a tratarte ese trastorno que no te conviene, o me obligarás a acabar contigo en este mismo \
-		momento.\
-		</p></br>\
-		<p>Y Dos Caras tuvo que acceder a solucionar su problema. Batman lo puso en manos de especialistas que, con ayuda de un tratamiento, \
-		comenzaron a luchar contra su trastorno.\
-		</p></br>\
-		<p>FIN\
-		</p></br>"
+        </p></br>\
+        <p class='transient'><a href='./responder'>preguntar</a></p></br>",
+
+        {
+            actions: {
+                'responder': "<p>-Tú, ¿que estás tramando?\
+                </p></br>\
+                <p>-¿Cómo has sido capaz de encontrarme y acceder hasta aquí sin haber armado ni un solo ruido?\
+                </p></br>\
+                <p class='transient'><a href='./responder1'>responder</a></p></br>",
+
+                'responder1': "<p>-Tu comité de vigilancia, que es muy efectivo. Te recomiendo que los mandes al paro. ¡Explícate ahora!\
+                </p></br>\
+                <p>-Supongo que no tengo otra alternativa…\
+                </p></br>\
+                <p class='transient'><a href='./responder2'>responder</a></p></br>",
+
+                'responder2': "<p>-Ni lo quieras comprobar.\
+                </p></br>\
+                <p>-Todo esto surge de mi famosa moneda de dos caras, sabes que yo de por sí no tengo ese espíritu maligno para obrar de esta manera. \
+                Simplemente, estaba tratando el asunto de la toxina, cuando en ese momento vi una noticia sobre ti en el periódico. Inconscientemente, \
+                relacioné una cosa con la otra y… ya puedes imaginarte el resto. Para resolver este pensamiento, tuve que lanzar la moneda, y el \
+                resultado no fue para nada bueno.\
+                </p></br>\
+                <p class='transient'><a href='./responder3'>responder</a></p></br>",
+
+                'responder3': "<p>-Pues sólo te digo una cosa: o empiezas a tratarte ese trastorno que no te conviene, o me obligarás a acabar contigo en este mismo \
+                momento.\
+                </p></br>\
+                <p>Y Dos Caras tuvo que acceder a solucionar su problema. Batman lo puso en manos de especialistas que, con ayuda de un tratamiento, \
+                comenzaron a luchar contra su trastorno.\
+                </p></br>\
+                <p>FIN\
+                </p></br>"
+
+
+            }
+        }
+
     )
 };
 

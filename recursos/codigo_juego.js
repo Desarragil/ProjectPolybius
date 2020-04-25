@@ -56,13 +56,13 @@ undum.game.situations = {
                         batcueva++;
                         system.animateQuality("lugaresVisitados", character.qualities.lugaresVisitados + 1);
                         system.setCharacterText("<p>¡¡Escapa de la batcueva!!</p>");
-                        system.write("\
+                        system.write("<h1>BATCUEVA</h1>\
 								<p align='center'> <img id='img' src='./recursos/imágenes/batcueva.jpg' width='450' height='250' ></p>\
 								<p>Puedes sentir una gran presión en el pecho. 'No es posible', piensas, mientras observas las camaras de seguridad.\
 								 Es imposible que hayan podido dar con tu escondite; los últimos sistemas de ocultamiento, defensas contra curiosos,\
 								 nadie podría saber dónde se encuentra su localización. Una explosión interrumpe tus pensamientos, ya han accedido al interior.\
 								</p></br>\
-								<p>Te encuentras en el distribuidor de la batcueva y quieres salir de allí lo antes\
+								<p>Te encuentras en el distribuidor de la <a class= raw target=_blank href='https://batman.fandom.com/es/wiki/Batcave'>batcueva</a> y quieres salir de allí lo antes\
 		 						posible, ya que te encuentras indefenso y unos encapuchados quieren aprovechar esta situación\
 		 						para acabar contigo.</p></br>");
                     } else if ((character.qualities.llavesBatcueva == 0) && (callejon == 0)) {
@@ -105,7 +105,7 @@ undum.game.situations = {
                     if ((llaves == 0) || (callejon == 0)) {
                         system.write("<h1>GARAJE</h1>\
 		  			<p> Accedes al Garaje intentando buscar la mejor solución para poder salir de la batcueva\
-		 		 	totalmente ileso. Podrías coger el batmovil y huir, pero antes de que puedas tomar una decisión\
+		 		 	totalmente ileso. Podrías coger el <a class= raw target=_blank href='https://batman.fandom.com/es/wiki/Batmobile'>batmovil</a> y huir, pero antes de que puedas tomar una decisión\
 					te percatas de que la puerta de salida a la calle del garaje se encuentra abierta. Debes tomar una decisión.</p></br>");
                     } else if (callejon == 1) {
                         system.write("<h1>GARAJE</h1>\
@@ -340,7 +340,7 @@ undum.game.situations = {
                     } else {
                         system.write("<h1>SALA DE COMUNICACIONES</h1>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/sala_de_comunicaciones.jpg' width='450' height='250' ></p>\
-		<p>Te encuentras en la sala de comunicaciones, donde Alfred y tú\
+		<p>Te encuentras en la sala de comunicaciones, donde <a class= raw target=_blank href='https://batman.fandom.com/es/wiki/Alfred_Pennyworth'>Alfred</a> y tú\
 		tenéis montado vuestro centro de operaciones informáticas, y \
 		desde donde Alfred te brinda apoyo de inteligencia durante tus\
 		misiones.</p></br>\
@@ -606,50 +606,25 @@ undum.game.situations = {
             }
     ),
 
-    parkrow: new undum.SimpleSituation(
-            "<a class= raw align= center href='https://batman.fandom.com/es/wiki/Callej%C3%B3n_del_Crimen'><h1>CALLEJON DEL CRIMEN</h1></a>\
+   parkrow: new undum.SimpleSituation(
+            "<h1>CALLEJÓN DEL CRIMEN</h1>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/callejoncrimen.jpg' width='450' height='250' ></p>\
 		<p>Te encuentras en el lugar el cual intentas evitar a toda costa. Lo tienes grabado\
 		todo en la cabeza: aquella noche del 26 de Junio a las 10:27 pm tu vida cambió para\
 		siempre, los acontecimientos que se desencadenarían desde ese momento te\
 		convertirían en la persona que eres hoy. Te encuentras en Park Row, conocido como\
-		Callejón del Crimen, el lugar donde asesinaron a tus padres.\
+		<a class= raw target=_blank href='https://batman.fandom.com/es/wiki/Callej%C3%B3n_del_Crimen'>callejon del crimen</a>, el lugar donde asesinaron a tus padres.\
 		</p></br>\
 		<p>No hay tiempo que perder, debes ponerte en marcha, todas las evidencias te llevan\
 		este lugar. Ante ti se encuentra el lugar donde asesinaron a tus padres, al fondo\
 		del callejón se encuentran unos contenedores de basura, algunos de ellos\
 		desparramados por el suelo. No hay mucho tiempo que perder pero, si así lo deseas,\
-		podrías investigar más a fondo el callejón.\
+		podrías <a class='once' href='./fondo'>investigar más a fondo el callejón.</a>\
 		</p></br>\
 		<p>Te acercas al lugar exacto en el que asesinaron a tus padres, ya que sobre la\
-        silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos.\
-        Puedes <a href='cogersustancia'>mirar detalladamente</a></p></br>"
-	    
-    ),
-    
-    cogersustancia: new undum.SimpleSituation(
-
-        "<p>Te acercas a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras <a href='./recogerbolsa' class='once'>\
-		una bolsa de una sustancia la cual no parece muy legal.</a>\
-		</p></br>\
-		<p>Sin duda debes analizar la sustancia para averiguar de qué se trata. El ordenador\
-		 de tu batcueva no se encuentra 100 % operativo por lo que solo te queda una solución:\
-		 recurrir a un viejo amigo. Debes ir a la comisaría de Gotham y buscar al comisario\
-		 Gordon para que te ayude a resolver el misterio.\
-		</p></br>\
-		<p>Te diriges al fondo del callejón y observas los contenedores, tras un vistazo rápido\
-		 fijas tu atención en un destello. Te dispones a examinarlo.\
-		</p></br>\
-		<p>Parece que alguien dejo su tarjeta de presentación tras una caída pero ¿Desde dónde?.\
-		</p></br>\
-		<p>Llegas al final del callejón y observas los cubos de basura esparcidos y, a unos\
-		 metros, encuentras un puñado de cristales rotos. Observas por encima de tu cabeza\
-		 y alcanzas a ver en la oscuridad de la noche una ventana con los cristales rotos.\
-		 Debes de investigar ese piso, puede que tenga algo que ver con los asesinatos del\
-		 callejón pero necesitas tu batgarra para salvar la altura a la que se encuentra.\
-		</p></br>\
-		<p><a href='nodo_pisofranco'>entrar en piso franco.</a></br>\
-		<a href='nodo_batmovil'>Volver al batmovil.</a></p></br>",
+        	silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos.\
+        	<p class='transient'><a class='once' href='./cogersustancia'>Examinar los cadáveres</a></p></br>\
+		<p class='transient'><a class='once' href='nodo_batmovil'>Volver al batmovil.</a></p></br>",
             {
 
                 enter: function (character, system, to) {
@@ -660,14 +635,36 @@ undum.game.situations = {
                 },
 
                 actions: {
+			'cogersustancia':  "<p>Te acercas a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras <a class='once' href='./recogerbolsa' class='once'>\
+						una bolsa de una sustancia la cual no parece muy legal.</a>\
+						</p></br>\
+						<p>Sin duda debes analizar la sustancia para averiguar de qué se trata. El ordenador\
+			 			de tu batcueva no se encuentra 100 % operativo por lo que solo te queda una solución:\
+			 			recurrir a un viejo amigo. Debes ir a la comisaría de Gotham y buscar al\
+						 <a class= raw target=_blank href='https://batman.fandom.com/es/wiki/James_Gordon'>Comisario Gordon</a> para que te ayude a resolver el misterio.\
+						</p></br>",
+			'fondo': "<p>Te diriges al fondo del callejón y observas los contenedores, tras un vistazo rápido\
+				 fijas tu atención en un destello.<a class='once' href='./examinardestello'> Te dispones a examinarlo.</a>\
+				</p></br>",
+			'examinardestello': "<p>Parece que alguien dejo su tarjeta de presentación tras una caída pero <a class='once' href='./piso'>¿Desde dónde?.</a>\
+						</p></br>",
+			'piso': "<p>Llegas al final del callejón y observas los cubos de basura esparcidos y, a unos\
+		 		metros, encuentras un puñado de cristales rotos. Observas por encima de tu cabeza\
+		 		y alcanzas a ver en la oscuridad de la noche una ventana con los cristales rotos.\
+		 		Debes de investigar ese piso, puede que tenga algo que ver con los asesinatos del\
+		 		callejón pero necesitas tu batgarra para salvar la altura a la que se encuentra.\
+				</p></br>\
+				<p class='transient'><a href='nodo_pisofranco'>entrar en piso franco.</a></br>",
+
                     'recogerbolsa': function (character, system, to) {
                         system.setQuality("sustancia", 1);
                     }
                 }
             }
+		
     ),
-
-    parkrow1: new undum.SimpleSituation(
+    
+parkrow1: new undum.SimpleSituation(
             "<h1>CALLEJÓN DEL CRIMEN</h1>\
 			<p align='center'> <img id='img' src='./recursos/imágenes/callejoncrimen.jpg' width='450' height='250' ></p>\
 			<p>Te encuentras en Park Row, conocido como\
@@ -678,31 +675,32 @@ undum.game.situations = {
 			del callejón se encuentra el piso franco que anteriormente descubriste.\
 			</p></br>\
 			<p>Te acercas al lugar exacto en el que asesinaron a tus padres, ya que sobre la\
-            silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos. Puedes <a href='cogersustancia1'>mirar detalladamente</a></p></br>"
-    ),
-    
-    cogersustancia1: new undum.SimpleSituation(
-            "<p>Te acercas a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras <a href='./recogerbolsa' class='once'>\
-			una bolsa de una sustancia la cual no parece muy legal.</a>\
-			</p></br>\
-			<p>Sin duda debes analizar la sustancia para averiguar de qué se trata. El ordenador\
-			 de tu batcueva no se encuentra 100 % operativo por lo que solo te queda una solución:\
-			 recurrir a un viejo amigo. Debes ir a la comisaría de Gotham y buscar al comisario\
-			 Gordon para que te ayude a resolver el misterio.\
-			</p></br>\
-			<p><a href= 'nodo_pisofranco'>entrar en piso franco.</a></br>\
-			<a href= 'nodo_batmovil'>Volver al batmovil.</a></p></br>",
-            {
+            		silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos.</p>\
+			<p class='transient'><a class='once' href='./cogersustancia'>Examinar los cadáveres.</a></p></br>\
+			<p class='transient'><a class='once' href= 'nodo_pisofranco'>Entrar en piso franco.</a></p></br>\
+			<p class='transient'><a class='once' href= 'nodo_batmovil'>Volver al batmovil.</a></p></br>",
+	{
                 actions: {
+    
+    			'cogersustancia':  "<p>Te acercas a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras <a class='once' href='./recogerbolsa' class='once'>\
+						una bolsa de una sustancia la cual no parece muy legal.</a>\
+						</p></br>\
+						<p>Sin duda debes analizar la sustancia para averiguar de qué se trata. El ordenador\
+			 			de tu batcueva no se encuentra 100 % operativo por lo que solo te queda una solución:\
+			 			recurrir a un viejo amigo. Debes ir a la comisaría de Gotham y buscar al \
+			 			<a class= raw target=_blank href='https://batman.fandom.com/es/wiki/James_Gordon'>Comisario Gordon</a> para que te ayude a resolver el misterio.\
+						</p></br>",
+            
                     'recogerbolsa': function (character, system, to) {
                         system.setQuality("sustancia", 1);
                     }
                 }
             }
     ),
+    
 
     parkrow2: new undum.SimpleSituation(
-            "<a class= raw align= center href='https://batman.fandom.com/es/wiki/Edificio_del_DPGC'><h1>CALLEJON DEL CRIMEN</h1></a>\
+            "<h1>CALLEJÓN DEL CRIMEN</h1>\
 			<p align='center'> <img id='img' src='./recursos/imágenes/callejoncrimen.jpg' width='450' height='250' ></p>\
 			<p>Te encuentras en Park Row, conocido como\
 			Callejón del Crimen, el lugar donde asesinaron a tus padres.\
@@ -727,7 +725,7 @@ undum.game.situations = {
             ),
 
     parkrow3: new undum.SimpleSituation(
-            "<a class= raw align= center href='https://batman.fandom.com/es/wiki/Edificio_del_DPGC'><h1>CALLEJON DEL CRIMEN</h1></a>\
+            "<h1>CALLEJON DEL CRIMEN</h1>\
 			<p align='center'> <img id='img' src='./recursos/imágenes/callejoncrimen.jpg' width='450' height='250' ></p>\
 			<p>Te encuentras en Park Row, conocido como Callejón del Crimen, el lugar donde asesinaron a tus padres.\
 			</p></br>\
@@ -777,7 +775,7 @@ undum.game.situations = {
                                         <p>-Anoche realizamos una regada en un piso franco. Un soplo anónimo nos dió la dirección\
                                         de lo que creíamos un traficante de poca monta. Cuando llegamos había escapado por la ventana.\
                                         Cuando nuestros chicos llegaron al callejón pudieron abatirlo, pero no estaba solo.\
-                                         Junto a él abatieron a uno de los hombres de Jonathan Crane.\
+                                         Junto a él abatieron a uno de los hombres de <a class= raw target=_blank href='https://batman.fandom.com/es/wiki/Jonathan_Crane_(Nueva_Tierra)'>Jonathan Crane</a>.\
                                         </p></br>\
                                         <p>El espantapajaros, un viejo amigo.\
                                         </p></br>\
@@ -789,7 +787,7 @@ undum.game.situations = {
                                         <p>-James, esta noche han atacado mi guarida. No sé quién ni por qué pero no dispongo de los\
                                          medios para analizar esto. Por favor, no te pediría que te arriesgaras por mi si no fuera mi última opción.\
                                         </p></br>\
-                                        <p>-Maldita sea, déjame que llame a Bárbara, ella sabrá qué hacer. Apresurado, Gordon coge\
+                                        <p>-Maldita sea, déjame que llame a <a class= raw target=_blank href='https://batman.fandom.com/es/wiki/Barbara_Gordon'>Bárbara</a> ella sabrá qué hacer. Apresurado, Gordon coge\
                                          la bolsa del escritorio y sale de su despacho.\
                                         </p></br>\
                                         <p>Tras 45 minutos de espera Gordon vuelve a su despacho.\
@@ -807,7 +805,7 @@ undum.game.situations = {
                                         </p></br>\
                                         <p>-No por mucho tiempo. Dices decidido. Esta noche se acabó, ¿Dónde puedo encontrarle?.\
                                         </p></br>\
-                                        <P>-Hemos estado siguiendo sus pasos muy de cerca, se está refugiando en el Salón Iceberg.\
+                                        <P>-Hemos estado siguiendo sus pasos muy de cerca, se está refugiando en el <a class= raw target=_blank href='https://batman.fandom.com/es/wiki/Sala_Iceberg'>salón iceberg</a>.\
                                          Está al amparo de Oswald Cobblepot, desde allí es prácticamente intocable.\
                                         </p></br>\
                                         <p>-Ya lo veremos.\
@@ -910,9 +908,9 @@ undum.game.situations = {
     ),
 	
     saloniceberg: new undum.SimpleSituation(
-            "<a class= raw align= center href='https://batman.fandom.com/es/wiki/Sala_Iceberg'><h1>SALÓN ICEBERG</h1></a>\
+            "<h1>SALÓN ICEBERG</h1>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/Salon_iceberg.jpg' width='450' height='250' ></p>\
-		<p>Llegas al exterior del establecimiento que regenta el pingüino y la calle está desierta,\
+		<p>Llegas al exterior del establecimiento que regenta el <a class= raw target=_blank href='https://batman.fandom.com/es/wiki/Oswald_Cobblepot'>Pingüino</a> y la calle está desierta,\
 		 está claro que te están esperando.\
 		</p></br>\
 		<p>Al entrar en el hall no te encuentras a nadie, avanzas hasta la entrada del salón principal\
@@ -955,7 +953,7 @@ undum.game.situations = {
     ),
 
     salon_bloqueado: new undum.SimpleSituation(
-            "<a class= raw align= center href='https://batman.fandom.com/es/wiki/Sala_Iceberg'><h1>SALÓN ICEBERG</h1></a>\
+            "<h1>SALÓN ICEBERG</h1>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/Salon_iceberg.jpg' width='450' height='250' ></p>\
                 <p>Vuelves al salón iceberg dispuesto a desbloquear esa puerta blindada.</p></br>\
                 <p>Al entrar en la sala principal te encuentras con los hombres de Gordon. \
@@ -1029,7 +1027,7 @@ undum.game.situations = {
                         system.write("<p>Examinas el panel de identificación detenidamente e intentas hackearlo\
                             con tus herramientas. Intento tras intento fallas en tu cometido.</p></br>\n\
                             <p>En tu último intento te percatas de una forma familiar en la superfice\
-                            de la puerta blindada, es el símbolo de industrias Wayne.</p></br>\
+                            de la puerta blindada, es el símbolo de industrias <a class= raw target=_blank href='https://batman.fandom.com/es/wiki/Empresas_Wayne'>Wayne</a>.</p></br>\
                             <p> No sabes cómo ha ido a parar una de estas puertas a un lugar como este\
                              pero una cosa tienes clara, no vas a conseguir piratearla.</p></br>\
                             <p> Debes encontrar una forma de abrir esa puerta blindada, decidido\
@@ -1073,7 +1071,7 @@ undum.game.situations = {
 		</p></br>\
 		<p>-¿Qué tóxina? ¿De qué me estás hablando?\
 		</p></br>\
-		<p>-Si quieres respuestas, ve a la Torre Wayne. A estas alturas,\
+		<p>-Si quieres respuestas, ve a la <a class= raw target=_blank href='https://batman.fandom.com/es/wiki/Torre_Wayne'>Torre Wayne</a> A estas alturas,\
 	 	encontrarás todas las respuestas allí.\
 		</p></br>\
 		<p>Al terminar de articular la última frase nockeas a Crane, dejándolo inconsciente.\
@@ -1252,7 +1250,7 @@ undum.game.situations = {
             ),
 
     ircaminando: new undum.SimpleSituation(
-            "<a class= raw href='https://batman.fandom.com/es/wiki/Torre_Wayne'><h1>TORRE WAYNE</h1></a>            \
+            "<h1>TORRE WAYNE</h1>            \
 			<p align='center'> <img id='img' src='./recursos/imágenes/torrewayne.jpg' width='450' height='250' ></p>\
 		<p>Finalmente, decides ir caminando. Llegas a la torre, y al subir a lo más alto, te encuentras con que la \
 		escolta que custodia su residencia está distraída. Así, accedes de forma inmediata al interior, y se \
@@ -1307,7 +1305,7 @@ undum.game.situations = {
     irbanio: new undum.SimpleSituation(
             "<h1>BAÑO</h1>\
 		<p>Una vez llegas allí, ves una pequeña ráfaga de luz que asoma bajo la puerta. Esto te hace pensar que tu objetivo se \
-		encuentra allí, y decides sorprenderlo. Abres la puerta y apuntas con un revólver: descubres que el villano es Dos Caras, y \
+		encuentra allí, y decides sorprenderlo. Abres la puerta y apuntas con un revólver: descubres que el villano es <a class= raw target=_blank href='https://batman.fandom.com/es/wiki/Dos_Caras'>Dos Caras</a>, y \
 		sólo tienes unos segundos para decidir entre <a href='disparar'>disparar</a> o \
 		<a href='dejarquehable'>dejar que hable y se explique.</a>\
 		</p></br>"

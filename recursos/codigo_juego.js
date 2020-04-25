@@ -601,7 +601,7 @@ undum.game.situations = {
     ),
 
     parkrow: new undum.SimpleSituation(
-            "<h1>CALLEJÓN DEL CRIMEN</h1>\
+            "<a class= raw align= center href='https://batman.fandom.com/es/wiki/Callej%C3%B3n_del_Crimen'><h1>CALLEJON DEL CRIMEN</h1></a>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/callejoncrimen.jpg' width='450' height='250' ></p>\
 		<p>Te encuentras en el lugar el cual intentas evitar a toda costa. Lo tienes grabado\
 		todo en la cabeza: aquella noche del 26 de Junio a las 10:27 pm tu vida cambió para\
@@ -616,9 +616,40 @@ undum.game.situations = {
 		podrías <a class='once' href='./fondo'>investigar más a fondo el callejón.</a>\
 		</p></br>\
 		<p>Te acercas al lugar exacto en el que asesinaron a tus padres, ya que sobre la\
+<<<<<<< HEAD
         	silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos.\
         	<p class='transient'><a class='once' href='./cogersustancia'>Examinar los cadáveres</a></p></br>\
 		<p class='transient'><a class='once' href='nodo_batmovil'>Volver al batmovil.</a></p></br>",
+=======
+        silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos.\
+        Puedes <a href='cogersustancia'>mirar detalladamente</a></p></br>"
+	    
+    ),
+    
+    cogersustancia: new undum.SimpleSituation(
+
+        "<p>Te acercas a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras <a href='./recogerbolsa' class='once'>\
+		una bolsa de una sustancia la cual no parece muy legal.</a>\
+		</p></br>\
+		<p>Sin duda debes analizar la sustancia para averiguar de qué se trata. El ordenador\
+		 de tu batcueva no se encuentra 100 % operativo por lo que solo te queda una solución:\
+		 recurrir a un viejo amigo. Debes ir a la comisaría de Gotham y buscar al comisario\
+		 Gordon para que te ayude a resolver el misterio.\
+		</p></br>\
+		<p>Te diriges al fondo del callejón y observas los contenedores, tras un vistazo rápido\
+		 fijas tu atención en un destello. Te dispones a examinarlo.\
+		</p></br>\
+		<p>Parece que alguien dejo su tarjeta de presentación tras una caída pero ¿Desde dónde?.\
+		</p></br>\
+		<p>Llegas al final del callejón y observas los cubos de basura esparcidos y, a unos\
+		 metros, encuentras un puñado de cristales rotos. Observas por encima de tu cabeza\
+		 y alcanzas a ver en la oscuridad de la noche una ventana con los cristales rotos.\
+		 Debes de investigar ese piso, puede que tenga algo que ver con los asesinatos del\
+		 callejón pero necesitas tu batgarra para salvar la altura a la que se encuentra.\
+		</p></br>\
+		<p><a href='nodo_pisofranco'>entrar en piso franco.</a></br>\
+		<a href='nodo_batmovil'>Volver al batmovil.</a></p></br>",
+>>>>>>> TAREA 12.5 REALIZADA
             {
 
                 enter: function (character, system, to) {
@@ -693,7 +724,7 @@ undum.game.situations = {
     ),
 
     parkrow2: new undum.SimpleSituation(
-            "<h1>CALLEJÓN DEL CRIMEN</h1>\
+            "<a class= raw align= center href='https://batman.fandom.com/es/wiki/Edificio_del_DPGC'><h1>CALLEJON DEL CRIMEN</h1></a>\
 			<p align='center'> <img id='img' src='./recursos/imágenes/callejoncrimen.jpg' width='450' height='250' ></p>\
 			<p>Te encuentras en Park Row, conocido como\
 			Callejón del Crimen, el lugar donde asesinaron a tus padres.\
@@ -722,7 +753,7 @@ undum.game.situations = {
             ),
 
     parkrow3: new undum.SimpleSituation(
-            "<h1>CALLEJÓN DEL CRIMEN</h1>\
+            "<a class= raw align= center href='https://batman.fandom.com/es/wiki/Edificio_del_DPGC'><h1>CALLEJON DEL CRIMEN</h1></a>\
 			<p align='center'> <img id='img' src='./recursos/imágenes/callejoncrimen.jpg' width='450' height='250' ></p>\
 			<p>Te encuentras en Park Row, conocido como Callejón del Crimen, el lugar donde asesinaron a tus padres.\
 			</p></br>\
@@ -743,9 +774,10 @@ undum.game.situations = {
                     }
                 }
             }
+			
     ),
     comisaria: new undum.SimpleSituation(
-            "<h1>COMISARIA DE GOTHAM</h1>\
+            "<a class= raw align= center href='https://batman.fandom.com/es/wiki/Edificio_del_DPGC'><h1>CALLEJON DEL CRIMEN</h1></a>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/Comisaria.jpg' width='450' height='250' ></p>\
 		<p>Llegas a la comisaría de Gotham city al amparo de la noche, inutilizas el sistema\
 		 de alumbrado para colarte y ,al llegar a su despacho, ahí está: James Gordon.\
@@ -813,7 +845,7 @@ undum.game.situations = {
     ),
 
     comisaria1: new undum.SimpleSituation(
-            "<h1>COMISARIA DE GOTHAM</h1>\
+            "<a class= raw align= center href='https://batman.fandom.com/es/wiki/Edificio_del_DPGC'><h1>CALLEJON DEL CRIMEN</h1></a>\
 		<p align='center'> <img id='img' src='./recursos/imágenes/Comisaria.jpg' width='450' height='250' ></p>\
 		<p>Llegas a la comisaría de Gotham city al amparo de la noche, inutilizas el sistema\
 		 de alumbrado para colarte y ,al llegar a su despacho, ahí está: James Gordon.\
@@ -855,7 +887,7 @@ undum.game.situations = {
                         system.animateQuality("lugaresVisitados", character.qualities.lugaresVisitados + 1);
                     }
                     if (character.qualities.tarjetaAcred == 0) {
-                        system.write("<h1>PISO FRANCO</h1>\
+                        system.write("<a class= raw align= center href='https://batman.fandom.com/es/wiki/Edificio_Prewitt'><h1>PISO FRANCO</h1></a>\
 								<p align='center'> <img id='img' src='./recursos/imágenes/piso_franco.jpg' width='450' height='250' ></p>\
 								<p>Tras escalar el edificio con tu batgarra consigues introducirte en el piso franco.\
 		 						Todo está quemado, poco queda ya de lo que había en la estancia. Puedes volver al\
@@ -869,7 +901,7 @@ undum.game.situations = {
 								</p></br>\
 								<p class='transient'><a href='nodo_parkrow'>Volver al callejón.</a></p></br>");
                     } else {
-                        system.write("<h1>PISO FRANCO</h1>\
+                        system.write("<a class= raw align= center href='https://batman.fandom.com/es/wiki/Edificio_Prewitt'><h1>PISO FRANCO</h1></a>\
 								<p align='center'> <img id='img' src='./recursos/imágenes/piso_franco.jpg' width='450' height='250' ></p>\
 								<p>Tras escalar el edificio con tu batgarra consigues introducirte en el piso franco.\
 		 						Todo está quemado, poco queda ya de lo que había en la estancia. No vas a encontrar nada nuevo\

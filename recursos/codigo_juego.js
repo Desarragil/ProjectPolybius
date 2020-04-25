@@ -1085,8 +1085,8 @@ undum.game.situations = {
 		</p></br>\
                 <p align='center'> <img id='img' src='./recursos/imágenes/muertegaseado.jpg' width='450' height='250' ></p>\
 		<p>Crane aprieta un control remoto que tenía en el bolsillo activando unos aspersores en la pared\
-		 que rocían toda la estancia con la toxina de espantapájaros, lo cual te deja en el suelo en estado catatónico.\
-		 Has fracasado.</p></br>\
+		que rocían toda la estancia con la toxina de espantapájaros, lo cual te deja en el suelo en estado catatónico.\
+		Has fracasado.</p></br>\
                 <p align='center'> <img id='img' src='./recursos/imágenes/muerte.jpg' width='450' height='250' ></p>\
 		<p class = 'transient' ><a href='inicio'>Volver a comenzar</a></p>",
             {

@@ -162,7 +162,7 @@ undum.game.situations = {
      <p align='center'> <img id='img' src='./recursos/imágenes/batmovil.jpg' width='450' height='250' ></p>\
 	 <p>Dadas las circunstancias tienes claras las opciones posibles.</p></br>\
 	 <ul class='options'>\
-			<li><a href='./examinarasiento'>Examinar los asientos en busca de algún arma para defenderte</a></li>\
+			<li><a class='once' href='./examinarasiento'>Examinar los asientos en busca de algún arma para defenderte</a></li>\
 			<li><a href='inicio'>Salir al distribuidor</a></li>\
 		</ul></p></br>",
             {
@@ -478,17 +478,12 @@ undum.game.situations = {
 				encuentra tu laboratorio de química y ha sido completamente\
 				destruido, por las marcas de abrasiones que se encuentran en\
 				el lugar puedes deducir que lo han volado por los aires\
-				ese laboratorio era ideal para analizar sustancias desconocidas\
-				lastima. Pero ves algo extraño en el suelo lo observas con\
-				detenimiento y descubres que se han dejado una <a href='./nota'>nota</a></p></br>",
-				
-				 'nota':"<p>Coges la nota y está algo requemada por lo que no se puede leer todo\
-				           su contenido, pero puedes leer un párrafo: El intercabio será en el\
-						    callejón del crimen.</p></br>",
+				ese laboratorio era ideal para analizar sustancias desconocidas,\
+				lastima.</p></br>",
 
                     'mecanica': function (character, system, to) {
                         if ((character.qualities.piezaCPU3 == 0) && (batmovilResuelto == 0)) {
-                            system.write("<p>El taller de mecánica es el lugar que mejor\
+                            system.write("<p>El talle de mecánica es el lugar que mejor\
 				ha soportado el ataque. Tan solo han esparcido muchas de tus\
 				herramientas por el suelo y derribado unos cuantos almacenes de piezas\
 				, nada que el viejo Alfred no pueda arreglar en un día de duro trabajo.\
@@ -515,7 +510,6 @@ undum.game.situations = {
             }
     ),
 
-            
     nodo_gameover1: new undum.SimpleSituation(
             "",
             {
@@ -619,36 +613,12 @@ undum.game.situations = {
 		este lugar. Ante ti se encuentra el lugar donde asesinaron a tus padres, al fondo\
 		del callejón se encuentran unos contenedores de basura, algunos de ellos\
 		desparramados por el suelo. No hay mucho tiempo que perder pero, si así lo deseas,\
-		podrías investigar más a fondo el callejón.\
+		podrías <a class='once' href='./fondo'>investigar más a fondo el callejón.</a>\
 		</p></br>\
 		<p>Te acercas al lugar exacto en el que asesinaron a tus padres, ya que sobre la\
-        silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos.\
-        Puedes <a href='cogersustancia'>mirar detalladamente</a></p></br>"
-    ),
-    
-    cogersustancia: new undum.SimpleSituation(
-
-        "<p>Te acercas a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras <a href='./recogerbolsa' class='once'>\
-		una bolsa de una sustancia la cual no parece muy legal.</a>\
-		</p></br>\
-		<p>Sin duda debes analizar la sustancia para averiguar de qué se trata. El ordenador\
-		 de tu batcueva no se encuentra 100 % operativo por lo que solo te queda una solución:\
-		 recurrir a un viejo amigo. Debes ir a la comisaría de Gotham y buscar al comisario\
-		 Gordon para que te ayude a resolver el misterio.\
-		</p></br>\
-		<p>Te diriges al fondo del callejón y observas los contenedores, tras un vistazo rápido\
-		 fijas tu atención en un destello. Te dispones a examinarlo.\
-		</p></br>\
-		<p>Parece que alguien dejo su tarjeta de presentación tras una caída pero ¿Desde dónde?.\
-		</p></br>\
-		<p>Llegas al final del callejón y observas los cubos de basura esparcidos y, a unos\
-		 metros, encuentras un puñado de cristales rotos. Observas por encima de tu cabeza\
-		 y alcanzas a ver en la oscuridad de la noche una ventana con los cristales rotos.\
-		 Debes de investigar ese piso, puede que tenga algo que ver con los asesinatos del\
-		 callejón pero necesitas tu batgarra para salvar la altura a la que se encuentra.\
-		</p></br>\
-		<p><a href='nodo_pisofranco'>entrar en piso franco.</a></br>\
-		<a href='nodo_batmovil'>Volver al batmovil.</a></p></br>",
+        	silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos.\
+        	<p class='transient'><a class='once' href='./cogersustancia'>Examinar los cadáveres</a></p></br>\
+		<p class='transient'><a class='once' href='nodo_batmovil'>Volver al batmovil.</a></p></br>",
             {
 
                 enter: function (character, system, to) {
@@ -659,11 +629,33 @@ undum.game.situations = {
                 },
 
                 actions: {
+			'cogersustancia':  "<p>Te acercas a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras <a class='once' href='./recogerbolsa' class='once'>\
+						una bolsa de una sustancia la cual no parece muy legal.</a>\
+						</p></br>\
+						<p>Sin duda debes analizar la sustancia para averiguar de qué se trata. El ordenador\
+			 			de tu batcueva no se encuentra 100 % operativo por lo que solo te queda una solución:\
+			 			recurrir a un viejo amigo. Debes ir a la comisaría de Gotham y buscar al comisario\
+			 			Gordon para que te ayude a resolver el misterio.\
+						</p></br>",
+			'fondo': "<p>Te diriges al fondo del callejón y observas los contenedores, tras un vistazo rápido\
+				 fijas tu atención en un destello.<a class='once' href='./examinardestello'> Te dispones a examinarlo.</a>\
+				</p></br>",
+			'examinardestello': "<p>Parece que alguien dejo su tarjeta de presentación tras una caída pero <a class='once' href='./piso'>¿Desde dónde?.</a>\
+						</p></br>",
+			'piso': "<p>Llegas al final del callejón y observas los cubos de basura esparcidos y, a unos\
+		 		metros, encuentras un puñado de cristales rotos. Observas por encima de tu cabeza\
+		 		y alcanzas a ver en la oscuridad de la noche una ventana con los cristales rotos.\
+		 		Debes de investigar ese piso, puede que tenga algo que ver con los asesinatos del\
+		 		callejón pero necesitas tu batgarra para salvar la altura a la que se encuentra.\
+				</p></br>\
+				<p class='transient'><a href='nodo_pisofranco'>entrar en piso franco.</a></br>",
+
                     'recogerbolsa': function (character, system, to) {
                         system.setQuality("sustancia", 1);
                     }
                 }
             }
+		
     ),
 
     parkrow1: new undum.SimpleSituation(
@@ -677,22 +669,22 @@ undum.game.situations = {
 			del callejón se encuentra el piso franco que anteriormente descubriste.\
 			</p></br>\
 			<p>Te acercas al lugar exacto en el que asesinaron a tus padres, ya que sobre la\
-            silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos. Puedes <a href='cogersustancia1'>mirar detalladamente</a></p></br>"
-    ),
-    
-    cogersustancia1: new undum.SimpleSituation(
-            "<p>Te acercas a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras <a href='./recogerbolsa' class='once'>\
-			una bolsa de una sustancia la cual no parece muy legal.</a>\
-			</p></br>\
-			<p>Sin duda debes analizar la sustancia para averiguar de qué se trata. El ordenador\
-			 de tu batcueva no se encuentra 100 % operativo por lo que solo te queda una solución:\
-			 recurrir a un viejo amigo. Debes ir a la comisaría de Gotham y buscar al comisario\
-			 Gordon para que te ayude a resolver el misterio.\
-			</p></br>\
-			<p><a href= 'nodo_pisofranco'>entrar en piso franco.</a></br>\
-			<a href= 'nodo_batmovil'>Volver al batmovil.</a></p></br>",
-            {
+            		silueta de los cuerpos de tus padres yacen ahora otros dos cuerpos.</p>\
+			<p class='transient'><a class='once' href='./cogersustancia'>Examinar los cadáveres.</a></p></br>\
+			<p class='transient'><a class='once' href= 'nodo_pisofranco'>Entrar en piso franco.</a></p></br>\
+			<p class='transient'><a class='once' href= 'nodo_batmovil'>Volver al batmovil.</a></p></br>",
+	{
                 actions: {
+    
+    			'cogersustancia':  "<p>Te acercas a inspeccionar los cadáveres y en la chaqueta de uno de ellos encuentras <a class='once' href='./recogerbolsa' class='once'>\
+						una bolsa de una sustancia la cual no parece muy legal.</a>\
+						</p></br>\
+						<p>Sin duda debes analizar la sustancia para averiguar de qué se trata. El ordenador\
+			 			de tu batcueva no se encuentra 100 % operativo por lo que solo te queda una solución:\
+			 			recurrir a un viejo amigo. Debes ir a la comisaría de Gotham y buscar al comisario\
+			 			Gordon para que te ayude a resolver el misterio.\
+						</p></br>",
+            
                     'recogerbolsa': function (character, system, to) {
                         system.setQuality("sustancia", 1);
                     }
@@ -709,20 +701,24 @@ undum.game.situations = {
 			<p>No hay tiempo que perder, debes ponerte en marcha, tienes suficientes pistas \
 			para continuar con tu aventura. Pero antes de darte la vuelta y proseguir tu \
 			camino recuerdas los contenedores que se encontraban desparramados al fondo del\
-			callejón. Si así lo deseas, podrías investigar más a fondo el callejón.</p></br>\
-			<p>Te diriges al fondo del callejón y observas los contenedores, tras un vistazo rápido\
-			 fijas tu atención en un destello. Te dispones a examinarlo.\
-			</p></br>\
-			<p>Parece que alguien dejo su tarjeta de presentación tras una caída pero ¿Desde dónde?.\
-			</p></br>\
-			<p>Llegas al final del callejón y observas los cubos de basura esparcidos y, a unos\
-			 metros, encuentras un puñado de cristales rotos. Observas por encima de tu cabeza\
-			 y alcanzas a ver en la oscuridad de la noche una ventana con los cristales rotos.\
-			 Debes de investigar ese piso, puede que tenga algo que ver con los asesinatos del\
-			 callejón pero necesitas tu batgarra para salvar la altura a la que se encuentra.\
-			</p></br>\
-			<p><a href= 'nodo_pisofranco'>entrar en piso franco.</a></br>\
-			<a href= 'nodo_batmovil'>Volver al batmovil.</a></p></br>"
+			callejón. Si así lo deseas, podrías <a class='once' href='./fondo'>investigar más a fondo el callejón.</a></p></br>\
+			<a href= 'nodo_batmovil'>Volver al batmovil.</a></p></br>",
+	{
+	actions:{
+			'fondo': "<p>Te diriges al fondo del callejón y observas los contenedores, tras un vistazo rápido\
+				 fijas tu atención en un destello.<a class='once' href='./examinardestello'> Te dispones a examinarlo.</a>\
+				</p></br>",
+			'examinardestello': "<p>Parece que alguien dejo su tarjeta de presentación tras una caída pero <a class='once' href='./piso'>¿Desde dónde?.</a>\
+						</p></br>",
+			'piso': "<p>Llegas al final del callejón y observas los cubos de basura esparcidos y, a unos\
+		 		metros, encuentras un puñado de cristales rotos. Observas por encima de tu cabeza\
+		 		y alcanzas a ver en la oscuridad de la noche una ventana con los cristales rotos.\
+		 		Debes de investigar ese piso, puede que tenga algo que ver con los asesinatos del\
+		 		callejón pero necesitas tu batgarra para salvar la altura a la que se encuentra.\
+				</p></br>\
+				<p class='transient'><a href='nodo_pisofranco'>entrar en piso franco.</a></br>"
+		}
+	}
             ),
 
     parkrow3: new undum.SimpleSituation(
